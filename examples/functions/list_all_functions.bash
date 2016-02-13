@@ -3,6 +3,7 @@
 <<COMMENT
 
 This example shows how to list all functions which have been declared.
+This is done via declare(builtin) or typeset(builtin).
 
 References:
 http://stackoverflow.com/questions/4471364/how-do-i-list-the-functions-defined-in-my-shell

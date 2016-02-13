@@ -38,6 +38,8 @@ pid4=`ps -eL | grep " init$" | tr -s " " | cut -d " " -f 3`
 pid5=`ps -eL | grep " init" | tr -s " " | cut -d " " -f 3`
 # absolutely nuts
 pid6=`ps -eL | grep " init" | grep -v grep | tr -s " " | cut -d " " -f 3`
+# great
+pid7=`pidof init`
 
 echo "pid1 is $pid1"
 echo "pid2 is $pid2"
@@ -45,3 +47,4 @@ echo "pid3 is $pid3"
 echo "pid4 is $pid4"
 echo "pid5 is $pid5"
 echo "pid6 is $pid6"
+echo "pid7 is $pid7"

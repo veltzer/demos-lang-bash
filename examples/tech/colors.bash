@@ -1,7 +1,13 @@
 #!/bin/bash
 
-# References:
-# http://www.ngolde.de/farben2.sh
+<<COMMENT
+
+This is an example of how to create color output from a shell script.
+
+References:
+http://www.ngolde.de/farben2.sh
+
+COMMENT
 
 for attr in 0 1 4 5 7;do
 	echo "----------------------------------------------------------------"
