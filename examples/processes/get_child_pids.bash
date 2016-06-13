@@ -3,9 +3,9 @@
 <<COMMENT
 
 Showing how to wait for a specific process to end.
-note: in bash you cannot wait for any process to end
-so you cannot launch many processes waiting for the first
-one to end not knowing which one that will be...
+
+Example of how to collect your child process ids in bash
+and monitor them.
 
 COMMENT
 

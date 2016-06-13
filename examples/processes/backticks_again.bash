@@ -6,7 +6,7 @@ This is an example of how the pid of a certain process/thread in bash.
 Note that you don't want to use the standard ps output
 
 NOTES:
-- you dont want to run ps with the -o flag because it shows the PID on
+- you don't want to run ps with the -o flag because it shows the PID on
 the first column and to align it it actually pads it with spaces but
 not in all lines which creates lots of problems for tr and cut later on.
 - you want to be careful on the grep: if you grep just for the name (say 'init')

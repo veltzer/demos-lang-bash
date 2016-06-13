@@ -2,8 +2,11 @@
 
 <<COMMENT
 
-An example of using the bash 'wait' function to wait for background processes
-to terminate...
+An example of using the bash 'wait' function to wait for background processes to terminate.
+
+NOTE: in bash you cannot wait for any process to end
+so you cannot launch many processes waiting for the first
+one to end not knowing which one that will be...
 
 COMMENT
 
