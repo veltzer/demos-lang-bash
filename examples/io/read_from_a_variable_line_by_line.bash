@@ -1,12 +1,12 @@
 #!/bin/bash -u
 
-: '
+<<'COMMENT'
 
 This shows how to process a variable of list type, entry by entry.
 
 http://www.cyberciti.biz/faq/unix-howto-read-line-by-line-from-file/
 
-'
+COMMENT
 
 list=$(dpkg --list php\* | awk '/ii/{print $2}')
 while IFS= read -r line

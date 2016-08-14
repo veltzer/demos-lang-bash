@@ -1,6 +1,6 @@
 #!/bin/bash -u
 
-: '
+<<'COMMENT'
 
 This example shows how to work with files, reading them line by line.
 
@@ -13,7 +13,7 @@ in them.
 - the -r flag is needed because otherwise backslashes will be treated
 as escape codes when reading.
 
-'
+COMMENT
 
 file="/etc/passwd"
 while IFS=: read -r f1 f2 f3 f4 f5 f6 f7

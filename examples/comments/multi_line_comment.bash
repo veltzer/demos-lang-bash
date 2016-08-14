@@ -1,6 +1,6 @@
 #!/bin/bash -u
 
-<<COMMENT
+<<'COMMENT'
 
 This is an example of how to do multi line comments in bash.
 
@@ -47,6 +47,18 @@ You can continue the comment until COMMENT appears
 
 $$foo
 ${a:=7}
+
+COMMENT
+
+echo $a
+
+<<'COMMENT'
+
+This example:
+- wont evaluate the content of the comment
+- it will allow single quotes
+${a=8} will actually evaluated...
+WE HAVE A WINNER
 
 COMMENT
 
