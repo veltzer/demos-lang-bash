@@ -1,6 +1,6 @@
 #!/bin/bash -u
 
-<<COMMENT
+<<'COMMENT'
 
 example of using -u (above) and accessing an undefined variable...
 

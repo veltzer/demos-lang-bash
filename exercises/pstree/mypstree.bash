@@ -1,6 +1,6 @@
 #!/bin/bash
 
-<<COMMENT
+<<'COMMENT'
 
 this is the a rather efficient implementation of pstree
 in bash.

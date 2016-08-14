@@ -1,6 +1,6 @@
 #!/bin/bash -u
 
-<<COMMENT
+<<'COMMENT'
 
 TODO:
 1. stop using a temp file

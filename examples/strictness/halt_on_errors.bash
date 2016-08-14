@@ -1,6 +1,6 @@
 #!/bin/bash -u
 
-<<COMMENT
+<<'COMMENT'
 
 This shows how to make bash more strict
 If you remove the "set -e" and "set +e" then the script

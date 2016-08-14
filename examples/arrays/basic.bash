@@ -1,6 +1,6 @@
 #!/bin/bash -u
 
-<<COMMENT
+<<'COMMENT'
 
 This is a simple array example in bash.
 we create the array the bash way

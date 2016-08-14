@@ -1,6 +1,6 @@
 #!/bin/bash -u
 
-<<COMMENT
+<<'COMMENT'
 
 this script shows how to break in the middle of a for loop and use continue to return to the loop
 

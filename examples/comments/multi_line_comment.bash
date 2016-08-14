@@ -11,15 +11,14 @@ COMMENT
 
 <<COMMENT
 
-This is a classic multi line comment
-
-You cannot say $ something here (without the space) since
-bash will compain...
-
+- evaluates the content of the comment (bad)
 $$foo is fine, not because it is not evaluated but rather because
 $$ is seen as the variable (current shell pid).
+- it will allow single quotes (') (good)
+- you can continue the comment until COMMENT appears (good)
 
-${a=5} will actually evaluated...
+$$foo (single $ will cause an error)
+${a=5} (evaluated)
 
 COMMENT
 
@@ -27,26 +26,24 @@ echo $a
 
 : '
 
-This is also a multi line comment
+- wont evaluate the content of the comment (good)
+- cannot use single quotes (bad)
+- the comment continues until a single quote (bad)
 
-It has the advantage on <<COMMENT that you can put $foo without worry!
-
-The problem with this is that you cant use a single quote inside the
-comment.
-
-$foo and ${a=6} behave nice...
+$foo (no error)
+${a=6} (not evaluated)
 
 '
 echo $a
 
 : <<'COMMENT'
 
-This is the best solution. You can put single quotes (').
-You can use variables and they will not be evaluated.
-You can continue the comment until COMMENT appears
+- wont evaluate the content of the comment (good)
+- it will allow single quotes (') (good)
+- you can continue the comment until COMMENT appears (good)
 
-$$foo
-${a:=7}
+$foo (no error)
+${a=7} (not evaluated)
 
 COMMENT
 
@@ -54,11 +51,12 @@ echo $a
 
 <<'COMMENT'
 
-This example:
-- wont evaluate the content of the comment
-- it will allow single quotes
-${a=8} will actually evaluated...
-WE HAVE A WINNER
+- wont evaluate the content of the comment (good)
+- it will allow single quotes (') (good)
+- you can continue the comment until COMMENT appears (good)
+
+$foo (no error)
+${a=8} (not evaluated)
 
 COMMENT
 

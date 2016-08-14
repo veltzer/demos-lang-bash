@@ -1,7 +1,7 @@
 #!/bin/bash
 # this script does not have -u on purpose
 
-<<COMMENT
+<<'COMMENT'
 
 This shows how to make bash more strict in that it will error
 and will stop on any undefined variable that requires expansion.

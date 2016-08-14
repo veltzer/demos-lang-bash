@@ -1,6 +1,6 @@
 #!/bin/bash -u
 
-<<COMMENT
+<<'COMMENT'
 
 This is a script that never dies and keeps printing stuff at a low rate.
 Useful for demos.

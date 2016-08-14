@@ -1,6 +1,6 @@
 #!/bin/bash -u
 
-<<COMMENT
+<<'COMMENT'
 
 this is an example of how to iterate properly all the command line arguments.
 You can test this by giving arguments of like this:

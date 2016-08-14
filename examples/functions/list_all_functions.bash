@@ -1,6 +1,6 @@
 #!/bin/bash -u
 
-<<COMMENT
+<<'COMMENT'
 
 This example shows how to list all functions which have been declared.
 This is done via declare(builtin) or typeset(builtin).

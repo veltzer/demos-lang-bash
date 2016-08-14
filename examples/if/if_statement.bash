@@ -1,6 +1,6 @@
 #!/bin/bash
 
-<<COMMENT
+<<'COMMENT'
 
 this example explores the conditional statement in bash
 note that:

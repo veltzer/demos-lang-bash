@@ -1,6 +1,6 @@
 #!/bin/bash -u
 
-<<COMMENT
+<<'COMMENT'
 
 An attempt to make a zombie in bash
 This is not possible. Why? because bash installs

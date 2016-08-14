@@ -1,6 +1,6 @@
 #!/bin/bash -u
 
-<<COMMENT
+<<'COMMENT'
 
 This demo shows how to add to the path variable in a way that does
 not add junk.

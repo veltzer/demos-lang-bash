@@ -1,6 +1,6 @@
 #!/bin/bash -u
 
-<<COMMENT
+<<'COMMENT'
 
 This is an example that shows that the exit code of a shell pipe
 is the exit code *of the last component* of the pipe.

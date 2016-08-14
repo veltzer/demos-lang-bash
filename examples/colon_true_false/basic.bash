@@ -1,6 +1,6 @@
 #!/bin/bash -u
 
-<<COMMENT
+<<'COMMENT'
 
 This example shows that ':' is an actual command (builtin) which accepts arguments,
 does nothing and changes '$?' to '0'.

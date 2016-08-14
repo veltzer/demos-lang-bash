@@ -1,6 +1,6 @@
 #!/bin/bash -u
 
-<<COMMENT
+<<'COMMENT'
 
 this example shows how to create text counters using bash and the
 built-in "echo -en".

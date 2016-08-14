@@ -1,6 +1,6 @@
 #!/bin/bash
 
-<<COMMENT
+<<'COMMENT'
 
 this example shows the equivalent of a 'pass' statement
 in bash. This is the 'true' shell builtin which executes really

@@ -1,6 +1,6 @@
 #!/bin/bash -u
 
-<<COMMENT
+<<'COMMENT'
 
 This example shows how to find your own pid and ppid
 from within a bash script.

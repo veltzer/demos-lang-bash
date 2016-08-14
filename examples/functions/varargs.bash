@@ -1,6 +1,6 @@
 #!/bin/bash -u
 
-<<COMMENT
+<<'COMMENT'
 
 examples of how to write functions in bash which accept any number
 of arguments.

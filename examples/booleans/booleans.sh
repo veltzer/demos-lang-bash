@@ -1,6 +1,6 @@
 #!/bin/bash
 
-<<COMMENT
+<<'COMMENT'
 
 This example shows how to use booleans in bash
 

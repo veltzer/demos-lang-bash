@@ -1,6 +1,6 @@
 #!/bin/bash -uvx
 
-<<COMMENT
+<<'COMMENT'
 
 COMMENT
 
