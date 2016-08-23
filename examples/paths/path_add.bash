@@ -10,6 +10,11 @@ References:
 
 COMMENT
 
+PATH="/sbin"
+PATH="/usr/bin"
+PATH="/usr/bin:/sbin"
+PATH="/sbin:/usr/bin"
+
 pathadd() {
 	if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
 		PATH="${PATH:+"$PATH:"}$1"
