@@ -2,7 +2,7 @@
 
 <<'COMMENT'
 
-This is an example of how to do string manipulations in bash
+This is an example of how to cut up a string: prefix, suffix and middle.
 
 References:
 http://tldp.org/LDP/abs/html/string-manipulation.html
