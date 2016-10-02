@@ -4,6 +4,8 @@
 
 This is an example of how to do multi line comments in bash.
 
+The result? the <<'FOO'... FOO idiom seems to be the best.
+
 References:
 http://www.cyberciti.biz/faq/bash-comment-out-multiple-line-code/
 

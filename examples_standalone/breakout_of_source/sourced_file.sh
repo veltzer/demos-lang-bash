@@ -7,7 +7,7 @@ COMMENT
 
 echo "before the if"
 
-if [ "$HOSTNAME" != nochance ]; then
+if [[ true ]]; then
 	echo "in the if"
 	return
 fi
