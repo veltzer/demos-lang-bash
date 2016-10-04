@@ -16,3 +16,12 @@ function error() {
 	fi
 	exit "${code}"
 }
+
+function die() {
+	local frame=0
+	while caller $frame; do
+		((frame++));
+	done
+	echo "$*"
+	exit 1
+}
