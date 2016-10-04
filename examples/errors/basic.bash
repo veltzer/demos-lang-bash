@@ -10,6 +10,7 @@ http://stackoverflow.com/questions/64786/error-handling-in-bash
 COMMENT
 
 function error() {
+	expr [caller 1]
 	local parent_lineno="$1"
 	local message="$2"
 	local code="${3:-1}"
