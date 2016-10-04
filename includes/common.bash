@@ -1,5 +1,3 @@
-#!/bin/bash -u
-
 <<'COMMENT'
 
 This example shows that ':' is an actual command (builtin) which accepts arguments,
@@ -13,14 +11,14 @@ Diffences between '#' and ':'
 
 COMMENT
 
-false
-: bla bla bla
-echo $?
-
-true
-: bla bla bla
-echo $?
-
-false
-# bla bla bla
-echo $?
+function error() {
+	local parent_lineno="$1"
+	local message="$2"
+	local code="${3:-1}"
+	if [[ -n "$message" ]] ; then
+		echo "Error on or near line ${parent_lineno}: ${message}; exiting with status ${code}"
+	else
+		echo "Error on or near line ${parent_lineno}; exiting with status ${code}"
+	fi
+	exit "${code}"
+}
