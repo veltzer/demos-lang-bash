@@ -1,7 +1,11 @@
+#!/bin/bash -u
+
 <<'COMMENT'
 
-This is a common file that you can source in your example to avoid repetative
-code.
+This is a basic example of how to do error raising in bash.
+
+References:
+http://stackoverflow.com/questions/64786/error-handling-in-bash
 
 COMMENT
 
@@ -16,3 +20,5 @@ function error() {
 	fi
 	exit "${code}"
 }
+
+error ${LINENO} "problem" 1
