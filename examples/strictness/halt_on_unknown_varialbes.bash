@@ -1,5 +1,4 @@
-#!/bin/bash
-# this script does not have -u on purpose
+#!/bin/bash -u
 
 <<'COMMENT'
 
@@ -26,6 +25,7 @@ http://redsymbol.net/articles/unofficial-bash-strict-mode/
 
 COMMENT
 
+set +u
 echo "before $UNDEFINED"
 set -u
 echo "in $UNDEFINED"
