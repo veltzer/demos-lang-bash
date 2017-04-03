@@ -33,6 +33,17 @@ if false; then
 else
 	echo "command which should succeed succeeded"
 fi
+# ! operator
+if ! true; then
+	echo "command which should succeed failed"
+else
+	echo "command which should succeed succeeded"
+fi
+if ! false; then
+	echo "command which should fail failed"
+else
+	echo "command which should fail succeeded"
+fi
 # and now with a function
 function mytest {
 	"$@"
