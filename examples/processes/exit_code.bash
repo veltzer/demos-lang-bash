@@ -6,6 +6,7 @@ This is an example of how to check the exit code of a child
 
 References:
 - http://stackoverflow.com/questions/26675681/bash-how-to-check-the-exit-status-using-an-if-statement
+- http://stackoverflow.com/questions/5195607/checking-bash-exit-status-of-several-commands-efficiently
 
 COMMENT
 
