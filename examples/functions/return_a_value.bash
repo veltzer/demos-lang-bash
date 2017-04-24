@@ -22,11 +22,22 @@ function return_via_return {
 	return hello
 }
 
+function return_no_args {
+	foobar 2>/dev/null
+	return
+}
+
 echo "now via echo"
 A=$(return_via_echo)
 echo "\$? is [$?]"
 echo "return value is [$A]"
+
 echo "now via return"
 A=$(return_via_return)
+echo "\$? is [$?]"
+echo "return value is [$A]"
+
+echo "now via return with no args"
+A=$(return_no_args)
 echo "\$? is [$?]"
 echo "return value is [$A]"
