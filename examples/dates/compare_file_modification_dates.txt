@@ -1,0 +1,23 @@
+#!/bin/bash -u
+
+<<'COMMENT'
+
+This example shows how to compare the modification times of two files in
+UNIX under bash.
+
+References:
+- http://stackoverflow.com/questions/14802807/compare-files-date-bash
+
+COMMENT
+
+function compare() {
+	local f1=$1
+	local f2=$2
+	if [ $f1 -ot $f2 ]; then
+		echo "$f1 is older than $f2"
+	else
+		echo "$f2 is older than $f1"
+	fi
+}
+
+compare "/etc/hosts" "/etc/fstab"
