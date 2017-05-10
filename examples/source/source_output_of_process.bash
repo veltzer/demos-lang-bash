@@ -22,3 +22,8 @@ source <(echo export FOO=2)
 echo $FOO
 eval $(echo export FOO=3)
 echo $FOO
+filename=$(mktemp)
+echo "export FOO=4" >> $filename
+source $filename
+rm $filename
+echo $FOO
