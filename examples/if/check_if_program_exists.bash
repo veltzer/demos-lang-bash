@@ -4,6 +4,9 @@
 
 This example shows how to check if a command exists or not
 
+You can either use 'hash' or 'command -v'.
+The winner is hash since it works even for aliases.
+
 References:
 - http://stackoverflow.com/questions/592620/check-if-a-program-exists-from-a-bash-script
 
@@ -19,4 +22,21 @@ if hash lls 2>/dev/null; then
 	echo "yes, lls exists"
 else
 	echo "no, lls doesnt exist"
+fi
+if command -v ls 1>/dev/null 2>/dev/null; then
+	echo "yes, ls exists"
+else
+	echo "no, ls doesnt exist"
+fi
+if command -v lls 1>/dev/null 2>/dev/null; then
+	echo "yes, lls exists"
+else
+	echo "no, lls doesnt exist"
+fi
+alias foo=bar
+type foo
+if command -v foo 1>/dev/null 2>/dev/null; then
+	echo "yes, foo exists"
+else
+	echo "no, foo doesnt exist"
 fi
