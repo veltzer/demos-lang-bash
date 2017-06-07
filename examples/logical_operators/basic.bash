@@ -18,19 +18,19 @@ source ../../includes/common.bash
 if [[ 'foo' = 'foo' ]]; then
 	true
 else
-	error ${LINENO} "probem" 1
+	error ${LINENO} "problem" 1
 fi
 
 if [[ 'foo' != 'bar' ]]; then
 	true
 else
-	error ${LINENO} "probem" 1
+	error ${LINENO} "problem" 1
 fi
 
 if [[ 2 != 3 && 3 != 4 ]]; then
 	true
 else
-	error ${LINENO} "probem" 1
+	error ${LINENO} "problem" 1
 fi
 
 let "a=2"
@@ -38,10 +38,10 @@ let "b=2"
 if [[ $a = 1 || $b = 2 ]]; then
 	true
 else
-	error ${LINENO} "probem" 1
+	error ${LINENO} "problem" 1
 fi
 if [[ $a = 2 && $b = 2 ]]; then
 	true
 else
-	error ${LINENO} "probem" 1
+	error ${LINENO} "problem" 1
 fi

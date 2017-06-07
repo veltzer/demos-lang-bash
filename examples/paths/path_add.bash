@@ -15,15 +15,19 @@ PATH="/usr/bin"
 PATH="/usr/bin:/sbin"
 PATH="/sbin:/usr/bin"
 
-pathadd() {
+pathadd_after() {
 	if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
 		PATH="${PATH:+"$PATH:"}$1"
 	fi
 }
 
-pathadd /usr/bin
-pathadd /usr/bin
-pathadd /usr/bin
-pathadd /usr/bin
+pathadd_before() {
+	if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+		PATH="$1${PATH:+"$PATH:"}"
+	fi
+}
+
+pathadd_after /usr/bin
+pathadd_before /usr/bin
 
 echo $PATH
