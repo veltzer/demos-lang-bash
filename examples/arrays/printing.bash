@@ -11,6 +11,5 @@ y=(12 94 54)
 echo "${y[@]}"
 echo "${y[*]}"
 
-# does not work!!!
-
-echo $y
+# the next line does not work!!!
+echo "$y"
