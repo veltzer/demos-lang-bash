@@ -47,6 +47,10 @@ TIMEFORMAT=''
 time real_long_time
 
 # caputure the time it took
+# The problem with this approach is that the function that is run by time
+# is now in a subshell (because of the $ surrounding it which creates a subshell)
+# and therefore the function cannot change any environment variable and so it's
+# in effect running in a different mode than the regular one.
 TIMEFORMAT='%R'
 t=$((time real_long_time) 2>&1)
 echo $?
