@@ -9,21 +9,13 @@ http://tldp.org/LDP/abs/html/string-manipulation.html
 
 COMMENT
 
-stringZ=abcABC123ABCabc
-#	0123456789.....
-#	0-based indexing.
+string="0123456789ABCDE"
 
-echo ${stringZ:0} # abcABC123ABCabc
-echo ${stringZ:1} # bcABC123ABCabc
-echo ${stringZ:7} # 23ABCabc
-
-echo ${stringZ:7:3} # 23A - Three characters of substring.
-
-# Is it possible to index from the right end of the string?
-
-echo ${stringZ:-4} # abcABC123ABCabc - Defaults to full string, as in ${parameter:-default}.
-
-# However...
-
-echo ${stringZ:(-4)} # Cabc - Now, it works.
-echo ${stringZ: -4} # Cabc - Parentheses or added space "escape" the position parameter.
+echo ${string:0} # the entire string
+echo ${string:1} # without the first character
+echo ${string:7} # from the 7'th character onward
+echo ${string:7:3} # three characters from the first character
+echo ${string:-4} # does not work, gives the entire string
+echo ${string:(-4)} # the last four charactes of the string
+echo ${string: -4} # this works too
+echo ${string:0:-1} # remove the last character from the string

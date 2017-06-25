@@ -2,7 +2,7 @@
 
 <<'COMMENT'
 
-This is an example of how to trim spaces from a bash variable.
+This is an example of how to trim spaces from a bash variable using sed.
 
 References:
 http://stackoverflow.com/questions/369758/how-to-trim-whitespace-from-bash-variable
