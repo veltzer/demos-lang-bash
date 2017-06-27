@@ -51,6 +51,10 @@ function implicit_return_4() {
 	return
 }
 
+function empty_function() {
+	:
+}
+
 if yes; then echo "yes"; fi
 if ! no ; then echo "no"; fi
 if func; then echo "yes, /etc/passwd is readable"; fi
@@ -58,3 +62,5 @@ if implicit_return_1; then echo "yes, /etc/passwd is readable"; fi
 if ! implicit_return_2; then echo "yes, /etc/shadow is unreadable"; fi
 if implicit_return_3; then echo "yes, /etc/passwd is readable"; fi
 if ! implicit_return_4; then echo "yes, /etc/shadow is unreadable"; fi
+if empty_function; then echo "yes, empty function returns 0"; fi
+if ! empty_function; then :; else echo "yes, empty function returns 0"; fi
