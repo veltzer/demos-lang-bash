@@ -1,20 +1,13 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This is an example of doing profiling in bash using the date(1) utility and bc(1).
-
-Notes:
-- this is a very clean way of doing profiling.
-- unlike the 'time' based solution the function in this solution is running in the same
-shell and not in a subshell.
-- the solution does not change what the function outputs.
-
-References:
-- https://unix.stackexchange.com/questions/12068/how-to-measure-time-of-program-execution-and-store-that-inside-a-variable 
-
-COMMENT
-
+# This is an example of doing profiling in bash using the date(1) utility and bc(1).
+# Notes:
+# - this is a very clean way of doing profiling.
+# - unlike the 'time' based solution the function in this solution is running in the same
+# shell and not in a subshell.
+# - the solution does not change what the function outputs.
+# References:
+# - https://unix.stackexchange.com/questions/12068/how-to-measure-time-of-program-execution-and-store-that-inside-a-variable 
 
 function real_long_time() {
 	local x=0

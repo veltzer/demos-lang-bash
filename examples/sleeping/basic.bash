@@ -1,11 +1,7 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This is a script that never dies and keeps printing stuff at a low rate.
-Useful for demos.
-
-COMMENT
+# This is a script that never dies and keeps printing stuff at a low rate.
+# Useful for demos.
 
 while [[ true ]]; do
 	echo nag nag...

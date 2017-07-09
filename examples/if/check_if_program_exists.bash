@@ -1,18 +1,12 @@
 #!/bin/bash
 
-<<'COMMENT'
-
-This example shows how to check if a command exists or not
-
-You can either use 'hash' or 'command -v'.
-Both work well. In theory command -v is weaker since it will also respect
-aliases but as we all know aliases don't work in shell scripts without
-special provisions...
-
-References:
-- http://stackoverflow.com/questions/592620/check-if-a-program-exists-from-a-bash-script
-
-COMMENT
+# This example shows how to check if a command exists or not
+# You can either use 'hash' or 'command -v'.
+# Both work well. In theory command -v is weaker since it will also respect
+# aliases but as we all know aliases don't work in shell scripts without
+# special provisions...
+# References:
+# - http://stackoverflow.com/questions/592620/check-if-a-program-exists-from-a-bash-script
 
 if hash ls 2>/dev/null; then
 	echo "yes, ls exists"

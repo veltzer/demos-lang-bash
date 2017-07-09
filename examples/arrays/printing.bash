@@ -1,10 +1,6 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This is the most simple example of arrays: defining and printing them
-
-COMMENT
+# This is the most simple example of arrays: defining and printing them
 
 y=(12 94 54)
 

@@ -1,10 +1,6 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-this script shows how to break in the middle of a for loop and use continue to return to the loop
-
-COMMENT
+# this script shows how to break in the middle of a for loop and use continue to return to the loop
 
 for x in {1..10}
 do

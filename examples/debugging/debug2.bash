@@ -1,10 +1,6 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-set up a nice message for debugging
-
-COMMENT
+# set up a nice message for debugging
 
 PS4='$LINENO '
 

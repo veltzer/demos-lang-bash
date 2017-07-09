@@ -1,17 +1,11 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This program shows how to check in bash if a certain program is in the path.
-
-Notes:
-- the '2> /dev/null' is to suppress the errors comming out of hash
-when it cannot find a program.
-
-References:
-- http://stackoverflow.com/questions/592620/check-if-a-program-exists-from-a-bash-script
-
-COMMENT
+# This program shows how to check in bash if a certain program is in the path.
+# Notes:
+# - the '2> /dev/null' is to suppress the errors comming out of hash
+# when it cannot find a program.
+# References:
+# - http://stackoverflow.com/questions/592620/check-if-a-program-exists-from-a-bash-script
 
 function is_in_path() {
 	local prog=$1

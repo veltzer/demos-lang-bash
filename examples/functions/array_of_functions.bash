@@ -1,13 +1,8 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This example shows how to store an array of functions.
-
-References:
-- https://stackoverflow.com/questions/20361398/bash-array-of-functions
-
-COMMENT
+# This example shows how to store an array of functions.
+# References:
+# - https://stackoverflow.com/questions/20361398/bash-array-of-functions
 
 function a {
 	echo "a"

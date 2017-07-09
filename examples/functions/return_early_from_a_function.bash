@@ -1,12 +1,7 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This is an example of how to exit early from a function
-
-Take away: use return
-
-COMMENT
+# This is an example of how to exit early from a function
+# Take away: use return
 
 function myfunc {
 	local arg="$1"

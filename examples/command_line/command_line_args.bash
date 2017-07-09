@@ -1,10 +1,6 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-example of showing all command line arguments using a for loop
-
-COMMENT
+# example of showing all command line arguments using a for loop
 
 echo "lengh of command line is [$#]"
 for x in $@

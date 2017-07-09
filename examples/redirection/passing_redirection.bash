@@ -1,12 +1,8 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This example shows that you cannot pass shell special notation (like redirection
-or the like) via variables.
-That is the reason for the difference in the output between the next two lines...
-
-COMMENT
+# This example shows that you cannot pass shell special notation (like redirection
+# or the like) via variables.
+# That is the reason for the difference in the output between the next two lines...
 
 REDIRECT="> /dev/null"
 ls $REDIRECT

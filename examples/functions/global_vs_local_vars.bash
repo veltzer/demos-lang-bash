@@ -1,11 +1,7 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-An example that shows that variables in bash functions are global by default
-So what should you do? always use local
-
-COMMENT
+# An example that shows that variables in bash functions are global by default
+# So what should you do? always use local
 
 function change_globals {
 	arr[6]=8

@@ -1,11 +1,7 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This example tries to show how backticks work in the shell.
-Note that this also deals with nested backticks
-
-COMMENT
+# This example tries to show how backticks work in the shell.
+# Note that this also deals with nested backticks
 
 # very simple: execute a command and replace `[cmd]` with its output
 echo `date`

@@ -1,17 +1,10 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This example shows how to iterate on a bunch of files.
-The easiest way is to use straight up bash but to use
-the 'shopt -s nullglob'.
-
-
-COMMENT
+# This example shows how to iterate on a bunch of files.
+# The easiest way is to use straight up bash but to use
+# the 'shopt -s nullglob'.
 
 source ../../includes/common.bash
-
-
 
 shopt -s nullglob
 

@@ -1,17 +1,11 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This is an example of how to write simple logical operators in bash.
-
-NOTES:
-- the spaces around the operators and the parenthesis is important. Without
-it the shell would not be able to parse our expression.
-
-References:
-http://stackoverflow.com/questions/6270440/simple-logical-operators-in-bash
-
-COMMENT
+# This is an example of how to write simple logical operators in bash.
+# NOTES:
+# - the spaces around the operators and the parenthesis is important. Without
+# it the shell would not be able to parse our expression.
+# References:
+# http://stackoverflow.com/questions/6270440/simple-logical-operators-in-bash
 
 source ../../includes/common.bash
 

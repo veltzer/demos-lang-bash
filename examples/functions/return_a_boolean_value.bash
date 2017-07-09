@@ -1,24 +1,18 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This is how to return a boolean value from a bash function.
-
-Notes:
-- you cannot write code like this:
-	return [ ... ]
-	the right way to write this code would be:
-	[ ... ]
-	return $?
-- you can use implicit return value. This means you just write 'return' and leave
-off the value. The value will be $?.
-- you can use implicit return. This means you can avoid writing a 'return'
-statement at all. $? is your return value if you do not return a value.
-
-References:
-- https://stackoverflow.com/questions/5431909/bash-functions-return-boolean-to-be-used-in-if
-
-COMMENT
+# This is how to return a boolean value from a bash function.
+# Notes:
+# - you cannot write code like this:
+# 	return [ ... ]
+# 	the right way to write this code would be:
+# 	[ ... ]
+# 	return $?
+# - you can use implicit return value. This means you just write 'return' and leave
+# off the value. The value will be $?.
+# - you can use implicit return. This means you can avoid writing a 'return'
+# statement at all. $? is your return value if you do not return a value.
+# References:
+# - https://stackoverflow.com/questions/5431909/bash-functions-return-boolean-to-be-used-in-if
 
 function yes {
 	return 0

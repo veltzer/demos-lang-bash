@@ -1,14 +1,10 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-An example of using the bash 'wait' function to wait for background processes to terminate.
-
-NOTE: in bash you cannot wait for any process to end
-so you cannot launch many processes waiting for the first
-one to end not knowing which one that will be...
-
-COMMENT
+# An example of using the bash 'wait' function to wait for background processes to terminate.
+# NOTES:
+# - in bash you cannot wait for any process to end
+# so you cannot launch many processes waiting for the first
+# one to end not knowing which one that will be...
 
 echo "running sleep 5 in the background..."
 sleep 5 &

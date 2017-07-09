@@ -1,13 +1,8 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This is a basic example of how to do error raising in bash.
-
-References:
-http://stackoverflow.com/questions/64786/error-handling-in-bash
-
-COMMENT
+# This is a basic example of how to do error raising in bash.
+# References:
+# http://stackoverflow.com/questions/64786/error-handling-in-bash
 
 function error() {
 	expr [caller 1]

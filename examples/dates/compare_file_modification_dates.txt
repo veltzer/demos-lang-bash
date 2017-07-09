@@ -1,14 +1,9 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This example shows how to compare the modification times of two files in
-UNIX under bash.
-
-References:
-- http://stackoverflow.com/questions/14802807/compare-files-date-bash
-
-COMMENT
+# This example shows how to compare the modification times of two files in
+# UNIX under bash.
+# References:
+# - http://stackoverflow.com/questions/14802807/compare-files-date-bash
 
 function compare() {
 	local f1=$1

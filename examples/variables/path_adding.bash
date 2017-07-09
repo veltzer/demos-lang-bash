@@ -1,11 +1,7 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This demo shows how to add to the path variable in a way that does
-not add junk.
-
-COMMENT
+# This demo shows how to add to the path variable in a way that does
+# not add junk.
 
 function path_add {
 	if [[ "$1" = "" ]]; then

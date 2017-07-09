@@ -1,12 +1,8 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This script shows how to create a temporary file in bash.
-
-References:
-- http://stackoverflow.com/questions/10982911/creating-temporary-files-in-bash
-COMMENT
+# This script shows how to create a temporary file in bash.
+# References:
+# - http://stackoverflow.com/questions/10982911/creating-temporary-files-in-bash
 
 # create a temporary file which is only writable and readable by me in /tmp
 # and give me it's name

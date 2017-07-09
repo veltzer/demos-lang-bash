@@ -1,15 +1,10 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This example shows how to read from a pipe
-
-The difference between the first example and the second is that
-in the first example the while loop which is the second command
-runs in a subshell. in the second example the while loop is the
-first command and so runs in the shell proper.
-
-COMMENT
+# This example shows how to read from a pipe
+# The difference between the first example and the second is that
+# in the first example the while loop which is the second command
+# runs in a subshell. in the second example the while loop is the
+# first command and so runs in the shell proper.
 
 let "numlines=0"
 dpkg --list | while IFS= read -r line

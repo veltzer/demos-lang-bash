@@ -1,13 +1,8 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-These are basic examples of functions in bash.
-
-NOTES:
-- all three ways of defining a function below work equally well.
-
-COMMENT
+# These are basic examples of functions in bash.
+# NOTES:
+# - all three ways of defining a function below work equally well.
 
 function func1 {
 	echo "func1"

@@ -1,10 +1,6 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This example shows how to write a 'C' like for loop in bash.
-
-COMMENT
+# This example shows how to write a 'C' like for loop in bash.
 
 arr=(red "yellow green" blue)
 len=${#arr[@]}

@@ -1,15 +1,10 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This example shows how to loop over a range of integers in ascending
-or descending order, with step of 1 or other step size.
-
-NOTES:
-- for i in {$min..$max} when 'min' and 'max' are variables does not work.
-you can use seq(1) instead (see below).
-
-COMMENT
+# This example shows how to loop over a range of integers in ascending
+# or descending order, with step of 1 or other step size.
+# NOTES:
+# - for i in {$min..$max} when 'min' and 'max' are variables does not work.
+# you can use seq(1) instead (see below).
 
 # forward
 for j in {1..3}

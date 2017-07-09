@@ -1,14 +1,9 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This is an example of basic integer arithmetic in the shell using the 'let' shell builtin.
-
-NOTES:
-- You can use the 'let' shell builtin in functions too.
-- You can find documentation about the 'let' shell builtin in 'man builtins'.
-
-COMMENT
+# This is an example of basic integer arithmetic in the shell using the 'let' shell builtin.
+# NOTES:
+# - You can use the 'let' shell builtin in functions too.
+# - You can find documentation about the 'let' shell builtin in 'man builtins'.
 
 let "x=0"
 echo $x

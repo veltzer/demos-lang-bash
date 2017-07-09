@@ -1,10 +1,6 @@
 #!/bin/bash
 
-<<'COMMENT'
-
-This example shows how to use booleans in bash
-
-COMMENT
+# This example shows how to use booleans in bash
 
 val=false
 if $val; then

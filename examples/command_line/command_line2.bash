@@ -1,10 +1,6 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-this is an example of getting specific arguments from the command line.
-
-COMMENT
+# this is an example of getting specific arguments from the command line.
 
 if [[ $# -ne 2 ]]; then
 	echo "you must pass exactly two arguments to this script..."

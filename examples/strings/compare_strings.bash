@@ -1,13 +1,6 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This is an example of how to compare strings
-
-References:
-- 
-
-COMMENT
+# This is an example of how to compare strings
 
 a="foo"
 b="bar"

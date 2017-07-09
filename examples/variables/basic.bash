@@ -1,10 +1,6 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-basic bash variable usage
-
-COMMENT
+# basic bash variable usage
 
 somevar=7
 echo $somevar

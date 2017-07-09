@@ -1,14 +1,9 @@
 #!/bin/bash
 
-<<'COMMENT'
-
-This is an example of how to use the 'caller' builtin in order to build
-a 'die' like function.
-
-References:
-http://wiki.bash-hackers.org/commands/builtin/caller
-
-COMMENT
+# This is an example of how to use the 'caller' builtin in order to build
+# a 'die' like function.
+# References:
+# http://wiki.bash-hackers.org/commands/builtin/caller
  
 die() {
 	local frame=0

@@ -1,10 +1,6 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This shows how to write a bash list on multiple lines
-
-COMMENT
+# This shows how to write a bash list on multiple lines
 
 my_list=(
 "element one"

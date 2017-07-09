@@ -1,14 +1,9 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This example shows how to correctly add compoents to envrionment
-or non environment variables like 'PATH'.
-
-References:
-- http://superuser.com/questions/39751/add-directory-to-path-if-its-not-already-there
-
-COMMENT
+# This example shows how to correctly add compoents to envrionment
+# or non environment variables like 'PATH'.
+# References:
+# - http://superuser.com/questions/39751/add-directory-to-path-if-its-not-already-there
 
 PATH="/sbin"
 PATH="/usr/bin"

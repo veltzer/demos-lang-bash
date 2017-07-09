@@ -1,13 +1,8 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-Showing how to wait for a specific process to end.
-
-Example of how to collect your child process ids in bash
-and monitor them.
-
-COMMENT
+# Showing how to wait for a specific process to end.
+# Example of how to collect your child process ids in bash
+# and monitor them.
 
 echo "running sleep 5 in the background..."
 sleep 5 &

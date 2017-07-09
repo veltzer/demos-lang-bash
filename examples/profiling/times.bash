@@ -1,19 +1,12 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This is an example of how to profile using the 'times' bash builtin.
-
-NOTES:
-- As you can see from the analysis below the problem with 'times' is that
-it always returns 0 as a return value. So you can't just run regular
-commands under times since their return value will be lost
-- Another problem with this approach is that 'times' has a bad interaction
-with processes 
-
-
-COMMENT
-
+# This is an example of how to profile using the 'times' bash builtin.
+# NOTES:
+# - As you can see from the analysis below the problem with 'times' is that
+# it always returns 0 as a return value. So you can't just run regular
+# commands under times since their return value will be lost
+# - Another problem with this approach is that 'times' has a bad interaction
+# with processes 
 
 function bad() {
 	return 1

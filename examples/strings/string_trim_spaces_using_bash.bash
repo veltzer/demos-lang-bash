@@ -1,13 +1,6 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This is an example of how to trim spaces from a bash variable using only bash.
-
-References:
-- 
-
-COMMENT
+# This is an example of how to trim spaces from a bash variable using only bash.
 
 x=' this is a string '
 echo "--$x--"

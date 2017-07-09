@@ -1,10 +1,6 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-counting numbers of calls to functions
-
-COMMENT
+# counting numbers of calls to functions
 
 # no need for this initialisation
 # FUNCS=()

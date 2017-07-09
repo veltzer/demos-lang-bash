@@ -1,13 +1,8 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This example shows how to check if a file is readable or writable in bash.
-
-References:
-- https://askubuntu.com/questions/558977/checking-for-a-file-and-whether-it-is-readable-and-writable
-
-COMMENT
+# This example shows how to check if a file is readable or writable in bash.
+# References:
+# - https://askubuntu.com/questions/558977/checking-for-a-file-and-whether-it-is-readable-and-writable
 
 function readable() {
 	local filename=$1

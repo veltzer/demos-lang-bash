@@ -1,10 +1,6 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This is an example of how to know the string length in bash.
-
-COMMENT
+# This is an example of how to know the string length in bash.
 
 str='hello world'
 

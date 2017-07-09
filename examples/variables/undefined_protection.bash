@@ -1,10 +1,6 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-example of using -u (above) and accessing an undefined variable...
-
-COMMENT
+# example of using -u (above) and accessing an undefined variable...
 
 somevar=7
 echo $someva

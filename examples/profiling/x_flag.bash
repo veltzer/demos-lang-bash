@@ -1,12 +1,6 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This example shows the set -x flag.
-
-
-COMMENT
-
+# This example shows the set -x flag.
 
 function bad() {
 	return 1

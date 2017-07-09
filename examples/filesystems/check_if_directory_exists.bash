@@ -1,10 +1,6 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This example shows how to check if a directory exists or doesnt exist.
-
-COMMENT
+# This example shows how to check if a directory exists or doesnt exist.
 
 if [ -d "/etc" ]; then
 	echo "yes, /etc exists"

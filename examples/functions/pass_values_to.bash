@@ -1,10 +1,6 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This is how to pass values to a function
-
-COMMENT
+# This is how to pass values to a function
 
 function print_arg {
 	echo $1

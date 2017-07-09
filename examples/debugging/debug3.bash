@@ -1,10 +1,6 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-example of how to print a stack trace in bash
-
-COMMENT
+# example of how to print a stack trace in bash
 
 function print_stack {
 	local x=0

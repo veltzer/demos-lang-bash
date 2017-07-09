@@ -1,11 +1,7 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-This is how to call another process and return it's output
-as part of a function.
-
-COMMENT
+# This is how to call another process and return it's output
+# as part of a function.
 
 function do_ls() {
 	ls $1
