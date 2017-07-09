@@ -1,9 +1,9 @@
 #!/bin/bash -u
 
 # This example shows the advantage of the:
-# 	[command] | while read
+#	[command] | while read
 # pattern over the:
-# 	[command] | xargs
+#	[command] | xargs
 # pattern
 # Can you do the following with xargs(1)?
 

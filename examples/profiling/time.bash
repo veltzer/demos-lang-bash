@@ -9,7 +9,7 @@
 # - time preserves the return code of the function or command that it ran (very good).
 # - time prints it's output into stderr by default.
 # - since 'time' is a keyword you need to redirect it this way:
-# 	(time [arguments]) 2>)
+#	(time [arguments]) 2>)
 # - see below how to capture it's output to a variable.
 
 function real_long_time() {

@@ -7,13 +7,13 @@
 # will continue even though the "false" command fails.
 # More thing to make bash more strict:
 # give errors when commands fail:
-# 	set -e / set +e
+#	set -e / set +e
 # give errors when the shell is required to expand undefined variabled:
-# 	set -u / set +u
+#	set -u / set +u
 # give errors when pipes fail:
-# 	set -o pipefail:
+#	set -o pipefail:
 # To sum it up, you can begin your script with:
-# 	set -euo pipefail
+#	set -euo pipefail
 # References:
 # http://redsymbol.net/articles/unofficial-bash-strict-mode/
 
