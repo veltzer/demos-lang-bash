@@ -4,8 +4,15 @@
 # The first method below is recommended because it does not call any
 # out-of-shell executables and does not need to know the suffix.
 
-filename="/etc/foo.bar"
-no_suffix_1=${filename%.*}
-no_suffix_2=$(dirname $filename)/$(basename $filename .bar)
-echo $no_suffix_1
-echo $no_suffix_2
+filename="/zoo/foo.bar/filename.tar.gz"
+# very easy, return only the last suffix
+echo ${filename%.*}
+# very easy, return everything aside from everything after the first dot (could be dangerous)
+echo ${filename%%.*}
+# very cumbersome and you need to know the suffix
+echo $(dirname $filename)/$(basename $filename .tar.gz)
+# get the basename first and only then remove everything from the first dot onward
+e_basename=${filename##*/}
+e_dirname=${filename%/*}
+echo ${e_basename}
+echo ${e_dirname}
