@@ -2,21 +2,20 @@
 
 <<'COMMENT'
 
-This example shows that you cannot source more than one file in bash.
-
+This example shows that you cannot source more than one file in single bash 'source' command.
 The loop which follows is the right way to do it.
-
-Another thing that works is the cat example.
+Another thing that does work is the cat example.
 
 References:
 http://stackoverflow.com/questions/1423352/source-all-files-in-a-directory-from-bash-profile
 
 COMMENT
 
-source one.bash two.bash
+# this does not work (will only source the first file)
+source subfolder/*.bash
 
-for x in ???.bash; do
+for x in subfolder/*.bash; do
 	source $x
 done
 
-source <(cat ???.bash)
+source <(cat subfolder/*.bash)
