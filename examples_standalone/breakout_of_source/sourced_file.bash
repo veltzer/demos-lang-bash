@@ -9,9 +9,6 @@ COMMENT
 
 echo "before the if"
 
-if [[ true ]]; then
-	echo "in the if"
-	return
-fi
+return 3
 
 echo "after the if"
