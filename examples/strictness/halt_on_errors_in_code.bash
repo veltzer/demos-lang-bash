@@ -1,6 +1,11 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
-# This shows how to make bash more strict
+# This example shows how to make bash more strict
+# by adding markers in the code where you want to be more strict.
+# The idea is to add "set -e" and "set +e" on a piece of your
+# code when you want to make the failure of any command fail
+# the entire script.
+#
 # If you remove the "set -e" and "set +e" then the script
 # will continue even though the "false" command fails.
 # More thing to make bash more strict:
