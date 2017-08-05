@@ -1,14 +1,10 @@
 #!/bin/bash -u
 
-<<'COMMENT'
-
-TODO:
-1. stop using a temp file
-2. stop using wc -l and use a flag instead for end of file
-3. add a PID_TO_CHILDREN structure to give fast access to children
-of a pid.
-
-COMMENT
+# TODO:
+# 1. stop using a temp file
+# 2. stop using wc -l and use a flag instead for end of file
+# 3. add a PID_TO_CHILDREN structure to give fast access to children
+# of a pid.
 
 # -e is for all processes
 # --no-headers is to avoid the pesty first line

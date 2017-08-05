@@ -1,9 +1,5 @@
-<<'COMMENT'
-
-This is a common file that you can source in your example to avoid repetative
-code.
-
-COMMENT
+# This is a common file that you can source in your example to avoid repetative
+# code.
 
 function error() {
 	local parent_lineno="$1"
