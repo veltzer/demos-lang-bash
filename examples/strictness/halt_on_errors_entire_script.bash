@@ -7,8 +7,8 @@
 # line of this script.
 #
 # References:
-# http://redsymbol.net/articles/unofficial-bash-strict-mode/
-# http://kvz.io/blog/2013/11/21/bash-best-practices/
+# - http://redsymbol.net/articles/unofficial-bash-strict-mode/
+# - http://kvz.io/blog/2013/11/21/bash-best-practices/
 
 echo before
 false
