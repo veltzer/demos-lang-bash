@@ -1,6 +1,7 @@
 #!/bin/bash -u
 
 # These examples show how to return a value from a bash function
+#
 # NOTES:
 # - return is a shell builtin and only accepts numerical arguments.
 # - so return changes $? and not the return value as we see.
@@ -22,6 +23,11 @@ function return_no_args {
 	return
 }
 
+function return_via_var() {
+	var=5
+	return
+}
+
 echo "now via echo"
 A=$(return_via_echo)
 echo "\$? is [$?]"
@@ -36,3 +42,7 @@ echo "now via return with no args"
 A=$(return_no_args)
 echo "\$? is [$?]"
 echo "return value is [$A]"
+
+echo "now via return via var"
+return_via_var
+echo "var is $var"
