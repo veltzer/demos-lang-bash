@@ -17,7 +17,8 @@ array+=(a)
 array+=(b)
 
 # run all functions
-for i in "${!array[@]}"; do
+for i in "${!array[@]}"
+do
 	echo "running [${array[$i]}]"
 	${array[$i]}
 done

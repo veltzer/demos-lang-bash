@@ -14,13 +14,17 @@ function no() {
 
 function print_truth_table() {
 	local op=$1
-	for x in yes no; do
-		for y in yes no; do
-			if [ $op = "&&" ]; then
+	for x in yes no
+	do
+		for y in yes no
+		do
+			if [ $op = "&&" ]
+			then
 				$x && $y
 				a=$?
 			fi
-			if [ $op = "||" ]; then
+			if [ $op = "||" ]
+			then
 				$x || $y
 				a=$?
 			fi

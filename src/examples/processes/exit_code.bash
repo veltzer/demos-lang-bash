@@ -6,35 +6,41 @@
 # - http://stackoverflow.com/questions/5195607/checking-bash-exit-status-of-several-commands-efficiently
 
 false
-if [ $? -ne 0 ]; then
+if [ $? -ne 0 ]
+then
 	echo "command which should fail failed"
 else
 	echo "command which should fail succeeded"
 fi
 true
-if [ $? -ne 0 ]; then
+if [ $? -ne 0 ]
+then
 	echo "command which should succeed failed"
 else
 	echo "command which should succeed succeeded"
 fi
 # and now in one line
-if true; then
+if true
+then
 	echo "command which should fail failed"
 else
 	echo "command which should fail succeeded"
 fi
-if false; then
+if false
+then
 	echo "command which should succeed failed"
 else
 	echo "command which should succeed succeeded"
 fi
 # ! operator
-if ! true; then
+if ! true
+then
 	echo "command which should succeed failed"
 else
 	echo "command which should succeed succeeded"
 fi
-if ! false; then
+if ! false
+then
 	echo "command which should fail failed"
 else
 	echo "command which should fail succeeded"
@@ -44,7 +50,8 @@ function mytest {
 	"$@"
 	local status=$?
 	echo "entering with $1"
-	if [ $status -ne 0 ]; then
+	if [ $status -ne 0 ]
+	then
 		echo "error with $1" >&2
 		echo "faking exit with status $status"
 		# exit $status

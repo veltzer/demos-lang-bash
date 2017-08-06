@@ -6,14 +6,16 @@
 
 f1="/etc/foo"
 f2="/etc"
-if [ "${f1##${f2}}" != "${f1}" ]; then
+if [ "${f1##${f2}}" != "${f1}" ]
+then
 	echo "yes"
 else
 	echo "no"
 fi
 f1="/var/foo"
 f2="/etc"
-if [ "${f1##${f2}}" != "${f1}" ]; then
+if [ "${f1##${f2}}" != "${f1}" ]
+then
 	echo "yes"
 else
 	echo "no"

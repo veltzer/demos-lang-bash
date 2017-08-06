@@ -11,9 +11,11 @@ function readable() {
 
 }
 
-if readable "/etc/passwd"; then
+if readable "/etc/passwd"
+then
 	echo "yes, /etc/passwd is readable"
 fi
-if ! readable "/etc/ssl/private"; then
+if ! readable "/etc/ssl/private"
+then
 	echo "no, /etc/ssl/private is unreadable"
 fi

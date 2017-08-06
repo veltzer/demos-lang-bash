@@ -23,8 +23,10 @@ source subfolder/*.bash
 # regular shell globbing
 # so this handles the case where there are no matches.
 # it is long though
-if compgen -G "subfolder/*.bash" > /dev/null; then
-	for x in subfolder/*.bash; do
+if compgen -G "subfolder/*.bash" > /dev/null
+then
+	for x in subfolder/*.bash
+	do
 		source $x
 	done
 fi
@@ -33,13 +35,15 @@ fi
 # the difficulty is that we need to return the status of the shell 'nullglob'
 # setting to it's original state and we do not do that here.
 shopt -s nullglob
-for x in subfolder/*.bash; do
+for x in subfolder/*.bash
+do
 	source $x
 done
 shopt -u nullglob
 
 # this handles no matches and is short
-for x in $(compgen -G "subfolder/*.bash"); do
+for x in $(compgen -G "subfolder/*.bash")
+do
 	source $x
 done
 

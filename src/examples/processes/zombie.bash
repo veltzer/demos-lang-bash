@@ -18,6 +18,7 @@ PID=$!
 echo "the pid is [$PID]..."
 
 let "x=0"
-while [[ true ]]; do
+while [[ true ]]
+do
 	let "x=x+1"
 done

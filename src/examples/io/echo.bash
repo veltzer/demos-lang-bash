@@ -7,7 +7,8 @@
 # turning into small number of digits.
 
 let "x=100"
-while [[ $x -gt 0 ]]; do
+while [[ $x -gt 0 ]]
+do
 	echo -en "$x    \r"
 	let "x=x-1"
 	sleep 1

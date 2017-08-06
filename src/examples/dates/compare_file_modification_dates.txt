@@ -8,7 +8,8 @@
 function compare() {
 	local f1=$1
 	local f2=$2
-	if [ $f1 -ot $f2 ]; then
+	if [ $f1 -ot $f2 ]
+	then
 		echo "$f1 is older than $f2"
 	else
 		echo "$f2 is older than $f1"

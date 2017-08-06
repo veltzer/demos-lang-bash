@@ -4,7 +4,8 @@
 # not add junk.
 
 function path_add {
-	if [[ "$1" = "" ]]; then
+	if [[ "$1" = "" ]]
+	then
 		echo "$2"
 	else
 		echo "$1:$2"

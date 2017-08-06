@@ -14,7 +14,8 @@
 
 function real_long_time() {
 	local x=0
-	while [[ $x -lt 100000 ]]; do
+	while [[ $x -lt 100000 ]]
+	do
 		let "x=x+1"
 	done
 	return 1

@@ -7,7 +7,8 @@
 # turning into small number of digits.
 
 let "x=100"
-while [[ $x -gt 0 ]]; do
+while [[ $x -gt 0 ]]
+do
 	printf "%06d\r" $x
 	#printf "%-6d\r" $x
 	let "x=x-1"

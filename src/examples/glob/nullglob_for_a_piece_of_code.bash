@@ -6,7 +6,10 @@
 # - https://stackoverflow.com/questions/9126060/is-there-an-easy-way-to-set-nullglob-for-one-glob
 
 shopt -s nullglob
-for x in /tmp/doesntexist*.foo; do echo $x; done
+for x in /tmp/doesntexist*.foo
+do
+	echo $x
+done
 shopt -u nullglob
 
 # in order to return nullglob to it's former state we need to store
@@ -22,5 +25,8 @@ function restore_nullglob() {
 }
 
 save_nullglob
-for x in /tmp/doesntexist*.foo; do echo $x; done
+for x in /tmp/doesntexist*.foo
+do
+	echo $x
+done
 restore_nullglob

@@ -9,27 +9,35 @@
 # Remember that 0 in shell means true and any other value
 # means false.
 
-if true && true; then
+if true && true
+then
 	echo "true && true"
 fi
-if true && false; then
+if true && false
+then
 	echo "true && false"
 fi
-if false && true; then
+if false && true
+then
 	echo "false && true"
 fi
-if false && false; then
+if false && false
+then
 	echo "false && false"
 fi
-if true || true; then
+if true || true
+then
 	echo "true || true"
 fi
-if true || false; then
+if true || false
+then
 	echo "true || false"
 fi
-if false || true; then
+if false || true
+then
 	echo "false || true"
 fi
-if false || false; then
+if false || false
+then
 	echo "false || false"
 fi

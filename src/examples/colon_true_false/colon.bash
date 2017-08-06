@@ -14,18 +14,21 @@ source ../../includes/common.bash
 
 false
 : bla bla bla
-if [[ $? -ne 0 ]]; then
+if [[ $? -ne 0 ]]
+then
 	error ${LINENO} "problem" 1
 fi
 
 true
 : bla bla bla
-if [[ $? -ne 0 ]]; then
+if [[ $? -ne 0 ]]
+then
 	error ${LINENO} "problem" 1
 fi
 
 false
 # bla bla bla
-if [[ $? -ne 1 ]]; then
+if [[ $? -ne 1 ]]
+then
 	error ${LINENO} "problem" 1
 fi

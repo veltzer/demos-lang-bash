@@ -6,11 +6,13 @@
 function myfunc {
 	local arg="$1"
 	echo "start"
-	if [[ $arg -eq 1 ]]; then
+	if [[ $arg -eq 1 ]]
+	then
 		return
 	fi
 	echo "mid"
-	if [[ $arg -eq 2 ]]; then
+	if [[ $arg -eq 2 ]]
+	then
 		return
 	fi
 	echo "fini"

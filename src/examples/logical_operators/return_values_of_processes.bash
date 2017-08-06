@@ -11,13 +11,17 @@
 
 function print_truth_table() {
 	local op=$1
-	for x in true false; do
-		for y in true false; do
-			if [ $op = "&&" ]; then
+	for x in true false
+	do
+		for y in true false
+		do
+			if [ $op = "&&" ]
+			then
 				$x && $y
 				a=$?
 			fi
-			if [ $op = "||" ]; then
+			if [ $op = "||" ]
+			then
 				$x || $y
 				a=$?
 			fi

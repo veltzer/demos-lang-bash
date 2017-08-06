@@ -6,19 +6,22 @@
 # - [[ is a shell keyword
 # - test is a shell builtin 
 
-if test -d /etc -a -f /etc/passwd; then
+if test -d /etc -a -f /etc/passwd
+then
 	echo "/etc is a folder and /etc/passwd is a file..."
 else
 	echo "strange Linux system you have here..."
 fi
 
-if [ -d /etc -a -f /etc/passwd ]; then
+if [ -d /etc -a -f /etc/passwd ]
+then
 	echo "/etc is a folder and /etc/passwd is a file..."
 else
 	echo "strange Linux system you have here..."
 fi
 
-if [[ -d /etc -a -f /etc/passwd ]]; then
+if [[ -d /etc -a -f /etc/passwd ]]
+then
 	echo "/etc is a folder and /etc/passwd is a file..."
 else
 	echo "strange Linux system you have here..."

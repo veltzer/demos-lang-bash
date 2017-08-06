@@ -8,13 +8,15 @@
 
 source ../../includes/common.bash
 
-if compgen -G "/etc/markveltzer*" > /dev/null; then
+if compgen -G "/etc/markveltzer*" > /dev/null
+then
 	die "problem"
 else
 	echo "yes, markveltzer has no globs"
 fi
 
-if compgen -G "/etc/ssh*" > /dev/null; then
+if compgen -G "/etc/ssh*" > /dev/null
+then
 	echo "yes, ssh has globs"
 else
 	die "problem"

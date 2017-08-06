@@ -14,7 +14,8 @@
 # the recursion to work.
 
 ps -o comm,pid,ppid --no-headers -e | grep -v defunct | (
-	while read line; do
+	while read line
+	do
 		arr=($line)
 		comm=${arr[0]}
 		pid=${arr[1]}
@@ -31,7 +32,8 @@ ps -o comm,pid,ppid --no-headers -e | grep -v defunct | (
 		printf "%${width}s%s\n" "" "${comm}($pid)"
 		depth=$((depth+1))
 		local children=${pid_to_children[$pid]}
-		for x in $children; do
+		for x in $children
+		do
 			print $x $depth
 		done
 	}
