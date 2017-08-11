@@ -15,3 +15,6 @@ y=(12 94 54)
 z[0]="one two"
 z[1]="five six"
 z[2]="three four"
+echo "${y[0]}"
+echo "${y[1]}"
+echo "${y[2]}"
