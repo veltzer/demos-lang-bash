@@ -3,6 +3,7 @@
 # This example shows how to use associative array in bash.
 # NOTES:
 # - this is a bash 4 feature. will not work on older versions.
+#
 # References:
 # - https://stackoverflow.com/questions/1494178/how-to-define-hash-tables-in-bash
 
@@ -18,3 +19,7 @@ do
 	echo $value
 done
 echo hashmap has ${#hashmap[@]} elements
+# lets see if the variable is of type -A
+if [[ "$(declare -p hashmap)" =~ "declare -A" ]]; then
+	echo "yes, it's a hashmap"
+fi
