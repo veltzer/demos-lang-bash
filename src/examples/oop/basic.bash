@@ -3,6 +3,10 @@
 # This example show basic object oriented programming using bash.
 #
 # This is a work in progress
+#
+# References:
+# - http://hipersayanx.blogspot.co.il/2012/12/object-oriented-programming-in-bash.html
+# - https://stackoverflow.com/questions/36771080/creating-classes-and-objects-using-bash-scripting
 
 # this is the 'constructor'
 function Person() {

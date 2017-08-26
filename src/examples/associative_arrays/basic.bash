@@ -6,6 +6,7 @@
 #
 # References:
 # - https://stackoverflow.com/questions/1494178/how-to-define-hash-tables-in-bash
+# - https://stackoverflow.com/questions/14525296/bash-check-if-variable-is-array
 
 declare -A hashmap
 hashmap["key"]="value"
