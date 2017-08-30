@@ -35,6 +35,11 @@ function return_via_var() {
 	return
 }
 
+function return_via_user_var() {
+	local user_var=$1
+	eval $user_var="'5'"
+}
+
 echo "now via echo"
 A=$(return_via_echo)
 echo "\$? is [$?]"
@@ -53,3 +58,17 @@ echo "return value is [$A]"
 echo "now via return via var"
 return_via_var
 echo "var is $var"
+
+echo "now via return via var but in a subshell"
+$(return_via_var)
+if [ -z $var ]
+then
+	echo "yes, var is undefined" 
+fi
+
+echo "now via return via var without subshell"
+return_via_user_var foo
+if [ $foo = "5" ]
+then
+	echo "yes, foo is defined"
+fi

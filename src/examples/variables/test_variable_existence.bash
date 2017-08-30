@@ -1,10 +1,21 @@
 #!/bin/bash -u
 
-# this is an example that tests whether a variable is set or not.
+# This is an example that show how to test whether a variable is set or not.
+#
 # References:
 # http://stackoverflow.com/questions/3601515/how-to-check-if-a-variable-is-set-in-bash
 
 source ../../includes/common.bash
+
+if ! declare -p myvar 2> /dev/null > /dev/null
+then
+	echo "yes, myvar is not set"
+fi
+myvar=7
+if declare -p myvar 2> /dev/null > /dev/null
+then
+	echo "yes, myvar is set"
+fi
 
 # test if 'somevar' is not set
 if [ -z ${somevar+x} ]
