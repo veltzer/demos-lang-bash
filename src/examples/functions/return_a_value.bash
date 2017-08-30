@@ -9,6 +9,13 @@
 # return values.
 # - while echo (which is also a builtin) should be used for values.
 # - echo does not change $?
+#
+# TBD:
+# - should how to return a value without running the function
+# in a subshell.
+#
+# References:
+# - http://www.linuxjournal.com/content/return-values-bash-functions
 
 function return_via_echo {
 	echo hello
