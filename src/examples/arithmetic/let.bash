@@ -1,11 +1,16 @@
 #!/bin/bash -u
 
 # This is an example of basic integer arithmetic in the shell using the 'let' shell builtin.
+#
 # NOTES:
 # - You can use the 'let' shell builtin in functions too.
 # - If you want to use 'let' in bash functions then take care to declare
 # the variable you are using as local as best practices dictate.
 # - You can find documentation about the 'let' shell builtin in 'man builtins'.
+# - the problem with 'let' is that it can only do integer arithmetic.
+#
+# References:
+# -
 
 let "x=0"
 echo $x
