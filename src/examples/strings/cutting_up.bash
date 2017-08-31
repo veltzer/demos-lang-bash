@@ -1,8 +1,9 @@
 #!/bin/bash -u
 
 # This is an example of how to cut up a string: prefix, suffix and middle.
+#
 # References:
-# http://tldp.org/LDP/abs/html/string-manipulation.html
+# - http://tldp.org/LDP/abs/html/string-manipulation.html
 
 string="0123456789ABCDE"
 
