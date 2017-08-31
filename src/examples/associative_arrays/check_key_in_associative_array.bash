@@ -15,7 +15,7 @@ hashmap["key2"]="value2"
 function exists() {
 	local key=$1
 	local map=$2
-	eval '[ ${'$2'["$1"]+muahaha} ]'
+	eval '[ ${'$map'['$key']+muahaha} ]'
 }
 
 function get_value() {
