@@ -1,16 +1,22 @@
 #!/bin/bash -u
 
-# this example shows how to create text counters using bash and the
-# built-in "echo -en".
-# if you want documentation on the built-in echo command use "man builtins"
-# note the spaces printed to compensate for numbers with large number of digits
-# turning into small number of digits.
+# This is an example of how to format output text in bash using the builtin
+# 'printf' command
+#
+# NOTES:
+# - printf by default just prints it's output to the standrad output. If that
+# is what you need then great.
+# - if you need to get a hold of printf output and not print it yet you have
+# two ways.
+#	t=$(printf ...)
+# or
+#	printf -v t ...
+# and the second way is better because it does not invoke a subshell.
 
 let "x=100"
 while [[ $x -gt 0 ]]
 do
 	printf "%06d\r" $x
-	#printf "%-6d\r" $x
 	let "x=x-1"
 	sleep 1
 done
