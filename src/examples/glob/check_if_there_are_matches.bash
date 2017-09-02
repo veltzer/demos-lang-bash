@@ -1,8 +1,8 @@
 #!/bin/bash -u
 
 # This example shows how to check if a glob patten has matches.
-# This uses the compgen shell builtin
-# documentation on compgen is at 'man builtins'
+# This uses the 'compgen' shell builtin.
+#
 # References:
 # - http://stackoverflow.com/questions/2937407/test-whether-a-glob-has-any-matches-in-bash
 
@@ -10,14 +10,10 @@ source ../../includes/common.bash
 
 if compgen -G "/etc/markveltzer*" > /dev/null
 then
-	die "problem"
-else
-	echo "yes, markveltzer has no globs"
+	echo "problem"
 fi
 
-if compgen -G "/etc/ssh*" > /dev/null
+if ! compgen -G "/etc/ssh*" > /dev/null
 then
-	echo "yes, ssh has globs"
-else
-	die "problem"
+	echo "problem"
 fi

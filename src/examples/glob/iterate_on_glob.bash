@@ -1,10 +1,8 @@
 #!/bin/bash -u
 
 # This example shows how to iterate on a bunch of files.
-# The easiest way is to use straight up bash but to use
-# the 'shopt -s nullglob'.
-
-source ../../includes/common.bash
+# The easiest way is to use straight up bash with
+# the 'shopt -s nullglob' option.
 
 shopt -s nullglob
 

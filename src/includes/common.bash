@@ -23,3 +23,12 @@ function die() {
 	echo "$*"
 	exit 1
 }
+
+function assert() {
+	local value=$1
+	local message=$2
+	if $value
+	then
+		echo "assertion failed [$message]"
+	fi
+}
