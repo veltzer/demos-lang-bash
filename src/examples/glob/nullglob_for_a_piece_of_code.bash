@@ -3,6 +3,11 @@
 # This example shows how to use nullglob to get strict globbing
 # and to enable and disable it just for a small piece of code.
 #
+# NOTES:
+# - The problem with saving the nullglob state solution is that it
+# requires a subshell # and that is slow ($(shopt -p nullglob)).
+# I don't know of a better solution.
+#
 # References:
 # - https://stackoverflow.com/questions/9126060/is-there-an-easy-way-to-set-nullglob-for-one-glob
 
@@ -18,7 +23,6 @@ shopt -u nullglob
 
 function save_nullglob() {
 	nullglob=$(shopt -p nullglob)
-	shopt -s nullglob
 }
 
 function restore_nullglob() {
@@ -26,6 +30,7 @@ function restore_nullglob() {
 }
 
 save_nullglob
+shopt -s nullglob
 for x in /tmp/doesntexist*.foo
 do
 	echo $x
