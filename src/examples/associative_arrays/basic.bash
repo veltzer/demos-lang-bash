@@ -39,5 +39,9 @@ if [[ "$(declare -p hashmap)" =~ "declare -A" ]]; then
 	echo "yes, it's a hashmap"
 fi
 
+# print an associative array (only values)
+echo "this is the hashmap ${hashmap[@]}"
+echo "this is the hashmap ${hashmap[*]}"
+
 # check if a key is in a hashmap
 # TBD

@@ -22,7 +22,7 @@ function get_value() {
 	local __user_var=$1
 	local key=$2
 	local map=$3
-	eval $__user_var'=${'$map'[$key]}'
+	eval $__user_var'=${'$map'['$key']}'
 }
 
 # get a single value out of a hashmap
