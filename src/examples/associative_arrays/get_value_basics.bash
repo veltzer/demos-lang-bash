@@ -15,6 +15,18 @@ hashmap['key2']="value2"
 hashmap[key3]="value3"
 
 # get a single value out of a hashmap
-echo "${hashmap["key1"]}"
-echo "${hashmap['key2']}"
-echo "${hashmap[key3]}"
+val1=${hashmap["key1"]}
+if [ "$val1" != "value1" ]
+then
+	echo "ERROR"
+fi
+val2=${hashmap['key2']}
+if [ "$val2" != "value2" ]
+then
+	echo "ERROR"
+fi
+val3=${hashmap[key3]}
+if [ "$val3" != "value3" ]
+then
+	echo "ERROR"
+fi
