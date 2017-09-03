@@ -16,10 +16,7 @@ declare -A hashmap
 hashmap["key1"]="value1"
 hashmap["key2"]="value2"
 
-# get a single value out of a hashmap
-echo "${hashmap["key1"]}"
-
-# iterate all keys
+# iterate all keys and values
 for key in ${!hashmap[@]}
 do
 	echo $key ${hashmap[$key]}
@@ -42,6 +39,3 @@ fi
 # print an associative array (only values)
 echo "this is the hashmap ${hashmap[@]}"
 echo "this is the hashmap ${hashmap[*]}"
-
-# check if a key is in a hashmap
-# TBD
