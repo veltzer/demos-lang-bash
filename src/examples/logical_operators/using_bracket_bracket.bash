@@ -7,40 +7,28 @@
 # References:
 # http://stackoverflow.com/questions/6270440/simple-logical-operators-in-bash
 
-source ../../includes/common.bash
-
-if [[ 'foo' = 'foo' ]]
+if [[ 'foo' = 'bar' ]]
 then
-	true
-else
-	error ${LINENO} "problem" 1
+	echo "ERROR"
 fi
 
-if [[ 'foo' != 'bar' ]]
+if [[ 'foo' != 'foo' ]]
 then
-	true
-else
-	error ${LINENO} "problem" 1
+	echo "ERROR"
 fi
 
-if [[ 2 != 3 && 3 != 4 ]]
+if [[ 2 == 3 || 3 == 4 ]]
 then
-	true
-else
-	error ${LINENO} "problem" 1
+	echo "ERROR"
 fi
 
 let "a=2"
 let "b=2"
-if [[ $a = 1 || $b = 2 ]]
+if [[ $a = 1 && $b = 2 ]]
 then
-	true
-else
-	error ${LINENO} "problem" 1
+	echo "ERROR"
 fi
-if [[ $a = 2 && $b = 2 ]]
+if [[ $a = 1 || $b = 1 ]]
 then
-	true
-else
-	error ${LINENO} "problem" 1
+	echo "ERROR"
 fi
