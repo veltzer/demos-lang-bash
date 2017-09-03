@@ -1,5 +1,8 @@
 # This file defines helpers for dealing with associative arrays
 # in bash
+#
+# References:
+# - http://www.artificialworlds.net/blog/2012/10/17/bash-associative-array-examples/
 
 # the only problem with this function now is that it cannot print associative
 # arrays which have white spaces in keys
