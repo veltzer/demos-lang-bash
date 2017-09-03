@@ -9,11 +9,11 @@
 source ../../includes/assoc.bash
 
 # one line for declaration and data
-declare -A map1=( ["key1"]="val ue1" ["key2"]="val ue2" )
+declare -A map1=( ["ke y1"]="val ue1" ["ke y2"]="val ue2" )
 assoc_print map1
 
 # first declare and then add values
 declare -A map2
-map2["key1"]="val ue1"
-map2["key2"]="val ue2"
+map2["ke y1"]="val ue1"
+map2["ke y2"]="val ue2"
 assoc_print map2

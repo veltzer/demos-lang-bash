@@ -8,7 +8,7 @@
 # arrays which have white spaces in keys
 function assoc_print() {
 	local __map=$1
-	eval 'local keys=(${!'$__map'[@]})'
+	eval 'local keys=("${!'$__map'[@]}")'
 	local len
 	eval 'local len=${#'$__map'[@]}'
 	local i
