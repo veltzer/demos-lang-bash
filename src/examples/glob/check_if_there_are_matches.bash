@@ -6,14 +6,12 @@
 # References:
 # - http://stackoverflow.com/questions/2937407/test-whether-a-glob-has-any-matches-in-bash
 
-source ../../includes/common.bash
-
 if compgen -G "/etc/markveltzer*" > /dev/null
 then
-	echo "problem"
+	echo "ERROR"
 fi
 
 if ! compgen -G "/etc/ssh*" > /dev/null
 then
-	echo "problem"
+	echo "ERROR"
 fi
