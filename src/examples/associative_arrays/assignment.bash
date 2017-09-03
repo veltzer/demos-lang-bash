@@ -1,6 +1,9 @@
 #!/bin/bash -u
 
 # This example explores how to assign one associative array to another
+# THIS EXAMPLE DOES NOT WORK.
+
+source ../../includes/assoc.bash
 
 # declare a hashmap
 declare -A hashmap1
@@ -11,12 +14,5 @@ hashmap1["key2"]="value2"
 
 declare -A hashmap2=${hashmap1[*]}
 
-# iterate all keys and values
-for key in ${!hashmap1[@]}
-do
-	echo $key ${hashmap1[$key]}
-done
-for key in ${!hashmap2[@]}
-do
-	echo $key ${hashmap2[$key]}
-done
+assoc_print hashmap1
+assoc_print hashmap2
