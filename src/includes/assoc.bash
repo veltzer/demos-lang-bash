@@ -4,13 +4,19 @@
 # References:
 # - http://www.artificialworlds.net/blog/2012/10/17/bash-associative-array-examples/
 
+# This is a function that returns an associative arrays length
+function assoc_len() {
+	local __assoc_name=$1
+	local __var_name=$2
+	eval "$__var_name=\${#$__assoc_name[@]}"
+}
+
 # This is a function to print out an associative array.
 # It has been checked to handle associative arrays which have spaces
 # in the keys or values correctly.
 function assoc_print() {
 	local __assoc_name=$1
 	eval 'local keys=("${!'$__assoc_name'[@]}")'
-	local len
 	eval 'local len=${#'$__assoc_name'[@]}'
 	local i
 	for (( i=0; $i < $len; i+=1 ))
@@ -27,19 +33,24 @@ function assoc_print() {
 # otherwise the associative array which is created will be local.
 function assoc_create() {
 	local __assoc_name=$1
-	eval declare -gA $__assoc_name
+	eval "declare -gA $__assoc_name=()"
 }
 
 function assoc_set() {
-	local __var_name=$1
+	local __assoc_name=$1
 	local key=$2
 	local value=$3
-	eval $__var_name["$key"]="$value"
+	eval $__assoc_name["$key"]="$value"
 }
 
 function assoc_get() {
-	local __var_name=$1
-	local __obj_name=$2
+	local __assoc_name=$1
+	local __var_name=$2
 	local attr=$3
-	eval $__var_name=$\{$__obj_name[\"$attr\"]\}
+	eval $__assoc_name=$\{$__var_name[\"$attr\"]\}
+}
+
+function assoc_config_read() {
+	local __assoc_name=$1
+	local filename=$2
 }
