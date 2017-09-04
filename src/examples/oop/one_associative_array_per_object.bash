@@ -54,6 +54,8 @@ function oo_len() {
 	assoc_len "$__obj_name" "$__var_name"
 }
 
+# the testing code
+
 oo_new obj
 oo_set_attr obj name mark
 oo_set_attr obj surname veltzer
