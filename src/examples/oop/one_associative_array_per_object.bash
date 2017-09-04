@@ -19,40 +19,51 @@ source src/includes/assoc.bash
 
 # the infrastructure
 
-function new_object() {
+function oo_new() {
 	local __obj_name=$1
 	eval "declare -gA $__obj_name=()"
 }
 
-function set_attr() {
+function oo_set_attr() {
 	local __obj_name=$1
 	local attr=$2
 	local value=$3
 	eval "$__obj_name['$attr']='$value'"
 }
 
-function get_attr() {
-	local __var_name=$1
-	local __obj_name=$2
+function oo_get_attr() {
+	local __obj_name=$1
+	local __var_name=$2
 	local attr=$3
 	eval "$__var_name=\${$__obj_name['$attr']}"
 }
 
-new_object obj
-set_attr obj name mark
-set_attr obj surname veltzer
-get_attr name obj name
-get_attr surname obj surname
+function oo_print() {
+	local __obj_name=$1
+	assoc_print "$__obj_name"
+}
+
+function oo_len() {
+	local __obj_name=$1
+	local __var_name=$2
+	assoc_len "$__obj_name" "$__var_name"
+}
+
+oo_new obj
+oo_set_attr obj name mark
+oo_set_attr obj surname veltzer
+oo_get_attr obj name name
 if [ "$name" != "mark" ]
 then
 	echo "ERROR"
 fi
+oo_get_attr obj surname surname
 if [ "$surname" != "veltzer" ]
 then
 	echo "ERROR"
 fi
-assoc_print obj
-assoc_len obj len
+oo_print obj
+oo_len obj len
 if [ "$len" != "2" ]
 then
 	echo "ERROR"
