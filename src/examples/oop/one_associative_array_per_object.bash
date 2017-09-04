@@ -10,6 +10,11 @@
 #
 # This is a major fault with this approach.
 #
+# TODO:
+# - add method to destroy object.
+# - add method to remove attribute.
+# - what about methods and inheritance?
+#
 # References:
 # - http://hipersayanx.blogspot.co.il/2012/12/object-oriented-programming-in-bash.html
 # - https://stackoverflow.com/questions/36771080/creating-classes-and-objects-using-bash-scripting
