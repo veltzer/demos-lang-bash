@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # This example shows how to check if a glob patten has matches.
 # This uses the 'compgen' shell builtin.

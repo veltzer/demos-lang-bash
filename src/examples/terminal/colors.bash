@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -ue
 
 # This is an example of how to create color output from a shell script.
 # References:

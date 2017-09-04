@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # This example shows that you cannot pass shell special notation (like redirection
 # or the like) via variables.

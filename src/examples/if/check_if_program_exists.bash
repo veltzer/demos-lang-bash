@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -ue
 
 # This example shows how to check if a command exists or not
 # You can either use 'hash' or 'command -v'.

@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # This is a basic example of how to create a dialog in bash using
 # the dialog(1) tool and get the users response into a bash

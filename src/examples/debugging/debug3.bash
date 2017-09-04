@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # example of how to print a stack trace in bash
 

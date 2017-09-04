@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -ue
 
 # This is an example of how to handle bash error using 'trap' builtin.
 #

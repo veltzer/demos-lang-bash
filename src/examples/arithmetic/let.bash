@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # This is an example of basic integer arithmetic in the shell using the 'let' shell builtin.
 #

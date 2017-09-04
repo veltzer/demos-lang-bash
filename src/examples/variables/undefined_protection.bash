@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # example of using -u (above) and accessing an undefined variable...
 

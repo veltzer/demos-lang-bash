@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # These are examples that intend to check what function
 # names work in bash.

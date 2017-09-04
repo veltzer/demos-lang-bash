@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -ue
 
 echo "in main"
 source sourced_file.bash

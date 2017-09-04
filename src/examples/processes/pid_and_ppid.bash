@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # This example shows how to find your own pid and ppid
 # from within a bash script.

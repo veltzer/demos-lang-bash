@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # This program shows how to check in bash if a certain program is in the path.
 #

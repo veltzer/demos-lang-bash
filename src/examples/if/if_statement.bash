@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -ue
 
 # this example explores the conditional statement in bash
 # note that:

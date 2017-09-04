@@ -1,9 +1,9 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # This is a basic example of how to work with config files in bash
 # using an associative array.
 
-source src/includes/assoc.bash
+source src/includes/assoc.bashinc
 
 # create a new config object (this is actually an associative array)
 assoc_create config
@@ -13,10 +13,6 @@ assoc_config_read config "data/config.ini"
 assoc_config_read config "data/more.ini"
 # print all the files
 assoc_print config
-
-
-exit 0
-
 # get a single config file which is in the config
 assoc_get val config "one"
 echo "val is [$val]"

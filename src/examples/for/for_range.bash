@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # This example shows how to loop over a range of integers in ascending
 # or descending order, with step of 1 or other step size.

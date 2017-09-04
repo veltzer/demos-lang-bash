@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # This example shows how to read from a pipe
 # The difference between the first example and the second is that

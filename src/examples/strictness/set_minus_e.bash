@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # This example shows how 'set -e' works in bash.
 # The effect is that any command that fails will cause the script to stop.

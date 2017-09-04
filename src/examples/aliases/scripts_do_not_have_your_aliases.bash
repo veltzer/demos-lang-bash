@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # This example shows that bash scripts do not have your favourite
 # aliases. Check you current aliases and compare to the zero that

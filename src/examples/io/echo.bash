@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # this example shows how to create text counters using bash and the
 # built-in "echo -en".

@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # This is an example of how to remove an element from an array in bash.
 # References:

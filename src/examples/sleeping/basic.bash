@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # This is a script that never dies and keeps printing stuff at a low rate.
 # Useful for demos.

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -ue
 
 # This is an example of how to get input from the user in bash.
 # Notes:

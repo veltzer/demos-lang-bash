@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # This example shows how to iterate on a bunch of files.
 # The easiest way is to use straight up bash with

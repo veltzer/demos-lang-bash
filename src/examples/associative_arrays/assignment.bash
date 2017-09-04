@@ -1,9 +1,9 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # This example explores how to assign one associative array to another
 # THIS EXAMPLE DOES NOT WORK.
 
-source ../../includes/assoc.bash
+source src/includes/assoc.bashinc
 
 # declare a hashmap
 declare -A hashmap1

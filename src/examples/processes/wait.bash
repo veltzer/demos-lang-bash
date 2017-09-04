@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # An example of using the bash 'wait' function to wait for background processes to terminate.
 # NOTES:

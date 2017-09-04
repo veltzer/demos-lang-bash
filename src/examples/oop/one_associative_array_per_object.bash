@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # This example show basic object oriented programming using bash.
 # This approach uses a rather standard way of implementing object
@@ -20,7 +20,7 @@
 # - https://stackoverflow.com/questions/36771080/creating-classes-and-objects-using-bash-scripting
 # - https://github.com/lenormf/bash-oop
 
-source src/includes/assoc.bash
+source src/includes/assoc.bashinc
 
 # the infrastructure
 

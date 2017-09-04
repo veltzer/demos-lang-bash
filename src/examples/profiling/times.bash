@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # This is an example of how to profile using the 'times' bash builtin.
 # NOTES:

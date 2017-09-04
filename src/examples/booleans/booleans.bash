@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -ue
 
 # This example shows how to use booleans in bash
 

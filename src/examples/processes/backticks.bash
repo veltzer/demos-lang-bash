@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # This example tries to show how backticks work in the shell.
 # Note that this also deals with nested backticks

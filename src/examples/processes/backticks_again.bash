@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # This is an example of how the pid of a certain process/thread in bash.
 # Note that you don't want to use the standard ps output

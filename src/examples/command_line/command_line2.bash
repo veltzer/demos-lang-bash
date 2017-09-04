@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # this is an example of getting specific arguments from the command line.
 

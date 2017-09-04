@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # This is an example showing the different ways to initalize an associative array
 # in bash.
@@ -6,7 +6,7 @@
 # References:
 # - http://www.artificialworlds.net/blog/2012/10/17/bash-associative-array-examples/
 
-source ../../includes/assoc.bash
+source src/includes/assoc.bashinc
 
 # one line for declaration and data
 declare -A map1=( ["ke y1"]="val ue1" ["ke y2"]="val ue2" )

@@ -1,4 +1,4 @@
-#!/bin/bash -u
+#!/bin/bash -ue
 
 # These are basic examples of functions in bash.
 # NOTES:

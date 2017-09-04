@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -ue
 
 # This example shows that you cannot source more than one file in single bash 'source' command.
 # The loop which follows is the right way to do it.
