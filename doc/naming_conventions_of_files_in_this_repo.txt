@@ -1,0 +1,11 @@
+bash files: *.bash
+included bash files: *.bashinc
+
+Why the separation between them?
+
+- So that we could change the first line of all bash
+script easily.
+- So that we could check the modes of all files easily.
+- So that we could run linting more easily.
+- So that we could differentiate between bash related files
+	and all other files that may be in this repo (python etc)
