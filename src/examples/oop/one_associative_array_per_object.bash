@@ -1,8 +1,14 @@
 #!/bin/bash -u
 
 # This example show basic object oriented programming using bash.
+# This approach uses a rather standard way of implementing object
+# oriented programming by having one associative array per object.
+# The only issue with tihs approach is that we do not have
+# unique id for each object. This prevents us from storing many
+# of these objects in a container (bash list or associative
+# array).
 #
-# This is a work in progress
+# This is a major fault with this approach.
 #
 # References:
 # - http://hipersayanx.blogspot.co.il/2012/12/object-oriented-programming-in-bash.html

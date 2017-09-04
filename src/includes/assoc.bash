@@ -4,8 +4,9 @@
 # References:
 # - http://www.artificialworlds.net/blog/2012/10/17/bash-associative-array-examples/
 
-# the only problem with this function now is that it cannot print associative
-# arrays which have white spaces in keys
+# This is a function to print out an associative array.
+# It has been checked to handle associative arrays which have spaces
+# in the keys or values correctly.
 function assoc_print() {
 	local __map=$1
 	eval 'local keys=("${!'$__map'[@]}")'
