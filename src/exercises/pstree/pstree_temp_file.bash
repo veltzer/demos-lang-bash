@@ -6,21 +6,23 @@
 # 3. add a PID_TO_CHILDREN structure to give fast access to children
 # of a pid.
 
+filename=/tmp/out.txt
+
 # -e is for all processes
 # --no-headers is to avoid the pesty first line
 # -o user,pid,ppid,comm is to only show stuff we need
 # user is there to make sure that we always have 4 columns
 # bacause brain dead ps does not have a clear option not to align
 # columns and we need consistency for tr
-ps -e --no-headers -o pid,ppid,comm > out.txt
+ps -e --no-headers -o pid,ppid,comm > $filename
 
-# note that we get the number of lines from the out.txt file
+# note that we get the number of lines from the $filename file
 # and do not run ps(1) again to avoid consistency problems
-numlines=`wc -l out.txt | cut -d " " -f 1`
+numlines=`wc -l $filename | cut -d " " -f 1`
 
 # save the old file descriptor
 exec 3>&0
-exec 0< out.txt
+exec 0< $filename
 
 PID_TO_NAME=()
 PID_TO_PPID=()
@@ -33,10 +35,6 @@ do
 	pid=${fields[0]}
 	ppid=${fields[1]}
 	name=${fields[2]}
-	# don't do this
-	#pid=`echo $line | cut -f 2 -d ,`
-	#ppid=`echo $line | cut -f 3 -d ,`
-	#name=`echo $line | cut -f 4 -d ,`
 	PID_TO_NAME[$pid]=$name
 	PID_TO_PPID[$pid]=$ppid
 	INDEX_TO_PID[$pidnum]=$pid
@@ -44,7 +42,7 @@ do
 done
 # restore the file descriptor
 exec 0>&3 
-rm -f out.txt
+rm -f $filename
 
 function print_proc {
 	local num=$1

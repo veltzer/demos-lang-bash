@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # this is the a rather efficient implementation of pstree
 # in bash.
@@ -13,15 +13,22 @@
 # - notice the local definitions which are important in order for
 # the recursion to work.
 
+source src/includes/assoc.bashinc
+
 ps -o comm,pid,ppid --no-headers -e | grep -v defunct | (
+	declare -A pid_to_children
+	declare -A pid_to_comm
 	while read line
 	do
 		arr=($line)
 		comm=${arr[0]}
 		pid=${arr[1]}
 		ppid=${arr[2]}
-		pid_to_ppid[$pid]=$ppid
 		pid_to_comm[$pid]=$comm
+		if ! assoc_key_exists pid_to_children $ppid
+		then
+			assoc_set pid_to_children $ppid ""
+		fi
 		pid_to_children[$ppid]="${pid_to_children[$ppid]} $pid"
 	done
 	function print {
@@ -31,6 +38,10 @@ ps -o comm,pid,ppid --no-headers -e | grep -v defunct | (
 		local width=$(($depth * 8 ))
 		printf "%${width}s%s\n" "" "${comm}($pid)"
 		depth=$((depth+1))
+		if ! assoc_key_exists pid_to_children $pid
+		then
+			assoc_set pid_to_children $pid ""
+		fi
 		local children=${pid_to_children[$pid]}
 		for x in $children
 		do
