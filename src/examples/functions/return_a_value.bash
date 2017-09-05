@@ -22,11 +22,11 @@ function return_via_echo {
 }
 
 function return_via_return {
-	return hello
+	return 0
 }
 
 function return_no_args {
-	foobar 2>/dev/null
+	:
 	return
 }
 
@@ -74,5 +74,5 @@ if [ $foo != "value" ]
 then
 	echo "error, return value is wrong"
 else
-	echo "yes, all is "
+	echo "yes, all is OK"
 fi
