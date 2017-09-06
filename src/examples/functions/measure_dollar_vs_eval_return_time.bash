@@ -28,6 +28,11 @@
 # function runs in that subshell. This also means that the called
 # function cannot return values using the stack and must resort
 # to either echo or return which still work.
+#
+# Conclusions:
+# indeed launching a subshell is horrible and its much better to
+# return values via the variable by reference method.
+# note that this method has it's drawbacks too.
 
 function add_echo() {
 	local a=$1
