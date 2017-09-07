@@ -6,6 +6,7 @@
 # - expr(1) is not a shell builtin and is part of the 'coreutils' package.
 # - this means that expr is slower to use (much more than let).
 # - expr(1) can only do integer arithmetic.
+# - you must keep spaces between arguments to expr(1)
 #
 # References:
 # -
