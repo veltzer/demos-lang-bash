@@ -4,7 +4,7 @@
 # Take away: use return
 
 function myfunc {
-	local arg="$1"
+	local arg=$1
 	echo "start"
 	if [[ $arg -eq 1 ]]
 	then

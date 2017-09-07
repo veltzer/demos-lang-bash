@@ -12,25 +12,19 @@
 # bash variable.
 
 function func1 {
-	local arg="$1"
-	echo "arg is [$arg]"
-}
-
-function func2 {
 	local arg=$1
 	echo "arg is [$arg]"
 }
 
-function func3 {
+function func2 {
 	arg=$1
 	echo "arg is [$arg]"
 }
 
-function func4 {
+function func3 {
 	echo "arg is [$1]"
 }
 
 func1 "hello world"
 func2 "hello world"
 func3 "hello world"
-func4 "hello world"

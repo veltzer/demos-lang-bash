@@ -70,3 +70,8 @@ function assoc_key_exists() {
         local key=$2
         eval "[ \${$__assoc_name['$key']+muahaha} ]"
 }
+
+function assoc_is_assoc() {
+	local __assoc_name=$1
+	[ "$(declare -p $_assoc_name)" =~ "declare -A" ]
+}

@@ -1,13 +1,18 @@
 # A set of functions to help with dealing with arrays
 
 # A function that prints an array.
-# This should be usable for sparese array too.
+# This should be usable for sparse array too.
 function array_print() {
-	local -n array="$1"
-	# declare -p array
-	# echo "length of array is ${#array[@]}"
+	local -n array=$1
+	echo "length of array is ${#array[@]}"
 	for index in ${!array[@]}
 	do
 		echo $index/${array[$index]}
 	done
+}
+
+function array_length() {
+	local __user_var=$1
+	local -n array=$1
+	echo "length of array is ${#array[@]}"
 }

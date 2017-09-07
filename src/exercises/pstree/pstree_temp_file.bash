@@ -46,7 +46,7 @@ rm -f $filename
 
 function print_proc {
 	local num=$1
-	local offset="$2"
+	local offset=$2
 	# get the name of the process
 	local name=${PID_TO_NAME[$num]}
 	# print it and increase the offset

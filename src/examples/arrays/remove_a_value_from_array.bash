@@ -8,8 +8,8 @@
 # - https://stackoverflow.com/questions/16860877/remove-element-from-array-shell
 
 function remove_value() {
-	local -n array="$1"
-	local value="$2"
+	local -n array=$1
+	local value=$2
 	new_array=()
 	for current_value in "${array[@]}"
 	do

@@ -2,8 +2,8 @@
 # code.
 
 function error() {
-	local parent_lineno="$1"
-	local message="$2"
+	local parent_lineno=$1
+	local message=$2
 	local code="${3:-1}"
 	if [[ -n "$message" ]]
 	then
