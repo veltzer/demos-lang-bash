@@ -2,13 +2,14 @@
 
 # This is an example of how to push to an array.
 # Pushing means adding an element at the begining of the array.
+#
 # References:
 # - https://unix.stackexchange.com/questions/328882/how-to-add-new-value-to-beginning-of-array-in-bash
 
-ARRAY=()
-ARRAY+=('foo')
-ARRAY+=('bar')
+my_array=()
+my_array+=('foo')
+my_array+=('bar')
 
-ARRAY=('first' "${ARRAY[@]}") 
+my_array=('first' "${my_array[@]}") 
 
-echo "${ARRAY[@]}"
+echo "${my_array[@]}"

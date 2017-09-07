@@ -1,11 +1,14 @@
 #!/bin/bash -ue
 
 # This is an example of how to append to an array in bash.
-# Note that if you a new value to be added to the array
+# 
+# NOTES:
+# - if you need to add a new value to the array
+# you must quote the value because if it contains
 # a variable you must quote the value because if it contains
 # spaces then each separate word is going to be added to the
 # array as a separate element.
-# This means that the same syntax can be used to add arrays to
+# - the same syntax can be used to add arrays to
 # arrays (see the example at the end)
 #
 # References:

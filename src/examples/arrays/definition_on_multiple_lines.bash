@@ -8,7 +8,4 @@ my_array=(
 "element three"
 )
 
-for elem in "${my_array[@]}"
-do
-	echo $elem
-done
+echo "${my_array[@]}"
