@@ -34,6 +34,8 @@
 # return values via the variable by reference method.
 # note that this method has it's drawbacks too.
 
+source src/includes/array.bashinc
+
 function add_echo() {
 	local a=$1
 	local b=$2
@@ -51,6 +53,16 @@ function add_byref() {
 	eval "$__user_var=$result"
 }
 
+array_new __return_values
+
+function add_bystack() {
+	local a=$1
+	local b=$2
+	local result
+	let "result=$a+$b"
+	array_push __return_values
+}
+
 # lets see if all is well
 c=$(add_echo 2 2)
 if [ "$c" != "4" ]
@@ -59,6 +71,12 @@ then
 fi
 add_byref d 2 2
 if [ "$d" != "4" ]
+then
+	echo "ERROR"
+fi
+add_bystack 2 2
+array_pop __return_values e
+if [ "$e" != "4" ]
 then
 	echo "ERROR"
 fi
