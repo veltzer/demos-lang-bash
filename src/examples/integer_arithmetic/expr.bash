@@ -9,7 +9,7 @@
 # - you must keep spaces between arguments to expr(1)
 #
 # References:
-# -
+# - https://ryanstutorials.net/bash-scripting-tutorial/bash-arithmetic.php
 
 echo $(expr 2 + 2)
 # the next line will cause an error

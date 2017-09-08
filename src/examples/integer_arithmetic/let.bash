@@ -10,7 +10,7 @@
 # - the problem with 'let' is that it can only do integer arithmetic.
 #
 # References:
-# -
+# - https://ryanstutorials.net/bash-scripting-tutorial/bash-arithmetic.php
 
 let "x=0"
 echo $x
