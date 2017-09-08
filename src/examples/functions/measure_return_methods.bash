@@ -35,6 +35,8 @@
 # note that this method has it's drawbacks too.
 
 source src/includes/array.bashinc
+source src/includes/var.bashinc
+source src/includes/measure.bashinc
 
 function add_echo() {
 	local a=$1
@@ -44,7 +46,7 @@ function add_echo() {
 	echo $result
 }
 
-function add_byref() {
+function add_ref() {
 	local __user_var=$1
 	local a=$2
 	local b=$3
@@ -55,12 +57,12 @@ function add_byref() {
 
 array_new __return_values
 
-function add_bystack() {
+function add_stack() {
 	local a=$1
 	local b=$2
 	local result
 	let "result=$a+$b"
-	array_push __return_values
+	array_push __return_values $result
 }
 
 # lets see if all is well
@@ -69,12 +71,12 @@ if [ "$c" != "4" ]
 then
 	echo "ERROR"
 fi
-add_byref d 2 2
+add_ref d 2 2
 if [ "$d" != "4" ]
 then
 	echo "ERROR"
 fi
-add_bystack 2 2
+add_stack 2 2
 array_pop __return_values e
 if [ "$e" != "4" ]
 then
@@ -89,17 +91,23 @@ function wrap_echo() {
 		c=$(add_echo 2 2)
 	done
 }
-function wrap_byref() {
+function wrap_ref() {
 	for (( i=0; i<$count; i++ ))
 	do
-		add_byref d 2 2
+		add_ref d 2 2
+	done
+}
+function wrap_stack() {
+	for (( i=0; i<$count; i++ ))
+	do
+		add_stack 2 2
+		array_pop __return_values e
 	done
 }
 
-source ../../includes/var.bashinc
-source ../../includes/measure.bashinc
-
 measure diff_echo wrap_echo 4
-measure diff_byref wrap_byref 4
+measure diff_ref wrap_ref 4
+measure diff_stack wrap_stack 4
 echo "diff_echo is [$diff_echo]"
-echo "diff_byref is [$diff_byref]"
+echo "diff_ref is [$diff_ref]"
+echo "diff_stack is [$diff_stack]"
