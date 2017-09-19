@@ -1,6 +1,7 @@
 #!/bin/bash -ue
 
 # This is an example of how to capture the standard error
+#
 # References:
 # - https://stackoverflow.com/questions/11087499/bash-how-do-you-capture-stderr-to-a-variable
 # - https://stackoverflow.com/questions/3130375/bash-script-store-stderr-in-a-variable
