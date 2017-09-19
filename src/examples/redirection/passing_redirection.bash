@@ -7,3 +7,5 @@
 REDIRECT="> /dev/null"
 ls $REDIRECT
 ls > /dev/null # the output from this is not shown
+# this does not help either
+eval "ls $REDIRECT"
