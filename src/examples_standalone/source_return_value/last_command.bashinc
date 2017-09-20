@@ -1,0 +1,4 @@
+# the return of the last command in a sourced bash file is the return of the source
+# command itself at the high level
+
+ls /notexists

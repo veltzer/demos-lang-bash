@@ -1,6 +1,8 @@
 #!/bin/bash -ue
 
+set +e
+
 echo "in main"
-source sourced_file.bash
+source sourced_file.bashinc
 ret=$?
-echo "back in main $ret"
+echo "back in main return value is [$ret]"
