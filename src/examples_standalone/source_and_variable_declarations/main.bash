@@ -13,7 +13,7 @@
 # - unless unset of course.
 
 var="main_value"
-source "${BASH_SOURCE%/*}/sourced.bash"
+source "${BASH_SOURCE%/*}/sourced.bashinc"
 if [ "$var" != "sourced_value" ]
 then
 	echo "ERROR"
@@ -22,7 +22,11 @@ if [ "$my_var" != "sourced_value" ]
 then
 	echo "ERROR"
 fi
-if [ "${my_unset_var}" ]
+if [ "${my_unset_var-}" ]
+then
+	echo "ERROR"
+fi
+if [ "${my_unseen_var-}" ]
 then
 	echo "ERROR"
 fi

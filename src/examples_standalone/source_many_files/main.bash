@@ -17,15 +17,15 @@
 # this does not work:
 # -will only source the first file
 # -will fail if there is no file matching the pattern
-source subfolder/*.bash
+source subfolder/*.bashinc
 
 # this one checks if there are matches before doing
 # regular shell globbing
 # so this handles the case where there are no matches.
 # it is long though
-if compgen -G "subfolder/*.bash" > /dev/null
+if compgen -G "subfolder/*.bashinc" > /dev/null
 then
-	for x in subfolder/*.bash
+	for x in subfolder/*.bashinc
 	do
 		source $x
 	done
@@ -35,14 +35,14 @@ fi
 # the difficulty is that we need to return the status of the shell 'nullglob'
 # setting to it's original state and we do not do that here.
 shopt -s nullglob
-for x in subfolder/*.bash
+for x in subfolder/*.bashinc
 do
 	source $x
 done
 shopt -u nullglob
 
 # this handles no matches and is short
-for x in $(compgen -G "subfolder/*.bash")
+for x in $(compgen -G "subfolder/*.bashinc")
 do
 	source $x
 done

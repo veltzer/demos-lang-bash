@@ -1,0 +1,4 @@
+# this is a 'good' file on purpose
+
+echo "here I am"
+echo "error!" > /dev/stderr

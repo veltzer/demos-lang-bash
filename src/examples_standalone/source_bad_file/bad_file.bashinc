@@ -1,0 +1,4 @@
+# this is a 'bad' file on purpose
+
+echo "here I am"
+for
