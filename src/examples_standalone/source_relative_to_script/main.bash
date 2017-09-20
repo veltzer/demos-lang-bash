@@ -11,4 +11,4 @@
 # - https://stackoverflow.com/questions/6659689/referring-to-a-file-relative-to-executing-script
 # - http://mywiki.wooledge.org/BashFAQ/028
 
-source "${BASH_SOURCE%/*}/sourced.bash"
+source "${BASH_SOURCE%/*}/sourced.bashinc"

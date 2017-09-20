@@ -48,4 +48,4 @@ do
 done
 
 # will fail if there is no file matching the pattern
-source <(cat subfolder/*.bash)
+source <(cat subfolder/*.bashinc)
