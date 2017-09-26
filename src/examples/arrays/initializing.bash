@@ -55,3 +55,13 @@ array_print my_array6
 # the two next lines are both wrong
 # x=(56,23,14)
 # #x=[56,23,14]
+
+echo "assign from variable"
+my_var="0 1 2"
+my_array7=($my_var)
+array_print my_array7
+
+echo "assign from variable (one value)"
+my_var="one_value"
+my_array8=($my_var)
+array_print my_array8
