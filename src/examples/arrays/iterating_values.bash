@@ -2,6 +2,11 @@
 
 # This example shows how to iterate an array in bash.
 #
+# Results:
+# The first way
+#	$ for elem in "${array[@]}"
+# is the only right way to do it.
+#
 # References:
 # - https://www.cyberciti.biz/faq/bash-iterate-array/
 
@@ -12,41 +17,107 @@ z=(
 "three four"
 )
 
-echo "size of the array is ${#z[@]}"
-echo "size of the array is ${#z[*]}"
-
-echo "this is the right way to do it"
+echo 'for elem in "${z[@]}"'
+i=0
 for elem in "${z[@]}"
 do
-	echo $elem
+	if [ "$i" -ge "${#z[@]}" ]
+	then
+		echo -e "\tERROR inedx too large [$i] [${#z[@]}] [$elem]"
+		let "i=i+1"
+		continue
+	fi
+	if [ "$elem" != "${z[$i]}" ]
+	then
+		echo -e "\tERROR [$elem] != [${z[$i]}]"
+	fi
+	let "i=i+1"
 done
+if [ "$i" -ne 3 ]
+then
+	echo -e "\tERROR number of elements $i != 3"
+fi
 
-echo "this is the wrong way (with star)"
+echo 'for elem in ${z[@]}'
+i=0
+for elem in ${z[@]}
+do
+	if [ "$i" -ge "${#z[@]}" ]
+	then
+		echo -e "\tERROR inedx too large [$i] [${#z[@]}] [$elem]"
+		let "i=i+1"
+		continue
+	fi
+	if [ "$elem" != "${z[$i]}" ]
+	then
+		echo -e "\tERROR [$elem] != [${z[$i]}]"
+	fi
+	let "i=i+1"
+done
+if [ "$i" -ne 3 ]
+then
+	echo -e "\tERROR number of elements $i != 3"
+fi
+
+echo 'for elem in "${z[*]}"'
+i=0
 for elem in "${z[*]}"
 do
-	echo $elem
+	if [ "$i" -ge "${#z[@]}" ]
+	then
+		echo -e "\tERROR inedx too large [$i] [${#z[@]}] [$elem]"
+		let "i=i+1"
+		continue
+	fi
+	if [ "$elem" != "${z[$i]}" ]
+	then
+		echo -e "\tERROR [$elem] != [${z[$i]}]"
+	fi
+	let "i=i+1"
 done
+if [ "$i" -ne 3 ]
+then
+	echo -e "\tERROR number of elements $i != 3"
+fi
 
-echo "this is the WRONG way to do it! (gives all as one element)"
-for elem in "${z[*]}"
-do
-	echo $elem
-done
-
-echo "another WRONG way to do it! (breaks down spaces)"
-for elem in ${z[*]}
-do
-	echo $elem
-done
-
-echo "another WRONG way to do it! (only covers first element and breaks it down)"
-for elem in $z
-do
-	echo $elem
-done
-
-echo "another WRONG way to do it! (only covers first element)"
+echo 'for elem in "$z"'
+i=0
 for elem in "$z"
 do
-	echo $elem
+	if [ "$i" -ge "${#z[@]}" ]
+	then
+		echo -e "\tERROR inedx too large [$i] [${#z[@]}] [$elem]"
+		let "i=i+1"
+		continue
+	fi
+	if [ "$elem" != "${z[$i]}" ]
+	then
+		echo -e "\tERROR [$elem] != [${z[$i]}]"
+	fi
+	let "i=i+1"
 done
+if [ "$i" -ne 3 ]
+then
+	echo -e "\tERROR number of elements $i != 3"
+fi
+
+echo 'for elem in $z'
+i=0
+for elem in $z
+do
+	if [ "$i" -ge "${#z[@]}" ]
+	then
+		echo -e "\tERROR inedx too large [$i] [${#z[@]}] [$elem]"
+		let "i=i+1"
+		continue
+	fi
+	if [ "$elem" != "${z[$i]}" ]
+	then
+		echo -e "\tERROR [$elem] != [${z[$i]}]"
+	fi
+	let "i=i+1"
+done
+if [ "$i" -ne 3 ]
+then
+	echo -e "\tERROR number of elements $i != 3"
+fi
