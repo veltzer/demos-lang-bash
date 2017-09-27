@@ -4,7 +4,7 @@
 # executing the 'source' command.
 # You can check that this method works by running "main.bash"
 # from a different folder than the current one.
-# Please not that this method is bash specific and is not
+# Please note that this method is bash specific and is not
 # bullet proof but will work in most cases.
 #
 # References:
