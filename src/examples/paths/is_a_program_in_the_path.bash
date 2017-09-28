@@ -12,7 +12,6 @@
 function is_in_path() {
 	local prog=$1
 	hash $prog 2> /dev/null
-	return
 }
 
 if is_in_path ls
