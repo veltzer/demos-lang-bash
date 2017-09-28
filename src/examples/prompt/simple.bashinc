@@ -1,0 +1,14 @@
+x=0
+
+function change_prompt() {
+	res=$?
+	let "x=x+1"
+	PS1="${x}, $res > "
+}
+
+OLD_PROMPT_COMMAND=${PROMPT_COMMAND}
+PROMPT_COMMAND=change_prompt
+
+function restore_prompt() {
+	PROMPT_COMMAND=${OLD_PROMPT_COMMAND}
+}
