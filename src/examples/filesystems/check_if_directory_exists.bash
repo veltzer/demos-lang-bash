@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This example shows how to check if a directory exists or doesnt exist.
 

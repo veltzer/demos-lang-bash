@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This example explores what is the relation between the 'source'
 # bash builtin command and variables defined in the sourced files.

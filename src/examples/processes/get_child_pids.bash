@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # Showing how to wait for a specific process to end.
 # Example of how to collect your child process ids in bash

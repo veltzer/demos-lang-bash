@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This example shows how to find the length of an array in bash.
 #

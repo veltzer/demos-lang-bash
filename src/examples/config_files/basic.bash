@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This is a basic example of how to work with config files in bash
 # using an associative array.

@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This is an example of how to pass an array by reference to a bash function
 #

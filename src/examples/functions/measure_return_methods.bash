@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # There are several ways to return values from a bash function:
 # - echo the value and let the caller capture it using backticks

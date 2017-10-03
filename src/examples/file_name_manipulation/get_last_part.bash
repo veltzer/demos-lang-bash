@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This is an example of how to get the last part of a directory or file
 # The idea is to either use the basename(1) command

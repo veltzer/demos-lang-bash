@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This example shows how to write a bash function that can get a value
 # from any hashmap without launching a subshell.

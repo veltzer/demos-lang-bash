@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This example shows how to use logical operators when using the '['/'test' shell builtin.
 # Note that '[' and '[[' are not the same as '[[' is a shell keyword and not a shell

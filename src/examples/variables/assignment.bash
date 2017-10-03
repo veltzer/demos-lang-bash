@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # example of bash assignment
 # The conclusion is that you don't need to do:

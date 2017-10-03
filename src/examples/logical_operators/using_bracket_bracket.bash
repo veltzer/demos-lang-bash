@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This is an example of how to write simple logical operators in bash.
 # NOTES:

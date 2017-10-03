@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This example explores how to assign one associative array to another
 # THIS EXAMPLE DOES NOT WORK.

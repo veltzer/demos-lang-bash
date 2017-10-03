@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This is an example of sourcing files relative to the script
 # executing the 'source' command.

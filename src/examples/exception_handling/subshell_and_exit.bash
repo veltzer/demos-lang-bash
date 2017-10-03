@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This is an example of how to do some type of 'exception handling'
 # in bash by using a subshell and exit.

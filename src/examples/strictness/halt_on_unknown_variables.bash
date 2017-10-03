@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This shows how to make bash more strict in that it will error
 # and will stop on any undefined variable that requires expansion.

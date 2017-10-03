@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # There are several ways to do integer arithmetic in bash which are:
 # - braces

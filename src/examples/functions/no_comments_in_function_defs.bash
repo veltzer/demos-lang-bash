@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This example shows that when you define a function in bash
 # and then ask about it, you will not see the comments.

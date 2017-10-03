@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # An example that shows that variables in bash functions are global by default
 # So what should you do? always use local

@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This is an example of how to use the 'caller' builtin in order to build
 # a 'die' like function.

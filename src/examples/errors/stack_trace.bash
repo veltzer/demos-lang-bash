@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This example explores magic variables in bash that can help with error handling.
 #

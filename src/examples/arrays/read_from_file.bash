@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This example shows how to read an array from a file.
 # It reads the lines in '/etc/group' into an array.

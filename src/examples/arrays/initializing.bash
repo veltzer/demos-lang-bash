@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This is a simple array example in bash.
 # we create the array the bash way

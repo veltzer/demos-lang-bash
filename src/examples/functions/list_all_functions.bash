@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This example shows how to list all functions which have been declared.
 # This is done via declare(builtin) or typeset(builtin).

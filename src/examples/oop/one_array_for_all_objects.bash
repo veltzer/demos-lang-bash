@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This example show basic object oriented programming using bash.
 # This approach uses just one hashmap for all attributes of all objects

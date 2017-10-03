@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This example shows how to correctly add compoents to envrionment
 # or non environment variables like 'PATH'.

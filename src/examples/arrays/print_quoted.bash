@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This is an example of how to take a bash array and print it quoted with efficiency.
 # The idea of efficiency is not to invoke a subshell.

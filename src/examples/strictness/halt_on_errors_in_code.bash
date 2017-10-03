@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This example shows how to make bash more strict
 # by adding markers in the code where you want to be more strict.

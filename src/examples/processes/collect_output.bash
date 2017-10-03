@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This example shows how to collect output of processes in bash.
 # Basically there are two ways: backticks and $().

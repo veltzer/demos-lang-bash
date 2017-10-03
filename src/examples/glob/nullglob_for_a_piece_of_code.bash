@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This example shows how to use nullglob to get strict globbing
 # and to enable and disable it just for a small piece of code.

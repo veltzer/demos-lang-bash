@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This is an example of how to push to an array.
 # Pushing means adding an element at the begining of the array.

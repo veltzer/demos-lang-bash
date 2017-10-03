@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This script shows how to create a temporary file in bash.
 # References:

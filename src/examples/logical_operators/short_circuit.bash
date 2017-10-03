@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This example explores the short circuit feature of bash boolean operators.
 #

@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This example explores writing an empty function
 # The main point is that you cannot write a completely empty

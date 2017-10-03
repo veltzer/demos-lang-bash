@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This example shows how to read files for which each line is a list
 # of fields separated by some separator.

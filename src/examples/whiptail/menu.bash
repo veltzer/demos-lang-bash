@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This is an example of how to use whiptail(1) to show dialogs
 # from bash scripts

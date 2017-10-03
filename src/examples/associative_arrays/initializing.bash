@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This is an example showing the different ways to initalize an associative array
 # in bash.

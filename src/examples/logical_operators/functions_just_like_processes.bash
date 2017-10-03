@@ -1,4 +1,4 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This example shows that as far as bash boolean operators are concerned
 # then functions in bash returning 0 and 1 are just like processes having
