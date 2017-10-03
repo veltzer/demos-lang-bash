@@ -9,6 +9,9 @@
 # being executed using the 'PS4' variable as below.
 # In the following example each line will be preceeded with it's
 # line number.
+#
+# References:
+# - http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_02_03.html
 
 PS4='$LINENO '
 echo "Hello, World!"
