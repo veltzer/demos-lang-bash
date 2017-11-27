@@ -6,3 +6,5 @@ a="foo"
 b="bar"
 [ "$a" = "$b" ]
 echo $?
+[ "$a" != "$b" ]
+echo $?
