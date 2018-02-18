@@ -1,6 +1,11 @@
 #!/bin/bash -u
 
-# This example shows that you cannot pass shell special notation (like redirection
+# This example examines if you can redirect via a varible.
+# This means put "> [...]" and the like statements in a varialbe and
+# use it in a line such as:
+# $ ls $REDIRECT
+
+# The result is that you cannot pass shell special notation (like redirection
 # or the like) via variables.
 # That is the reason for the difference in the output between the next two lines...
 
