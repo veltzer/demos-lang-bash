@@ -12,3 +12,21 @@ if [[ "$str" == hello* ]]
 then
 	echo "yes"
 fi
+
+# this does not work
+if [[ "$str" == "hello*" ]]
+then
+	echo "yes"
+fi
+
+# the best solution by regexp (bash3 and onwards)
+if [[ "$str" =~ ^hello.* ]]
+then
+	echo "yes"
+fi
+
+# the best solution by regexp (bash3 and onwards)
+if [[ "$str" =~ ^hello ]]
+then
+	echo "yes"
+fi
