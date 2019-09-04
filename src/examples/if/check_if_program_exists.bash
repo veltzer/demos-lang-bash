@@ -3,7 +3,7 @@
 # This example shows how to check if a command exists or not
 # You can either use 'hash' or 'command -v'.
 #
-# Both work well. In theory command -v is weaker since it will also respect
+# Both work well. In theory command -v is weaker since it will also respects
 # aliases but as we all know aliases don't work in shell scripts without
 # special provisions which means that you can use 'command -v' without
 # problems in scripts.
