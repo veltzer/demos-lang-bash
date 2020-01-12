@@ -1,1 +1,7 @@
 http://kvz.io/blog/2013/11/21/bash-best-practices
+
+beginners guide:
+	http://www.tldp.org/LDP/Bash-Beginners-Guide/html/index.html
+
+excellent advanced bash guide:
+	http://tldp.org/LDP/abs/html/index.html
