@@ -6,6 +6,9 @@
 # and seeing that the script packs all the third argument correctly.
 # in bash, unlike in other scripting languages, the first argument is a real
 # argument and NOT the name of the script.
+#
+# References:
+# - https://stackoverflow.com/questions/255898/how-to-iterate-over-arguments-in-a-bash-script
 
 # the right way to iterate an array
 for elem in "$@"
