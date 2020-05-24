@@ -11,10 +11,13 @@
 # option which is available in many of the dialogs, then you will get
 # a "1" return value from dialog(1). Use that to distinguish between
 # valid output by the user and a user which does not want to answer.
+# - height, width and menu-height can be set to 0 and let dialog
+# calculate them for you.
+#
 # References:
 # - https://askubuntu.com/questions/491509/how-to-get-dialog-box-input-directed-to-a-variable
 
-result=$(dialog --menu "title of menu" 15 50 5 1 a 2 b 3 c --output-fd 1)
+result=$(dialog --menu "title of menu" 0 0 0 1 a 2 b 3 c --output-fd 1)
 code=$?
 if [ $code -eq 0 ]
 then
