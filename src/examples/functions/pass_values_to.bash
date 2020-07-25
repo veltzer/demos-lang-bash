@@ -25,6 +25,19 @@ function func3 {
 	echo "arg is [$1]"
 }
 
-func1 "hello world"
-func2 "hello world"
-func3 "hello world"
+function func4 {
+	# not quoting $1, $2, ... is a mistake when just using them
+	echo $1
+}
+
+function func5 {
+	# you can put quotations around $1, $2, ... but it is superfluous
+	local arg="$1"
+	echo "arg is [$arg]"
+}
+
+func1 "hello  world"
+func2 "hello  world"
+func3 "hello  world"
+func4 "hello  world"
+func5 "hello  world"
