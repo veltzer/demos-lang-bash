@@ -2,7 +2,8 @@
 
 # This example shows that collecting a value from a function via
 # back ticks or $() is fine but actually runs the function in a
-# subshell and so the function cannot change any variables.
+# subshell and so the function cannot change any variables in the
+# parent shell.
 
 function is_declared() {
 	local varname=$1

@@ -9,10 +9,8 @@
 # return values.
 # - while echo (which is also a builtin) should be used for values.
 # - echo does not change $?
-#
-# TBD:
-# - should how to return a value without running the function
-# in a subshell.
+# - running a subshell is slow so it's better to use a method which
+# does not employ a subshell.
 #
 # References:
 # - http://www.linuxjournal.com/content/return-values-bash-functions
@@ -41,6 +39,13 @@ function return_via_user_var() {
 	local value=$2
 	eval $__user_var=$2
 }
+
+function return_via_user_var_local() {
+	local -n var=$1
+	local value=$2
+	var=$value
+}
+
 
 echo "now via echo"
 A=$(return_via_echo)
@@ -71,6 +76,15 @@ fi
 echo "now via return via user var without subshell"
 return_via_user_var foo value
 if [ $foo != "value" ]
+then
+	echo "error, return value is wrong"
+else
+	echo "yes, all is OK"
+fi
+
+echo "now via return via user var without subshell with local -n"
+return_via_user_var_local bar value
+if [ $bar != "value" ]
 then
 	echo "error, return value is wrong"
 else
