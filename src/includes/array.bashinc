@@ -15,11 +15,11 @@ function array_set() {
 # A function that prints an array.
 # This should be usable for sparse array too.
 function array_print() {
-	local -n array=$1
-	# echo "length of array is ${#array[@]}"
-	for index in ${!array[@]}
+	local -n __array=$1
+	echo "length of array is ${#__array[@]}"
+	for index in ${!__array[@]}
 	do
-		echo $index/${array[$index]}
+		echo $index/${__array[$index]}
 	done
 }
 
