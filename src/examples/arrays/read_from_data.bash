@@ -4,7 +4,7 @@
 # variable in bash.
 #
 # References:
-# - https://stackoverflow.com/questions/11426529/reading-output-of-a-command-into-an-array-in-bash
+# - https://stackoverflow.com/questions/10586153/split-string-into-an-array-in-bash
 
 # using 'mapfile' - this is the best way
 data="2 4 6 8 10"
