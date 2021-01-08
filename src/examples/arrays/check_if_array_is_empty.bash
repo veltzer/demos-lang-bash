@@ -25,3 +25,15 @@ then
 else
 	echo "array is not empty"
 fi
+if [[ "${array_with_elements[@]}" ]]
+then
+	echo "array is not empty"
+else
+	echo "array is empty"
+fi
+if [[ "${array_without_elements[@]}" ]]
+then
+	echo "array is not empty"
+else
+	echo "array is empty"
+fi
