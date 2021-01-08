@@ -8,6 +8,8 @@
 #
 # References:
 # - https://stackoverflow.com/questions/1688999/how-can-i-read-a-list-of-filenames-from-a-file-in-bash
+# - https://stackoverflow.com/questions/11393817/read-lines-from-a-file-into-a-bash-array
+# - https://stackoverflow.com/questions/53201641/passing-newline-character-as-an-argument-within-shell
 
 filename="data/list_of_values.txt"
 
