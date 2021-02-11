@@ -51,7 +51,7 @@ debug:
 
 .PHONY: first_line_stats
 first_line_stats:
-	$(Q)head -1 -q $(ALL_SH) | sort -u
+	$(Q)head -1 -q $(ALL_SH) | sort | uniq -c
 
 .PHONY: clean
 clean:
