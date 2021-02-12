@@ -10,11 +10,11 @@ function is_there {
 
 function read_name {
 	echo "Please enter a name"
-	read name
+	read -r name
 }
 function read_phone {
 	echo "Please enter a phone"
-	read phone
+	read -r phone
 }
 function error_name_there {
 	echo "name is in the phonebook" 1>&2
@@ -35,7 +35,7 @@ else
 	echo "haven't found phonebook. Created one in [$phonebook]."
 fi
 
-read
+read -r
 
 clear
 PS3="please enter your selection> "
@@ -52,7 +52,7 @@ do
 				error_name_there
 			else
 				read_phone
-				echo $name,$phone >> $phonebook
+				echo "$name,$phone" >> $phonebook
 			fi
 			;;
 		delete)
@@ -84,7 +84,7 @@ do
 			echo
 			echo "in printbook"
 			echo "=================================="
-			cat $phonebook | sort -t , | less
+			sort -t , < "$phonebook" | less
 			;;
 		printcount)
 			echo
@@ -102,7 +102,7 @@ do
 				read_phone
 				grep -v "^$name," $phonebook > tmp.txt
 				mv tmp.txt $phonebook
-				echo $name,$phone >> $phonebook
+				echo "$name,$phone" >> $phonebook
 			else
 				error_name_not_there
 			fi
