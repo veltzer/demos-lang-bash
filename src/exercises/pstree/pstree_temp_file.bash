@@ -18,7 +18,7 @@ ps -e --no-headers -o pid,ppid,comm > $filename
 
 # note that we get the number of lines from the $filename file
 # and do not run ps(1) again to avoid consistency problems
-numlines=`wc -l $filename | cut -d " " -f 1`
+numlines=$(wc -l $filename | cut -d " " -f 1)
 
 # save the old file descriptor
 exec 3>&0
@@ -27,18 +27,18 @@ exec 0< $filename
 PID_TO_NAME=()
 PID_TO_PPID=()
 INDEX_TO_PID=()
-let "pidnum=0"
+(( pidnum=0 ))
 while [[ $pidnum -lt $numlines ]]
 do
-	read line
-	fields=($line)
+	read -r line
+	IFS=" " read -r -a fields <<< "$line"
 	pid=${fields[0]}
 	ppid=${fields[1]}
 	name=${fields[2]}
 	PID_TO_NAME[$pid]=$name
 	PID_TO_PPID[$pid]=$ppid
 	INDEX_TO_PID[$pidnum]=$pid
-	let "pidnum=pidnum+1"
+	(( "pidnum=pidnum+1" ))
 done
 # restore the file descriptor
 exec 0>&3 
@@ -60,9 +60,9 @@ function print_proc {
 		local ppid=${PID_TO_PPID[$cpid]}
 		if [[ $ppid -eq $num ]] 
 		then
-			print_proc $cpid "$offset"
+			print_proc "$cpid" "$offset"
 		fi
-		let "counter++"
+		(( counter++ ))
 	done
 }
 
