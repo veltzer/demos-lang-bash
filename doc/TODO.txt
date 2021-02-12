@@ -1,4 +1,6 @@
 - make the spellcheck on all of these demos pass
+	now 84/197
+	to see your status use "make -k"
 - http://www.linuxjournal.com/content/bash-co-processes 
 	do a demo of co-processes.
 - demo the 'readarray' command.

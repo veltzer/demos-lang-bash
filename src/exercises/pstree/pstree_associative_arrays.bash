@@ -15,19 +15,19 @@
 
 source src/includes/assoc.bashinc
 
-ps -o comm,pid,ppid --no-headers -e | grep -v defunct | (
+ps -o comm,pid,ppid --no-headers -e | (
 	declare -A pid_to_children
 	declare -A pid_to_comm
-	while read line
+	while read -r line
 	do
-		arr=($line)
+		IFS=" " read -r -a arr <<< "$line"
 		comm=${arr[0]}
 		pid=${arr[1]}
 		ppid=${arr[2]}
 		pid_to_comm[$pid]=$comm
-		if ! assoc_key_exists pid_to_children $ppid
+		if ! assoc_key_exists pid_to_children "$ppid"
 		then
-			assoc_set pid_to_children $ppid ""
+			assoc_set pid_to_children "$ppid" ""
 		fi
 		pid_to_children[$ppid]="${pid_to_children[$ppid]} $pid"
 	done
@@ -35,17 +35,17 @@ ps -o comm,pid,ppid --no-headers -e | grep -v defunct | (
 		local pid=$1
 		local depth=$2
 		local comm=${pid_to_comm[$pid]}
-		local width=$(($depth * 8 ))
+		local width=$(( depth * 8 ))
 		printf "%${width}s%s\n" "" "${comm}($pid)"
 		depth=$((depth+1))
-		if ! assoc_key_exists pid_to_children $pid
+		if ! assoc_key_exists pid_to_children "$pid"
 		then
-			assoc_set pid_to_children $pid ""
+			assoc_set pid_to_children "$pid" ""
 		fi
 		local children=${pid_to_children[$pid]}
 		for x in $children
 		do
-			print $x $depth
+			print "$x" "$depth"
 		done
 	}
 	print 1 0
