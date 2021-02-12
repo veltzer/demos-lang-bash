@@ -1,9 +1,11 @@
-#!/bin/bash -ue
+#!/bin/bash -u
 
 # This is an example of how to make bash stricter.
-# The "-e" flag above makes bash stop after the first command
+# The "set -e" (or setting -e at the shbang)
+# makes bash stop after the first command
 # returns an error code
 
+set -e
 echo "hello"
 false
 echo "goodbye"
