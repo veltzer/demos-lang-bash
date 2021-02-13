@@ -2,12 +2,34 @@
 
 # This is an example of how to do multi line comments in bash.
 # The result? the <<'FOO'... FOO idiom seems to be the best.
+#
 # References:
 # - http://www.cyberciti.biz/faq/bash-comment-out-multiple-line-code/
 # - https://unix.stackexchange.com/questions/37411/multiline-shell-script-comments-how-does-this-work
 
+function check() {
+	local a=$1
+	local val=$2
+	local name=$3
+	local exit_code=$4
+	if [[ "$a" -ne $val ]]
+	then
+		echo "${name}: not evaulated"
+	else
+		echo "${name}: evaluated"
+	fi
+	if [[ "$exit_code" -ne 0 ]]
+	then
+		echo "${name}: doesn't have 0 exit code"
+	else
+		echo "${name}: has 0 exit code"
+	fi
+
+}
+
 false
 
+# shellcheck disable=SC2188
 <<COMMENT
 
 - evaluates the content of the comment (bad)
@@ -21,11 +43,11 @@ $$foo (single $ will cause an error, bad)
 ${a=5} (evaluated, bad)
 
 COMMENT
-
-echo $a, $?
+check $a 5 "first version" $?
 
 false
 
+# shellcheck disable=SC2016
 : '
 
 - wont evaluate the content of the comment (good)
@@ -37,7 +59,7 @@ $foo (no error, good)
 ${a=6} (not evaluated, good)
 
 '
-echo $a, $?
+check $a 6 "second version" $?
 
 false
 
@@ -52,11 +74,12 @@ $foo (no error, good)
 ${a=7} (not evaluated, good)
 
 COMMENT
+check $a 7 "third version" $?
 
-echo $a, $?
 
 false
 
+# shellcheck disable=SC2188
 <<'COMMENT'
 
 - wont evaluate the content of the comment (good)
@@ -68,8 +91,7 @@ $foo (no error, good)
 ${a=8} (not evaluated, good)
 
 COMMENT
-
-echo $a, $?
+check $a 8 "fourth version" $?
 
 false
 
@@ -81,5 +103,4 @@ false
 #
 # $foo (no error, good)
 # ${a=8} (not evaluated, good)
-
-echo $a, $?
+check $a 8 "fifth version" $?
