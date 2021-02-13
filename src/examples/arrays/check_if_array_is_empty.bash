@@ -13,27 +13,15 @@ array_with_elements=(
 array_without_elements=(
 )
 
-if [ ${#array_with_elements[@]} -eq 0 ]
+if [ "${#array_with_elements[@]}" -eq 0 ]
 then
 	echo "array is empty"
 else
 	echo "array is not empty"
 fi
-if [ ${#array_without_elements[@]} -eq 0 ]
+if [ "${#array_without_elements[@]}" -eq 0 ]
 then
 	echo "array is empty"
 else
 	echo "array is not empty"
-fi
-if [[ "${array_with_elements[@]}" ]]
-then
-	echo "array is not empty"
-else
-	echo "array is empty"
-fi
-if [[ "${array_without_elements[@]}" ]]
-then
-	echo "array is not empty"
-else
-	echo "array is empty"
 fi

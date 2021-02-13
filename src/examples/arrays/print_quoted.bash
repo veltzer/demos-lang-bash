@@ -15,5 +15,5 @@ my_array=(
 printf -v my_var "'%s' " "${my_array[@]}"
 echo "my_var is [$my_var]"
 
-my_var="${my_array[@]@Q}"
+my_var="${my_array[*]@Q}"
 echo "my_var is [$my_var]"

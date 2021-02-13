@@ -8,7 +8,7 @@
 #!/bin/bash
 
 array=(item1 item2 item3)
-for index in ${!array[@]}
+for index in "${!array[@]}"
 do
-	echo $index/${#array[@]}
+	echo "$index/${#array[@]}"
 done
