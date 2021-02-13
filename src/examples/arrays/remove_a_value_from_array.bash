@@ -13,7 +13,7 @@ function remove_value() {
 	new_array=()
 	for current_value in "${array[@]}"
 	do
-		if [ $current_value != "$value" ]
+		if [ "$current_value" != "$value" ]
 		then
 			new_array+=("$current_value")
 		fi
