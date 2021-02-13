@@ -24,14 +24,14 @@ do
 	if [ "$i" -ge "${#z[@]}" ]
 	then
 		echo -e "\tERROR inedx too large [$i] [${#z[@]}] [$elem]"
-		let "i=i+1"
+		((i++))
 		continue
 	fi
 	if [ "$elem" != "${z[$i]}" ]
 	then
 		echo -e "\tERROR [$elem] != [${z[$i]}]"
 	fi
-	let "i=i+1"
+	((i++))
 done
 if [ "$i" -ne 3 ]
 then
@@ -45,14 +45,14 @@ do
 	if [ "$i" -ge "${#z[@]}" ]
 	then
 		echo -e "\tERROR inedx too large [$i] [${#z[@]}] [$elem]"
-		let "i=i+1"
+		((i++))
 		continue
 	fi
 	if [ "$elem" != "${z[$i]}" ]
 	then
 		echo -e "\tERROR [$elem] != [${z[$i]}]"
 	fi
-	let "i=i+1"
+	((i++))
 done
 if [ "$i" -ne 3 ]
 then
@@ -66,14 +66,14 @@ do
 	if [ "$i" -ge "${#z[@]}" ]
 	then
 		echo -e "\tERROR inedx too large [$i] [${#z[@]}] [$elem]"
-		let "i=i+1"
+		((i++))
 		continue
 	fi
 	if [ "$elem" != "${z[$i]}" ]
 	then
 		echo -e "\tERROR [$elem] != [${z[$i]}]"
 	fi
-	let "i=i+1"
+	((i++))
 done
 if [ "$i" -ne 3 ]
 then
@@ -87,14 +87,14 @@ do
 	if [ "$i" -ge "${#z[@]}" ]
 	then
 		echo -e "\tERROR inedx too large [$i] [${#z[@]}] [$elem]"
-		let "i=i+1"
+		((i++))
 		continue
 	fi
 	if [ "$elem" != "${z[$i]}" ]
 	then
 		echo -e "\tERROR [$elem] != [${z[$i]}]"
 	fi
-	let "i=i+1"
+	((i++))
 done
 if [ "$i" -ne 3 ]
 then
@@ -108,14 +108,14 @@ do
 	if [ "$i" -ge "${#z[@]}" ]
 	then
 		echo -e "\tERROR inedx too large [$i] [${#z[@]}] [$elem]"
-		let "i=i+1"
+		((i++))
 		continue
 	fi
 	if [ "$elem" != "${z[$i]}" ]
 	then
 		echo -e "\tERROR [$elem] != [${z[$i]}]"
 	fi
-	let "i=i+1"
+	((i++))
 done
 if [ "$i" -ne 3 ]
 then
