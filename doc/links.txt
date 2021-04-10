@@ -5,3 +5,6 @@ beginners guide:
 
 excellent advanced bash guide:
 	http://tldp.org/LDP/abs/html/index.html
+
+globbing patterns:
+	https://linuxhint.com/bash_globbing_tutorial/
