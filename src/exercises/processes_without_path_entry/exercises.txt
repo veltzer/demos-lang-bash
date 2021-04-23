@@ -1,0 +1,14 @@
+find all currently running processes which do not have a certain folder in their path.
+
+For instance:
+$ sudo ./solution /usr/bin
+will show all currently running processess which do not have "/usr/bin" in their PATH evironment variable.
+
+Hints:
+* all processes are reprented as files with numerical names in /proc. For instance process 100 is the folder /proc/100.
+* all processes related foldres have a file called 'environ' in them, with all of their environment variables.
+	these are of the form "NAME=value" and are seperated by the null character (0).
+	You must find a way to separate these out.
+* you can get all processes on the current system in two ways:
+	* run "ps -ef" and take the column id
+	* get all folders in /proc which have a numerical name (and use =~ to make sure they are numerical).
