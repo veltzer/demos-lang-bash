@@ -1,0 +1,15 @@
+
+Write a script that shows a file in a tabular format.
+Here is an example of a file:
+=========>8=============
+Mark Python 8
+Doron Java 5
+=========>8=============
+The output should be like this:
+Mark    Python  8
+Doron   Java    5
+Note that the output is totally tabular and each column is 8 characters wide.
+What do you need to do?
+Read the values in the original table and "pad" them with spaces so that each entry
+will be 8 characters wide.
+Dont worry about entries which are more than 7 characters wide, there will be no entires like that.
