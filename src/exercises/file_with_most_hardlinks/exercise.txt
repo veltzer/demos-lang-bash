@@ -18,8 +18,14 @@ Change: 2021-05-01 01:14:14.680203053 +0300
 folders have hardlinks too! Here is an example:
 $ ls -ld /etc/init.d
 drwxr-xr-x 2 root root 4096 Jun 18 19:52 /etc/init.d
+	   |
+           ---------  This is the hardlink of the folder
 
 The "-d" flag tells ls to show information about the folder instead of showing what is within the folder.
 
 Write a script to find the folder with the most hardlinks in /etc. Use ls or stat (whichever is more convenient for you)
 Don't worry about folders you can't access, You can dis-regard all of those.
+
+Hints:
+- if you want find(1) to work with an expression you can do:
+	$ find [folder] \( expr1 -or/-and/... expr2 \) ....
