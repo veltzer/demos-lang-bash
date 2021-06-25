@@ -6,7 +6,7 @@
 # NOTES:
 # - for i in {$min..$max} when 'min' and 'max' are variables does not work.
 # you can use seq(1) instead (see below). The problem with the seq(1) approach
-# is that it is not efficient as it actually generates all the number
+# is that it is not efficient as it actually generates all the numbers
 # in advance.
 
 # forward
