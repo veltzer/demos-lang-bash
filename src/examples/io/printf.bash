@@ -13,10 +13,10 @@
 #	printf -v t ...
 # and the second way is better because it does not invoke a subshell.
 
-let "x=100"
+((x=100))
 while [[ $x -gt 0 ]]
 do
-	printf "%06d\r" $x
-	let "x=x-1"
+	printf "%06d\r" "$x"
+	((x=x-1))
 	sleep 1
 done

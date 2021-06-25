@@ -6,10 +6,10 @@
 # runs in a subshell. in the second example the while loop is the
 # first command and so runs in the shell proper.
 
-let "numlines=0"
+((numlines=0))
 dpkg --list | while IFS= read -r line
 do
-	let "numlines+=1"
+	((numlines+=1))
 	printf '%s\n' "$line"
 done
 

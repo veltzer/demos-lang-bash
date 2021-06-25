@@ -12,7 +12,7 @@ echo "running sleep 10 in the background..."
 sleep 10 &
 PID10=$!
 echo "the pid of 10 is $PID10..."
-let "x=20"
+((x=20))
 while [[ $x -gt 0 ]]
 do
 	sleep 1

@@ -17,8 +17,8 @@ sleep 5 &
 PID=$!
 echo "the pid is [$PID]..."
 
-let "x=0"
-while [[ true ]]
+((x=0))
+while true
 do
-	let "x=x+1"
+	((x=x+1))
 done

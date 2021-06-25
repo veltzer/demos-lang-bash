@@ -7,10 +7,10 @@
 # pattern
 # Can you do the following with xargs(1)?
 
-let "x=0"
+((x=0))
 IFS=" "
-while read line
+while read -r line
 do
-	let "x=x+line"
+	((x=x+line))
 done <<< $(seq 10)
-echo $x
+echo "$x"

@@ -6,10 +6,10 @@
 # note the spaces printed to compensate for numbers with large number of digits
 # turning into small number of digits.
 
-let "x=100"
+((x=100))
 while [[ $x -gt 0 ]]
 do
 	echo -en "$x    \r"
-	let "x=x-1"
+	((x=x-1))
 	sleep 1
 done

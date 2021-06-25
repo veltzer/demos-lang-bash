@@ -10,7 +10,7 @@ echo ${filename%.*}
 # very easy, return everything aside from everything after the first dot (could be dangerous)
 echo ${filename%%.*}
 # very cumbersome and you need to know the suffix
-echo $(dirname $filename)/$(basename $filename .tar.gz)
+echo "$(dirname $filename)/$(basename $filename .tar.gz)"
 # get the basename first and only then remove everything from the first dot onward
 e_basename=${filename##*/}
 e_dirname=${filename%/*}
