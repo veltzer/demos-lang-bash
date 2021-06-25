@@ -12,4 +12,4 @@ str='one two one three one'
 
 removed="${str//one/}"
 
-echo $removed
+echo "$removed"

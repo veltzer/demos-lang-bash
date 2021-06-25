@@ -8,9 +8,9 @@
 # References:
 # - http://stackoverflow.com/questions/15429330/how-to-specify-a-multi-line-shell-variable
 
-read -d '' sql << EOF
+read -r -d '' sql << EOF
 select c1, c2 from foo
 where c1='something'
 EOF
 
-echo $sql
+echo "$sql"
