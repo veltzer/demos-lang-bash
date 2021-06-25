@@ -22,18 +22,25 @@
 # Play around with it until you find the right flags.
 
 # best
+# shellcheck disable=SC2006,2009
 pid1=`ps -e -L -o comm,pid | grep "^init " | tr -s " " | cut -d " " -f 2`
 # not the best
+# shellcheck disable=SC2006,2009
 pid2=`ps -e -L -o cmd,pid | grep "^/sbin/init " | tr -s " " | cut -d " " -f 2`
 # flakey
+# shellcheck disable=SC2006,2009
 pid3=`ps -e -L -o cmd,pid | grep "/sbin/init" | grep -v grep | tr -s " " | cut -d " " -f 2`
 # real flakey
+# shellcheck disable=SC2006,2009
 pid4=`ps -eL | grep " init$" | tr -s " " | cut -d " " -f 3`
 # really really flakey
+# shellcheck disable=SC2006,2009
 pid5=`ps -eL | grep " init" | tr -s " " | cut -d " " -f 3`
 # absolutely nuts
+# shellcheck disable=SC2006,2009
 pid6=`ps -eL | grep " init" | grep -v grep | tr -s " " | cut -d " " -f 3`
 # great
+# shellcheck disable=SC2006
 pid7=`pidof init`
 
 echo "pid1 is $pid1"

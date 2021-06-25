@@ -6,6 +6,7 @@
 # - http://stackoverflow.com/questions/5195607/checking-bash-exit-status-of-several-commands-efficiently
 
 false
+# shellcheck disable=SC2181
 if [ $? -ne 0 ]
 then
 	echo "command which should fail failed"
@@ -13,6 +14,7 @@ else
 	echo "command which should fail succeeded"
 fi
 true
+# shellcheck disable=SC2181
 if [ $? -ne 0 ]
 then
 	echo "command which should succeed failed"

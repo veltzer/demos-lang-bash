@@ -10,4 +10,4 @@ then
 	echo "yes, the file [$tfile] is there"
 fi
 
-rm $tfile
+rm "$tfile"
