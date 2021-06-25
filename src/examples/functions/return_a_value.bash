@@ -71,7 +71,7 @@ echo "now via return via var but in a subshell"
 $(return_via_var)
 if [ -z "$var" ]
 then
-	echo "yes, var is undefined" 
+	echo "yes, var is undefined"
 fi
 
 echo "now via return via user var without subshell"

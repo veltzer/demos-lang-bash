@@ -4,7 +4,9 @@
 # thw WRONG WAY!!!
 # note that this way breaks up arguments which are passed as one.
 # example: script x y with do x and y together.
+# This is also a warning from shellcheck
 
+# shellcheck disable=SC2068
 for x in $@
 do
 	echo $x

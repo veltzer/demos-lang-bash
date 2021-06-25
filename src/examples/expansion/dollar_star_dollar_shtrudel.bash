@@ -5,7 +5,7 @@
 # The four candidates are:
 # - "$@"
 # - $@
-# - $* 
+# - $*
 # - "$*"
 # This example clearly shows that only the first one is the correct choice.
 
@@ -31,7 +31,7 @@ function up2() {
 	then
 		echo "problem"
 	fi
-	count \$\@ $@
+	count \$\@ "$@"
 }
 
 function up3() {

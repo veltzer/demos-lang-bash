@@ -1,6 +1,6 @@
 #!/bin/bash -u
 
-# This example shows how to read some string and turn it into an array 
+# This example shows how to read some string and turn it into an array
 # variable in bash.
 #
 # References:
@@ -22,7 +22,7 @@ done <<< "$data "
 echo $?
 declare -p my_array_2
 
-# using one line read 
+# using one line read
 read -r -a my_array_3 <<< "$data"
 echo $?
 declare -p my_array_3

@@ -6,7 +6,7 @@
 # it always returns 0 as a return value. So you can't just run regular
 # commands under times since their return value will be lost
 # - Another problem with this approach is that 'times' has a bad interaction
-# with processes 
+# with processes
 
 function bad() {
 	return 1

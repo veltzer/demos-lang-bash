@@ -28,7 +28,7 @@ time ls -l
 time real_long_time
 
 # this is the default way to use time with a block of code
-time { 
+time {
 	real_long_time
 	real_long_time
 }
@@ -41,12 +41,12 @@ time real_long_time
 TIMEFORMAT=''
 time real_long_time
 
-# caputure the time it took
+# capture the time it took
 # The problem with this approach is that the function that is run by time
 # is now in a subshell (because of the $ surrounding it which creates a subshell)
 # and therefore the function cannot change any environment variable and so it's
 # in effect running in a different mode than the regular one.
 TIMEFORMAT='%R'
-t=$((time real_long_time) 2>&1)
+t=$( (time real_long_time) 2>&1)
 echo $?
 echo "t is [$t]"

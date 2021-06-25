@@ -6,7 +6,7 @@
 # - time is a shell keyword although there is also an executable (/usr/bin/time)
 # to back it up if it is missing.
 # - this means that 'time' should be fast.
-# - 'time' executes in the same shell (see proof below) 
+# - 'time' executes in the same shell (see proof below)
 # - the problem with time is that it is hard to get the output from time
 # (see below) and this also requires running a subshell.
 #

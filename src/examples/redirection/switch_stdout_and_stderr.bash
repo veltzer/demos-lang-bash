@@ -8,5 +8,5 @@
 
 echo we will now see errors instead of output
 find /etc 2> /dev/null 3>&2 2>&1 1>&3 | head
-echo simpler 
+echo simpler
 find /etc 2>&1 1> /dev/null | head

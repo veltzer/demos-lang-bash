@@ -33,14 +33,14 @@ function oo_set_attr() {
 	local __obj_name=$1
 	local attr=$2
 	local value=$3
-	eval "$__obj_name['$attr']='$value'"
+	eval "${__obj_name}['$attr']='$value'"
 }
 
 function oo_get_attr() {
 	local __obj_name=$1
 	local __var_name=$2
 	local attr=$3
-	eval "$__var_name=\${$__obj_name['$attr']}"
+	eval "$__var_name=\${${__obj_name}['$attr']}"
 }
 
 function oo_print() {
