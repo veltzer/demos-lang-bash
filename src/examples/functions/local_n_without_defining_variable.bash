@@ -41,7 +41,7 @@ function function_with_pre_declaration() {
 
 function test_it() {
 	function_without_pre_declaration
-	declare -p x 
+	declare -p x
 	function_with_pre_declaration
 	declare -p y
 }
@@ -52,6 +52,6 @@ declare -p x y
 unset x y
 
 function_without_pre_declaration
-declare -p x 
+declare -p x
 function_with_pre_declaration
 declare -p y

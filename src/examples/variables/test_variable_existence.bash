@@ -34,11 +34,11 @@ fi
 unset somevar
 # this should not happen
 if [ "${somevar-}" ]
-then 
+then
 	echo "ERROR"
 fi
 
-if [ ! -z ${unsetvar+x} ]
+if [ ! -z "${unsetvar+x}" ]
 then
 	echo "ERROR"
 fi
@@ -46,7 +46,7 @@ if [ -n "${unsetvar-}" ]
 then
 	echo "ERROR"
 fi
-if [ ! -n ${somevar+x} ]
+if [ ! -n "${somevar+x}" ]
 then
 	echo "ERROR"
 fi

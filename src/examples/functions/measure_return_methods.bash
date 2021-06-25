@@ -108,6 +108,7 @@ function wrap_stack() {
 measure diff_echo wrap_echo 4
 measure diff_ref wrap_ref 4
 measure diff_stack wrap_stack 4
+# shellcheck disable=SC2154
 echo "diff_echo is [$diff_echo]"
 echo "diff_ref is [$diff_ref]"
 echo "diff_stack is [$diff_stack]"

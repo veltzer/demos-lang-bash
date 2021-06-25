@@ -67,5 +67,5 @@ clean_hard:
 $(ALL_STAMP): out/%.stamp: % .shellcheckrc $(ALL_DEP)
 	$(info doing [$@])
 	$(Q)mkdir -p $(dir $@)
-	$(Q)shellcheck --shell=bash --external-sources --source-path="$$HOME" $<
+	$(Q)shellcheck --severity=error --shell=bash --external-sources --source-path="$$HOME" $<
 	$(Q)touch $@

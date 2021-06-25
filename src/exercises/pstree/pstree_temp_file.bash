@@ -41,7 +41,7 @@ do
 	(( "pidnum=pidnum+1" ))
 done
 # restore the file descriptor
-exec 0>&3 
+exec 0>&3
 rm -f $filename
 
 function print_proc {
@@ -52,13 +52,13 @@ function print_proc {
 	# print it and increase the offset
 	local counter
 	echo "$offset$name"
-	offset="  "$offset
+	offset=" $offset"
 	counter=0
 	while [[ $counter -lt $pidnum ]]
 	do
 		local cpid=${INDEX_TO_PID[$counter]}
 		local ppid=${PID_TO_PPID[$cpid]}
-		if [[ $ppid -eq $num ]] 
+		if [[ $ppid -eq $num ]]
 		then
 			print_proc "$cpid" "$offset"
 		fi

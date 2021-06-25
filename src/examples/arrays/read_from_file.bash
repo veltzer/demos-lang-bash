@@ -34,6 +34,6 @@ echo $?
 # shellcheck disable=SC2154
 declare -p my_array_4
 
-IFS=$'\n' read -d '' -r -a my_array_5 < "$filename" 
+IFS=$'\n' read -d '' -r -a my_array_5 < "$filename"
 echo $?
 declare -p my_array_5

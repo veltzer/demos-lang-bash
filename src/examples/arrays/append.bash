@@ -1,7 +1,7 @@
 #!/bin/bash -u
 
 # This is an example of how to append to an array in bash.
-# 
+#
 # NOTES:
 # - if you need to add a new value to the array
 # you must quote the value because if it contains

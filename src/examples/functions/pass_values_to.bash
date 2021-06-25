@@ -36,8 +36,8 @@ function func5 {
 	echo "arg is [$arg]"
 }
 
-func1 "hello  world"
-func2 "hello  world"
-func3 "hello  world"
-func4 "hello  world"
-func5 "hello  world"
+func1 "hello world"
+func2 "hello world"
+func3 "hello world"
+func4 "hello world"
+func5 "hello world"

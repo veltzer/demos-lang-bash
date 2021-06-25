@@ -10,4 +10,4 @@ fi
 must_pass_param=$1
 echo "must_pass_param is $must_pass_param"
 shift
-./count_them.bash $@
+./count_them.bash "$@"

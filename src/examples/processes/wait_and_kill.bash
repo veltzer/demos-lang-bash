@@ -44,7 +44,7 @@ process two &
 pidtwo=$!
 
 sleep 2
-trap signal1 SIGINT TERM 
+trap signal1 SIGINT TERM
 kill -s SIGINT $$
 
 process one &
@@ -53,7 +53,7 @@ process two &
 pidtwo=$!
 
 sleep 2
-trap signal2 SIGINT TERM 
+trap signal2 SIGINT TERM
 kill -s SIGINT $$
 
 process one &
@@ -62,5 +62,5 @@ process two &
 pidtwo=$!
 
 sleep 2
-trap signal3 SIGINT TERM 
+trap signal3 SIGINT TERM
 kill -s SIGINT $$

@@ -19,7 +19,7 @@ do
 			x3s=(${x3//,/ })
 			${x1s[0]} | ${x2s[0]} | ${x3s[0]}
 			res=$?
-			echo "${x1s[1]}${x2s[1]}${x3s[1]} -> $res" 
+			echo "${x1s[1]}${x2s[1]}${x3s[1]} -> $res"
 		done
 	done
 done

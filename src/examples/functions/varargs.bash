@@ -30,7 +30,7 @@ function add_all_args {
 
 progname=$0
 function myecho {
-	echo $progname $@
+	echo "$progname" "$@"
 }
 
 # this function return an error. Not by an explicit statement

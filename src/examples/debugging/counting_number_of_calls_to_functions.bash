@@ -3,8 +3,8 @@
 # counting numbers of calls to functions
 
 # no need for this initialisation
-# FUNCS=()
-# CALLS=()
+FUNCS=()
+CALLS=()
 
 function find_func {
 	local name=$1
@@ -17,8 +17,8 @@ function find_func {
 		fi
 	done
 	newloc=${#FUNCS}
-	$FUNCS[$newloc]=$name
-	$CALLS[$newloc]=0
+	FUNCS[$newloc]=$name
+	CALLS[$newloc]=0
 	return $newloc
 }
 
@@ -26,7 +26,7 @@ function increase_calls {
 	local curr=${FUNCNAME[1]}
 	find_func $curr
 	local location=$?
-	$CALLS[$location]++
+	CALLS[$location]++
 }
 
 function print_calls {

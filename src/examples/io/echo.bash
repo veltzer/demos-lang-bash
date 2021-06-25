@@ -9,7 +9,7 @@
 ((x=100))
 while [[ $x -gt 0 ]]
 do
-	echo -en "$x    \r"
+	echo -en "$x \r"
 	((x=x-1))
 	sleep 1
 done

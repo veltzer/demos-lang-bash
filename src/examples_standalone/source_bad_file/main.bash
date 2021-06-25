@@ -11,7 +11,7 @@
 # that I can think of:
 #	- the syntax of the sourced file is bad
 #	- the source file returns an error (the last command
-# of the sourced file is bad or 
+# of the sourced file is bad or
 
 echo "before bad_syntax"
 result=0

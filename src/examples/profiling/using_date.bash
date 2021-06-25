@@ -7,7 +7,7 @@
 # shell and not in a subshell.
 # - the solution does not change what the function outputs.
 # References:
-# - https://unix.stackexchange.com/questions/12068/how-to-measure-time-of-program-execution-and-store-that-inside-a-variable 
+# - https://unix.stackexchange.com/questions/12068/how-to-measure-time-of-program-execution-and-store-that-inside-a-variable
 
 function real_long_time() {
 	local x=0

@@ -20,7 +20,7 @@ done < <(for x in {2..20..3}; do echo "$x"; done)
 echo $?
 declare -p my_array_2
 
-# using one line read 
+# using one line read
 IFS=$'\n' read -r -d '' -a my_array_3 < <(for x in {2..20..3}; do echo "$x"; done && printf '\0' )
 echo $?
 declare -p my_array_3

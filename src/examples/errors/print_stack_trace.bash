@@ -5,7 +5,7 @@
 #
 # References:
 # - http://wiki.bash-hackers.org/commands/builtin/caller
- 
+
 die() {
 	local frame=0
 	while caller $frame
@@ -15,9 +15,9 @@ die() {
 	echo "$*"
 	exit 1
 }
- 
+
 f1() { die "*** an error occured ***"; }
 f2() { f1; }
 f3() { f2; }
- 
+
 f3

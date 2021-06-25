@@ -10,6 +10,6 @@ my_array=()
 my_array+=('foo')
 my_array+=('bar')
 
-my_array=('first' "${my_array[@]}") 
+my_array=('first' "${my_array[@]}")
 
 echo "${my_array[@]}"

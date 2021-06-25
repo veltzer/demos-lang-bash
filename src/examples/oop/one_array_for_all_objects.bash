@@ -37,7 +37,7 @@ function get_attr() {
 }
 
 function print_all() {
-	for key in ${!_object_attrs[@]}
+	for key in "${!_object_attrs[@]}"
 	do
 		echo $key ${_object_attrs[$key]}
 	done
