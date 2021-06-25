@@ -25,12 +25,14 @@ else
 fi
 a=true
 b=false
+# shellcheck disable=SC2166
 if [ $a = true -a $b = true ]
 then
 	echo "a -a b is true"
 else
 	echo "a -a b is false"
 fi
+# shellcheck disable=SC2166
 if [ $a = true -o $b = true ]
 then
 	echo "a -o b is true"

@@ -11,3 +11,6 @@
 
 # Allow using `which` since it gives full paths and is common enough
 # disable=SC2230
+
+# array unused warnings
+disable=SC2034

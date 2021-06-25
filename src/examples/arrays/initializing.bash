@@ -20,23 +20,24 @@
 source src/includes/array.bashinc
 
 # declare an array (it will be empty)
-declare -a my_array1
+declare -xa my_array1
 array_print my_array1
 
 # declare an array and put data
-declare -a my_array2[0]="0 value"
-declare -a my_array2[1]="1 value"
-declare -a my_array2[2]="2 value"
+declare -xa my_array2[0]="0 value"
+declare -xa my_array2[1]="1 value"
+declare -xa my_array2[2]="2 value"
 array_print my_array2
 
 # declare an array and then assign
-declare -a my_array3
+declare -xa my_array3
 my_array3[0]="0 value"
 my_array3[1]="1 value"
 my_array3[2]="2 value"
 array_print my_array3
 
 # just assign multiple values
+# shellcheck disable=SC2034
 my_array4=("0 value" "1 value" "2 value")
 array_print my_array4
 
@@ -58,10 +59,10 @@ array_print my_array6
 
 echo "assign from variable"
 my_var="0 value 1 value 2 value"
-my_array7=($my_var)
+my_array7=("$my_var")
 array_print my_array7
 
 echo "assign from variable (one value)"
 my_var="one_value"
-my_array8=($my_var)
+my_array8=("$my_var")
 array_print my_array8

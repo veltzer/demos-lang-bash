@@ -14,9 +14,9 @@
 filename="data/list_of_values.txt"
 
 my_array=()
-while read F
+while read -r F
 do
-	my_array+=($F)
+	my_array+=("$F")
 done < "$filename"
 echo $?
 declare -p my_array
@@ -29,8 +29,9 @@ mapfile -t my_array_3 < "$filename"
 echo $?
 declare -p my_array_3
 
-read -a my_array_4 -d $'\n' < "$filename"
+read -r -a my_array_4 -d $'\n' < "$filename"
 echo $?
+# shellcheck disable=SC2154
 declare -p my_array_4
 
 IFS=$'\n' read -d '' -r -a my_array_5 < "$filename" 

@@ -12,5 +12,5 @@ prefix='hel'
 no_prefix=${str#$prefix}
 no_suffix=${str%$suffix}
 
-echo $no_prefix
-echo $no_suffix
+echo "$no_prefix"
+echo "$no_suffix"
