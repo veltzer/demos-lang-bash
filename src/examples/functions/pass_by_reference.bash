@@ -14,20 +14,20 @@
 source src/includes/array.bashinc
 
 function using_eval() {
-	local var=$1
+	local var1=$1
 	local value=$2
-	eval "$var=$value"
+	eval "$var1=$value"
 }
 
 function using_minus_n() {
-	local -n var=$1
+	local -n var2=$1
 	local value=$2
-	var=$value
+	var2=$value
 }
 
 function array_with_minus_n() {
-	local -n var=$1
-	var=(1 2 3)
+	local -n var3=$1
+	var3=(1 2 3)
 }
 
 a=5
@@ -59,9 +59,9 @@ then
 	echo "ERROR 4"
 fi
 
-var=9
-using_minus_n var 10
-if [ "$var" != 10 ]
+my_array=9
+using_minus_n my_array 10
+if [ "$my_array" != 10 ]
 then
 	echo "ERROR 5"
 fi
