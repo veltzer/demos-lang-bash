@@ -6,6 +6,9 @@
 # of the command line is going to be passed as ONE argument to the program activated.
 # - environment and shell variables which are mentioned inside the double quoted are
 # ARE NOT going to be interpolated.
+#
+# References:
+# - https://www.shellscript.sh/escape.html
 
 # This is passed as one argument
 echo 'Hello, World!'

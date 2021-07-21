@@ -8,6 +8,9 @@
 # ARE going to be interpolated.
 # - if you want these variables not to be interpolated, put a backslash before the '$'
 # sign
+#
+# References:
+# - https://www.shellscript.sh/escape.html
 
 # This is passed as one argument
 echo "Hello, World!"
