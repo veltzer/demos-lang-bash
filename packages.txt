@@ -4,3 +4,4 @@ mawk
 bash
 shellcheck
 dialog
+whiptail
