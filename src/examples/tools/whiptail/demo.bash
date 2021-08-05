@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Demo of check list using whiptail
+# https://gist.githubusercontent.com/ictlyh/b2eb85b80b20d2e2f91d5b7c44e07d6a/raw/2f213f0a94452a9c5c84b2b5debc62e5e8c45746/whiptail-demo.sh
 
 whiptail --title "Check list example" --checklist \
 "Choose user's permissions" 20 78 4 \
