@@ -10,4 +10,5 @@
 read -p "What is your name: " name
 echo "your name is $name"
 
+# ask the user to press any key
 read -n 1 -p "press any key" -s
