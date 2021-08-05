@@ -3,3 +3,4 @@ gawk
 mawk
 bash
 shellcheck
+dialog
