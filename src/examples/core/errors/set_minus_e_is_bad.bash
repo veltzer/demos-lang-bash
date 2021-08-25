@@ -1,6 +1,8 @@
 #!/bin/bash -u
 
 # This example shows why "set -e" or -e at the shbang line are bad for you
+# It turns out that the specific example presented here actually works well
+# and does not prove that -e is bad for you.
 #
 # References:
 # - http://mywiki.wooledge.org/BashFAQ/105
