@@ -5,15 +5,9 @@ import config.general
 project_github_username = "veltzer"
 project_name = "demos-bash"
 github_repo_name = project_name
-project_website = "https://{project_github_username}.github.io/{project_name}".format(
-    **locals()
-)
-project_website_source = "https://github.com/{project_github_username}/{project_name}".format(
-    **locals()
-)
-project_website_git = "git://github.com/{project_github_username}/{project_name}.git".format(
-    **locals()
-)
+project_website = f"https://{project_github_username}.github.io/{project_name}"
+project_website_source = f"https://github.com/{project_github_username}/{project_name}"
+project_website_git = f"git://github.com/{project_github_username}/{project_name}.git"
 project_website_download_ppa = "https://launchpanet/~mark-veltzer/+archive/ubuntu/ppa"
 project_website_download_src = project_website_source
 # noinspection SpellCheckingInspection
@@ -51,7 +45,7 @@ project_classifiers = [
 ]
 
 project_data_files = []
-# project_data_files.append(templar.utils.hlp_files_under('/usr/bin', 'src/*'))
+# project_data_files.append(templar.utils.hlp_files_under("/usr/bin", "src/*"))
 
 project_copyright_years = ", ".join(
     map(str, range(int(project_year_started), datetime.datetime.now().year + 1))
@@ -64,13 +58,13 @@ else:
     )
 
 project_google_analytics_snipplet = """<script type="text/javascript">
-(function(i,s,o,g,r,a,m){{i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){{
+(function(i,s,o,g,r,a,m){{i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){{
 (i[r].q=i[r].q||[]).push(arguments)}},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-}})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+}})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");
 
-ga('create', '{0}', 'auto');
-ga('send', 'pageview');
+ga("create", "{0}", "auto");
+ga("send", "pageview");
 
 </script>""".format(
     project_google_analytics_tracking_id
