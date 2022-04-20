@@ -1,4 +1,3 @@
-import datetime
 import pyclassifiers.values
 import config.general
 
@@ -48,7 +47,7 @@ project_data_files = []
 # project_data_files.append(templar.utils.hlp_files_under("/usr/bin", "src/*"))
 
 project_copyright_years = ", ".join(
-    map(str, range(int(project_year_started), datetime.datetime.now().year + 1))
+    map(str, range(int(project_year_started), config.general.current_year + 1))
 )
 if str(config.general.current_year) == project_year_started:
     project_copyright_years_short = config.general.current_year
