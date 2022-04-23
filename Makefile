@@ -38,6 +38,7 @@ endif # DO_CHECK_SYNTAX
 #########
 .PHONY: all
 all: $(ALL)
+	@true
 
 tools.stamp: config/deps.py
 	$(info doing [$@])
