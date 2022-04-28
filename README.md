@@ -1,7 +1,8 @@
 
 # *demos-bash* project by Mark Veltzer
 
-![make](https://github.com/veltzer/demos-bash/workflows/make/badge.svg)![lint](https://github.com/veltzer/demos-bash/workflows/lint/badge.svg)
+![make](https://github.com/veltzer/demos-bash/workflows/make/badge.svg)
+
 
 demos for the bash programming language
 
