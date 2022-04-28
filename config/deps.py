@@ -1,0 +1,9 @@
+packages=[
+    'ksh',
+    'gawk',
+    'mawk',
+    'bash',
+    'shellcheck',
+    'dialog',
+    'whiptail',
+]
