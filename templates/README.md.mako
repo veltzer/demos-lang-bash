@@ -12,7 +12,7 @@
 	for action_file in action_files:
 		with open(action_file, 'r') as stream:
 			action_name=yaml.safe_load(stream)["name"]
-			context.write(f"![{action_name}](https://github.com/{config.project.project_github_username}/{config.project.project_name}/workflows/{action_name}/badge.svg)")
+			context.write(f"![{action_name}](https://github.com/{config.project.project_github_username}/{config.project.project_name}/workflows/{action_name}/badge.svg)\n")
 %>
 
 ${config.project.project_short_description}
