@@ -42,12 +42,12 @@ all: $(ALL)
 
 tools.stamp: config/deps.py
 	$(info doing [$@])
-	@pymakehelper touch_mkdir $@
+	$(Q)pymakehelper touch_mkdir $@
 
 .PHONY: check
 check:
 	$(info doing [$@])
-	@git grep "<<" src | grep -v "'COMMENT'" | grep -v "<<<" | grep -v multi_line_comment.bash || exit 0
+	$(Q)git grep "<<" src | grep -v "'COMMENT'" | grep -v "<<<" | grep -v multi_line_comment.bash || exit 0
 
 .PHONY: debug
 debug:
