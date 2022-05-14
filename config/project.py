@@ -26,22 +26,6 @@ project_keywords = [
 project_license = "MIT"
 project_year_started = 2015
 project_description = project_short_description
-project_platforms = [
-    "python3",
-]
-project_classifiers = [
-    pyclassifiers.values.DevelopmentStatus__4_Beta,
-    pyclassifiers.values.Environment__Console,
-    pyclassifiers.values.OperatingSystem__OSIndependent,
-    pyclassifiers.values.ProgrammingLanguage__Python,
-    pyclassifiers.values.ProgrammingLanguage__Python__3,
-    pyclassifiers.values.ProgrammingLanguage__Python__3__Only,
-    pyclassifiers.values.ProgrammingLanguage__Python__36,
-    pyclassifiers.values.ProgrammingLanguage__Python__37,
-    pyclassifiers.values.ProgrammingLanguage__Python__38,
-    pyclassifiers.values.Topic__Utilities,
-    pyclassifiers.values.License__OSIApproved__MITLicense,
-]
 
 project_data_files = []
 # project_data_files.append(templar.utils.hlp_files_under("/usr/bin", "src/*"))
