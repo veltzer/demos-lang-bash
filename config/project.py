@@ -1,4 +1,3 @@
-import pyclassifiers.values
 import config.general
 
 project_github_username = "veltzer"
