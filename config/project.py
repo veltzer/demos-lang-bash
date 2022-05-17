@@ -1,4 +1,4 @@
-import config.general
+import pydmt.helpers.signature
 
 project_github_username = "veltzer"
 project_name = "demos-bash"
@@ -8,13 +8,8 @@ project_website_source = f"https://github.com/{project_github_username}/{project
 project_website_git = f"git://github.com/{project_github_username}/{project_name}.git"
 project_website_download_ppa = "https://launchpanet/~mark-veltzer/+archive/ubuntu/ppa"
 project_website_download_src = project_website_source
-# noinspection SpellCheckingInspection
-project_paypal_donate_button_id = "ASPRXR59H2NTQ"
-project_google_analytics_tracking_id = "UA-56436979-1"
-project_short_description = "demos for the bash programming language"
-project_long_description = project_short_description
-# keywords to put on html pages or for search, dont put the name of the project or my details
-# as they will be added automatically...
+project_description_short = "demos for the bash programming language"
+project_description_long = "TBD"
 project_keywords = [
     "click",
     "argparse",
@@ -24,37 +19,6 @@ project_keywords = [
 ]
 project_license = "MIT"
 project_year_started = 2015
-project_description = project_short_description
 
-project_data_files = []
-# project_data_files.append(templar.utils.hlp_files_under("/usr/bin", "src/*"))
-
-project_copyright_years = ", ".join(
-    map(str, range(int(project_year_started), config.general.current_year + 1))
-)
-if str(config.general.current_year) == project_year_started:
-    project_copyright_years_short = config.general.current_year
-else:
-    project_copyright_years_short = f"{project_year_started}-{config.general.current_year}"
-
-project_google_analytics_snipplet = f"""<script type="text/javascript">
-(function(i,s,o,g,r,a,m){{i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){{
-(i[r].q=i[r].q||[]).push(arguments)}},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-}})(window,document,"script","https://www.google-analytics.com/analytics.js","ga");
-
-ga("create", "{project_google_analytics_tracking_id}", "auto");
-ga("send", "pageview");
-
-</script>"""
-
-project_paypal_donate_button_snipplet = f"""<form action="https://www.paypal.com/cgi-bin/webscr"
-    method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="{project_paypal_donate_button_id}">
-<input type="image" src="https://www.paypalobjects.com/en_US/IL/i/btn/btn_donateCC_LG.gif" name="submit"
-alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>"""
-
-codacy_id = None
+project_copyright_years_long = pydmt.helpers.signature.get_copyright_years_long(project_year_started)
+project_copyright_years_short = pydmt.helpers.signature.get_copyright_years_short(project_year_started)
