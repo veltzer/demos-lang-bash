@@ -15,7 +15,7 @@
 			context.write(f"![{action_name}](https://github.com/{config.project.project_github_username}/{config.project.project_name}/workflows/{action_name}/badge.svg)\n")
 %>
 
-${config.project.project_short_description}
+${config.project.project_description_short}
 
 project website: ${config.project.project_website}
 
