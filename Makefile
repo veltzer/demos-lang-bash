@@ -57,7 +57,7 @@ first_line_stats:
 
 .PHONY: clean
 clean:
-	$(Q)rm -f $(ALL_STAMP)
+	$(Q)rm -f $(ALL)
 
 .PHONY: clean_hard
 clean_hard:
@@ -68,6 +68,5 @@ clean_hard:
 ############
 $(ALL_STAMP): out/%.stamp: % .shellcheckrc
 	$(info doing [$@])
-	$(Q)mkdir -p $(dir $@)
 	$(Q)shellcheck --severity=error --shell=bash --external-sources --source-path="$$HOME" $<
-	$(Q)touch $@
+	$(Q)pymakehelper touch_mkdir $@
