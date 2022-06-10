@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -u
 
 # Demo of check list using whiptail
 # https://gist.githubusercontent.com/ictlyh/b2eb85b80b20d2e2f91d5b7c44e07d6a/raw/2f213f0a94452a9c5c84b2b5debc62e5e8c45746/whiptail-demo.sh
@@ -9,7 +9,6 @@ whiptail --title "Check list example" --checklist \
 "NET_INBOUND" "Allow connections from other hosts" OFF \
 "LOCAL_MOUNT" "Allow mounting of local devices" OFF \
 "REMOTE_MOUNT" "Allow mounting of remote devices" OFF
-#!/bin/bash
 
 # Demo of process bar using whiptail
 
@@ -19,7 +18,6 @@ whiptail --title "Check list example" --checklist \
         echo $i
     done
 } | whiptail --gauge "Please wait while we are sleeping..." 6 50 0
-#!/bin/bash
 
 # Demo of input box using whiptail
 
@@ -34,7 +32,6 @@ else
 fi
 
 echo "(Exit status was $exitstatus)"
-#!/bin/bash
 
 # Demo of menu using whiptail
 
@@ -46,7 +43,6 @@ whiptail --title "Menu example" --menu "Choose an option" 20 78 16 \
 "Add Group" "Add a user group to the system." \
 "Modify Group" "Modify a group and its list of members." \
 "List Groups" "List all groups on the system."
-#!/bin/bash
 
 # Demo of password using whiptail
 
