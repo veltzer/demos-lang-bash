@@ -1,6 +1,8 @@
 #!/bin/bash -u
 
 # this is an example of getting a specific number of arguments from the command line.
+# References:
+# - https://stackoverflow.com/questions/18568706/check-number-of-arguments-passed-to-a-bash-script
 
 if [[ "$#" -ne 2 ]]
 then
