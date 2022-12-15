@@ -1,0 +1,21 @@
+
+
+	Find the 5th largest regular file in /etc that has "ab" somewhere
+	in its name.
+
+	I just want the name of the file. Not any other data.
+
+	Commands that you need to use:
+		find
+		xargs
+		ls -l (-S)
+		sort
+		tr
+		cut
+		tail
+		head
+
+	Solution:
+		find /etc -name "*ab*" -and -type f 2> /dev/null | xargs ls -l | sort -n -k 5 | tail -5 | head -1 | tr -s " " | cut -d " " -f 9 
+		find /etc -name "*ab*" -and -type f -exec ls -l {} \; 2> /dev/null | sort -n -k 5 | tail -5 | head -1 | tr -s " " | cut -d " " -f 9
+		find /etc -name "*ab*" -and -type f -exec stat --format "%s %n" {} \; 2> /dev/null | sort -n | tail -5 | head -1 | cut -f 2 -d " "
