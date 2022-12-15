@@ -1,0 +1,19 @@
+	
+
+
+	Find the biggest file (not folder) in /etc
+	What I mean is DIRECTLY UNDER /etc/
+	(if the file is /etc/foo/bar I don't care about it)
+	The result should be ONLY the file name.
+
+	use the following commands:
+	ls -l
+	sort
+	tail/head
+	tr -s
+	cut
+
+solutions:
+	ls -l /etc/ | sort -k 5 -n | tail -1 | tr -s " " | cut -d " " -f 9
+	ls -lS /etc/ | head -2 | tail -1 | tr -s  " " | cut -d " " -f 9
+	ls -lSr /etc/ | tail -1 | tr -s  " " | cut -d " " -f 9

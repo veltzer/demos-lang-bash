@@ -1,0 +1,12 @@
+
+
+extract your full name from /etc/passwd using, at most,
+	two tools:
+	cat, cut, grep
+	Your user id is in the environment variable $UID
+
+solutions:
+	cat /etc/passwd | grep $UID | cut -f 5 -d :
+	cat /etc/passwd | grep :$UID: | cut -f 5 -d :
+	grep $UID /etc/passwd | cut -f 5 -d :
+	grep :$UID: /etc/passwd | cut -f 5 -d :
