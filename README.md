@@ -21,4 +21,4 @@ There are 200 examples so far (as of Jan 2021).
 
 	$ ./src/examples/booleans/booleans.bash
 
-Mark Veltzer, Copyright © 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022
+Mark Veltzer, Copyright © 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023
