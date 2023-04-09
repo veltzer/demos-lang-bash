@@ -1,6 +1,9 @@
 #!/bin/bash -u
 
 # This is an example of how to do long variables in bash
+#
+# References:
+# - https://unix.stackexchange.com/questions/340718/how-do-i-bring-heredoc-text-into-a-shell-script-variable
 
 read_it() {
 	VAR1=$(cat)
