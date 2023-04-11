@@ -4,7 +4,7 @@
 # Notes:
 # - you must collect the return code *right after* the running of the program.
 # This is because any program run after it will change this return code ($?).
-# - if you want to check if a program succeeds it easier since you can just
+# - if you want to check if a program succeeds it's easier since you can just
 # do: if [program].
 #
 # References:
