@@ -1,5 +1,9 @@
-There are 200 examples so far (as of Jan 2021).
+<%!
+    import pydmt.helpers.git
+%>${"##"} number of examples 
+
+Currently there are ${pydmt.helpers.git.count_files("src/**/*.bash")} examples in this repo.
 
 # How to run examples from this repository?
 
-	$ ./src/examples/booleans/booleans.bash
+	$ ./src/examples/core/booleans/booleans.bash
