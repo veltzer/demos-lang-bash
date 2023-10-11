@@ -1,1 +1,1 @@
-complete -C "${PWD}/complete.bash" foo
+complete -C "${PWD}/complete.bash more" foo
