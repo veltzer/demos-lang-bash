@@ -10,6 +10,7 @@
 #
 # References:
 # - https://unix.stackexchange.com/questions/193039/how-to-count-the-length-of-an-array-defined-in-bash
+# - https://www.cyberciti.biz/faq/bash-iterate-array/
 
 # lets define an array
 z=(
