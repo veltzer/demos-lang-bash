@@ -7,5 +7,5 @@
 
 a="foo"
 b="bar"
-c=$a$b
+c="$a$b"
 echo "c is [$c]"
