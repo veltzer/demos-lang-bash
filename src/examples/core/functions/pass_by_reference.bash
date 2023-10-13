@@ -9,7 +9,7 @@
 # to assign to it.
 # - passing the name of the variable and using local -n
 # to receive it.
-# method 2 sounds nicer.
+# the second method is nicer.
 
 source src/includes/array.bashinc
 
