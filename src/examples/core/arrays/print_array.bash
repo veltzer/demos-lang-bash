@@ -7,7 +7,7 @@
 
 my_array=("first value" "second value" "third value")
 
-# these two work the same as far as I can tell
+# these two work the same as far as I can tell, but they leave no space between the elements
 echo "${my_array[@]}"
 echo "${my_array[*]}"
 # the next line does not work, as it only prints the first element of the array
@@ -18,7 +18,7 @@ for elem in "${my_array[@]}"
 do
 	echo "$elem"
 done
-# another way
-printf '%s\n' "${my_array[@]}"
-# another suggestion
+echo "with printf"
+printf "%s\n" "${my_array[@]}"
+echo "with IFS"
 ( IFS=$'\n'; echo "${my_array[*]}" )
