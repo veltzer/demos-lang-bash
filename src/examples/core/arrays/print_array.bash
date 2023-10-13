@@ -22,3 +22,5 @@ echo "with printf"
 printf "%s\n" "${my_array[@]}"
 echo "with IFS"
 ( IFS=$'\n'; echo "${my_array[*]}" )
+echo "print with spaces"
+printf "%s " "${my_array[@]}"
