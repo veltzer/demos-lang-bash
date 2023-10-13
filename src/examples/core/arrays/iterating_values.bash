@@ -11,11 +11,7 @@
 # - https://www.cyberciti.biz/faq/bash-iterate-array/
 
 # lets define an array
-z=(
-"one two"
-"five six"
-"three four"
-)
+z=("one two" "five six" "three four")
 
 # shellcheck disable=SC2016
 echo 'for elem in "${z[@]}"'

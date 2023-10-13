@@ -6,8 +6,8 @@
 # References:
 # - http://tldp.org/LDP/abs/html/arrays.html
 
-array1=( "Vietnam" "Germany" "Argentina" )
-array2=( "Asia" "Europe" "America" )
+array1=("Vietnam" "Germany" "Argentina")
+array2=("Asia" "Europe" "America")
 
 for ((i=0;i<${#array1[@]};++i))
 do

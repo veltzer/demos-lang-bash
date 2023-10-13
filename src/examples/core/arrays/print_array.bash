@@ -5,11 +5,7 @@
 # References:
 # - https://stackoverflow.com/questions/15691942/bash-print-array-elements-on-separate-lines
 
-my_array=(
-	"first value"
-	"second value"
-	"third value"
-)
+my_array=("first value" "second value" "third value")
 
 # these two work the same as far as I can tell
 echo "${my_array[@]}"
