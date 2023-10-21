@@ -5,7 +5,7 @@
 # http://www.ngolde.de/farben2.sh
 
 for attr in 0 1 4 5 7;do
-	echo "----------------------------------------------------------------"
+	echo
 	printf "ESC[%s;Foreground;Background\n" $attr
 	for fore in 30 31 32 33 34 35 36 37
 	do
