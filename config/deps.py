@@ -4,6 +4,9 @@ packages=[
     "mawk",
     "bash",
     "shellcheck",
+    # dialog tools
+    "zenity",
     "dialog",
+    "kdialog",
     "whiptail",
 ]
