@@ -1,6 +1,7 @@
 #!/bin/bash -u
 
 # This is an example of how to remove a string from another string.
+# This method removed all the occurrences and not just the first.
 #
 # TODO:
 # I still need to explain how this works as regard the spaces.
