@@ -6,7 +6,7 @@
 function func {
 	if [ "$#" -ne 2 ]
 	then
-		echo "usage: func <arg1> <arg2>"
+		echo "usage: ${FUNCNAME[0]} <arg1> <arg2>"
 		return
 	fi
 	local arg1="$1"
