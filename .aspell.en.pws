@@ -1,4 +1,4 @@
-personal_ws-1.1 en 994 
+personal_ws-1.1 en 1014 
 AARRR
 ACLs
 ADPlus
@@ -185,6 +185,7 @@ Fi
 FileObserver
 Filesystem
 Finalizer
+FizzBuzz
 Flinn's
 FreeRTOS
 Frontends
@@ -270,6 +271,7 @@ JIT
 JMeter
 JMockit
 JNI
+JPG
 JSON
 JTAG
 JUnit
@@ -372,6 +374,7 @@ OCP
 ODP
 OFDM
 OO
+OOM
 OOP
 OOPs
 ORM
@@ -409,6 +412,7 @@ Parsers
 Pathname
 Pavlik
 Ph
+Phonebook
 PhpStorm
 Pipewire
 Powel
@@ -420,6 +424,7 @@ PrivateLink
 PromQL
 Provisioner
 Provisioners
+Pstree
 Pulseaudio
 PyCharm
 PyQt
@@ -628,6 +633,7 @@ autotools
 awk
 balancer
 balancers
+basename
 bbclass
 benchmarking
 bitbucket
@@ -715,9 +721,12 @@ eventfd
 exe
 executables
 execve
+exitsting
+expr
 extensibility
 facter
 facto
+fd
 fdisk
 fds
 fifo
@@ -744,7 +753,11 @@ gettimeofday
 gitignore
 glibc
 gperf
+hardcode
+hardlink
+hardlinks
 hashSetOf
+homedirs
 hotplug
 icc
 imagePullPolicy
@@ -772,6 +785,7 @@ jQuery
 jdk
 jenkins
 journaled
+jpg
 jprobes
 kdb
 kernelshark
@@ -850,11 +864,14 @@ passwd
 pathspec
 perceptron
 perf
+phonebook
 pid
+pingable
 pipenv
 polymorphism
 popd
 portmapper
+ppid
 pragma
 pre
 prem
@@ -923,6 +940,7 @@ staticcast
 strace
 struct
 stylesheets
+subfolders
 subnets
 sudo
 syllabi
@@ -962,6 +980,7 @@ ui
 unicast
 uniq
 unittest
+unix
 unmangled
 uring
 userspace
@@ -982,6 +1001,7 @@ webhook
 webkit
 weblogic
 webserver
+wget
 wic
 worktree
 worktrees

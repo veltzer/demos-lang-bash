@@ -1,9 +1,9 @@
-# Ping ips
+# Ping IPs
 
-you are given a file with a list of ips
-you script should go over all ips in the file,
+you are given a file with a list of IPs
+you script should go over all IPs in the file,
 pinging each one.
-The script should create a new file with just the ips that were found
+The script should create a new file with just the IPs that were found
 to be pingable.
 
 Hint:

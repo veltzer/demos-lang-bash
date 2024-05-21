@@ -19,14 +19,14 @@ is to be shown).
 in the current phonebook.
 6. update a name - will receive a name, will check that the name is in the current
 phonebook, then will receive a phone number and will update that entry to this phone number.
-7. exit - will exit the applcation with a "success" return code.
+7. exit - will exit the application with a "success" return code.
 
 Technical instructions
 * Use select for the menu.
 * Use exit to exit the application.
-* Use PS3 env var to customize the prompt.
-* Create an empty phonebook if one doesnt exist.
+* Use PS3 environment var to customize the prompt.
+* Create an empty phonebook if one doesn't exist.
 * Only hardcode the name of the phonebook file ONCE in your application.
 * Use case for handling the user input.
-* Use /dev/null to avoid unneccessary output from tools you are using.
+* Use /dev/null to avoid unnecessary output from tools you are using.
 * The phonebook should be stored on the HARD DRIVE.
