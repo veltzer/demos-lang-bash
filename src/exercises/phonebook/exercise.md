@@ -1,3 +1,5 @@
+# Phonebook
+
 Write a phone book application in ksh.
 
 The application should present a menu to the user with the following entries:
@@ -19,12 +21,12 @@ in the current phonebook.
 phonebook, then will receive a phone number and will update that entry to this phone number.
 7. exit - will exit the applcation with a "success" return code.
 
-Technical instructions:
-1. Use select for the menu.
-2. Use exit to exit the application.
-3. Use PS3 env var to customize the prompt.
-4. Create an empty phonebook if one doesnt exist.
-5. Only hardcode the name of the phonebook file ONCE in your application.
-6. Use case for handling the user input.
-7. Use /dev/null to avoid unneccessary output from tools you are using.
-8. The phonebook should be stored on the HARD DRIVE.
+Technical instructions
+* Use select for the menu.
+* Use exit to exit the application.
+* Use PS3 env var to customize the prompt.
+* Create an empty phonebook if one doesnt exist.
+* Only hardcode the name of the phonebook file ONCE in your application.
+* Use case for handling the user input.
+* Use /dev/null to avoid unneccessary output from tools you are using.
+* The phonebook should be stored on the HARD DRIVE.

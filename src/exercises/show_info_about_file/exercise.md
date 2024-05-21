@@ -1,3 +1,5 @@
+# Show info about file
+
 Create a script that receives exactly one argument.
 If that argument is a filename of an exitsting file then the script will print
 the content of the file

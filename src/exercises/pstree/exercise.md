@@ -1,9 +1,13 @@
-Create a pstree like program in ksh.
+# Pstree
+
+Create a `pstree` like program in ksh.
 It should look like this
 
+```txt
 init-+-sshd
      +-apache+apache
      +-syslogd
+```
 
 stage1: Call ps to create a temp file with the data you need
 (program cmd line, pid -> process id, ppid -> parent process id )

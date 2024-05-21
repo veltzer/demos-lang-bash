@@ -1,3 +1,5 @@
+# Common files in tar files
+
 Create two tar files with the following commands:
 $ for x in {a,b,c}; do echo $x > $x; done; tar cf 1.tar {a,b,c}
 $ for x in {b,c,d}; do echo $x > $x; done; tar cf 2.tar {b,c,d}
