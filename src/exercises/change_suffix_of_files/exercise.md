@@ -1,3 +1,5 @@
+# Change suffix of files
+
 Write a bash script that changes all files in the current directory that have the
 suffix ".JPG" to ".jpg"
 
@@ -13,6 +15,9 @@ You can solve this exercise in two ways:
 hints:
 - you may use the basename(1) utility
 - if you want to know if files of pattern A exist then you may use:
-	compgen -G A
-	This will return an exit code indicating whether files that match pattern A
-	exist or don't exist.
+
+```bash
+compgen -G A
+```
+
+* This will return an exit code indicating whether files that match pattern A exist or don't exist.

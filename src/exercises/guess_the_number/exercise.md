@@ -1,3 +1,4 @@
+# Guess the number
 
 Write a script which implements the game "guess the number".
 

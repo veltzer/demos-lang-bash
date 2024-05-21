@@ -1,3 +1,4 @@
+# Check homedirs exist
 
 A unix systems user database is in a file called /etc/passwd where the shell is the last (seventh)
 element and the home directory is the sixth element.
