@@ -18,4 +18,4 @@ Note that the output is totally tabular and each column is 8 characters wide.
 What do you need to do?
 Read the values in the original table and "pad" them with spaces so that each entry
 will be 8 characters wide.
-Dont worry about entries which are more than 7 characters wide, there will be no entires like that.
+Don't worry about entries which are more than 7 characters wide, there will be no entries like that.
