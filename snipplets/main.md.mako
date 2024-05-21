@@ -6,4 +6,6 @@ Currently there are ${pydmt.helpers.git.count_files("src/**/*.bash")} examples i
 
 # How to run examples from this repository?
 
-	$ ./src/examples/core/booleans/booleans.bash
+```bash
+./src/examples/core/booleans/booleans.bash
+```
