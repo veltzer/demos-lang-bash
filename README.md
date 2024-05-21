@@ -21,6 +21,8 @@ Currently there are 240 examples in this repo.
 
 # How to run examples from this repository?
 
-	$ ./src/examples/core/booleans/booleans.bash
+```bash
+./src/examples/core/booleans/booleans.bash
+```
 
 Mark Veltzer, Copyright © 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024
