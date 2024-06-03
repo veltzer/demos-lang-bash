@@ -1,3 +1,5 @@
+- rename solution -> solution.bash to do shellcheck on all solutions.
+
 - make shellcheck pass on all scripts with warning severity
 	we currently only use error severity
 	see the makefile for more details
