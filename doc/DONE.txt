@@ -1,0 +1,1 @@
+- rename solution -> solution.bash to do shellcheck on all solutions.
