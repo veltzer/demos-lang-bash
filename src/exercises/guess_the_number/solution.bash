@@ -2,10 +2,10 @@
 
 num=$((1 + $RANDOM % 100))
 
-attempts=0
+attempts=1
 while true
 do
-	if [ $attempts -eq 5 ]
+	if [ $attempts -gt 5 ]
 	then
 		echo "You lose!"
 		echo $attempts >> attempts.txt
@@ -24,5 +24,5 @@ do
 		echo $attempts >> attempts.txt
 		exit 0
 	fi
-	let "attempts+=1"
+	((++attempts))
 done
