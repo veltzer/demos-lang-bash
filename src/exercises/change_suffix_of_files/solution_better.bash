@@ -13,8 +13,7 @@ if compgen -G *${from_suffix} > /dev/null
 then
 	for file in *${from_suffix}
 	do
-		new_name=`basename "${file}" ${from_suffix}`${to_suffix}
-		mv "${file}" "${new_name}"
+		mv "${file}" "${file%.*}${to_suffix}"
 	done
 else
 	echo "You do not have any ${from_suffix} files in the current directory"
