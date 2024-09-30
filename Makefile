@@ -31,7 +31,7 @@ ifeq ($(DO_ALLDEP),1)
 .EXTRA_PREREQS+=$(foreach mk, ${MAKEFILE_LIST},$(abspath ${mk}))
 endif # DO_ALLDEP
 
-ALL_SH:=$(shell find src -name "*.bash")
+ALL_SH:=$(shell find src -type f -and -name "*.bash")
 ALL_STAMP:=$(addprefix out/, $(addsuffix .stamp, $(ALL_SH)))
 
 MD_SRC:=$(shell find src -type f -and -name "*.md")
