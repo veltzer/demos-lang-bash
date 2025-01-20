@@ -17,7 +17,7 @@ chat with me at [![gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gi
 
 ## Number of examples
 
-Currently there are 265 examples in this repo.
+Currently there are 267 examples in this repo.
 
 # How to run examples from this repository?
 
@@ -25,4 +25,4 @@ Currently there are 265 examples in this repo.
 ./src/examples/core/booleans/booleans.bash
 ```
 
-Mark Veltzer, Copyright © 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024
+Mark Veltzer, Copyright © 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025
