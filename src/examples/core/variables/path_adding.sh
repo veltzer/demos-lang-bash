@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This demo shows how to add to the path variable in a way that does
 # not add junk.

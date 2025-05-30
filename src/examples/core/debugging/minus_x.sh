@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example shows how to make a bash script verbose.
 # The idea is to turn on the -x flag.

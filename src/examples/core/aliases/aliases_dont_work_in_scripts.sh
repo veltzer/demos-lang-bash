@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example shows that you can define aliases in scripts and they
 # are kept by bash but they do not work by default.

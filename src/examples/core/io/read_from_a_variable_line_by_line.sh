@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This shows how to process a variable of list type, entry by entry.
 # References:

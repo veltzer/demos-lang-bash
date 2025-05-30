@@ -1,3 +1,3 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 source subfolder/foo.bashinc

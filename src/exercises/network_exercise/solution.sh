@@ -1,4 +1,4 @@
-#!/bin/bash
+\#\!/bin/bash -eu
 
 # this script will received the name of the process
 # that we want statistics for

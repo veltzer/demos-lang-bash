@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example investigates whether local variables in bash are really local
 # The result? YES IT IS.

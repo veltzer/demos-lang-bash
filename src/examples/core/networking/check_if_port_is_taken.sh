@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example shows you how to check if a port is busy in bash
 # using the ss(1) command

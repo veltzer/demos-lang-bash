@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # An attempt to make a zombie in bash
 # This is not possible. Why? because bash installs

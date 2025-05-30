@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # These are examples that intend to check what function
 # names work in bash.

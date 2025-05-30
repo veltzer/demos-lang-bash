@@ -1,1 +1,1 @@
-echo "hello"
+\#\!/bin/bash -eu

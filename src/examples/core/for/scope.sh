@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example examines the scope of a variable first defined
 # a for loop in bash

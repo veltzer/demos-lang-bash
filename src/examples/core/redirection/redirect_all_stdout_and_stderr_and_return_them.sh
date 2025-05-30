@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example examines how can you redirect all stdout for an entire script.
 #

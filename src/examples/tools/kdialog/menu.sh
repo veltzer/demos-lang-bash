@@ -1,4 +1,4 @@
-#!/bin/bash
+\#\!/bin/bash -eu
 
 # Define the options for the menu
 options=("opt1" "Option 1" "opt2" "Option 2" "opt3" "Option 3" "optquit" "Quit")

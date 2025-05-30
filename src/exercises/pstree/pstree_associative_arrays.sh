@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # this is the a rather efficient implementation of pstree
 # in bash.

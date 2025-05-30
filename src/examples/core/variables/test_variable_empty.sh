@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example shows how to test if a variable is empty.
 # The best way is the -z shown below.

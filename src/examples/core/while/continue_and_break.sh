@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example shows how to use 'continue' and 'break' in a bash 'while' loop.
 #

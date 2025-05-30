@@ -1,4 +1,4 @@
-#!/bin/bash -eu
+\#\!/bin/bash -eu
 
 find /etc -maxdepth 2 -type f -readable -exec grep -l "backup" {} \; 2> /dev/null | xargs ls -l | tr -s " " | cut -f 5 -d " " > sizes.txt
 

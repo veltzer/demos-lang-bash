@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This is an example of a process in bash which catches the SIGTERM signal from the
 # OS and refuses to die...

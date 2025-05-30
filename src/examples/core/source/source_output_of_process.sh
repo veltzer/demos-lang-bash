@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This is an example of how to source the output of some process.
 # This enables you to write processes that output the changes in the

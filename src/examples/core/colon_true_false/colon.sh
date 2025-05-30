@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example shows that ':' is an actual command (builtin) which accepts arguments,
 # does nothing and changes '$?' to '0'.

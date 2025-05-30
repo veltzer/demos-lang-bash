@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example tests who is faster: true, : or 'echo > /dev/null'
 

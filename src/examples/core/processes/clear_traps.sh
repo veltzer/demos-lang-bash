@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example explains how to clear a trapped signal
 # basically it's just doing "trap - [signals numbers]

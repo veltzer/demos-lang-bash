@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # this is an example of getting a specific number of arguments from the command line.
 # References:

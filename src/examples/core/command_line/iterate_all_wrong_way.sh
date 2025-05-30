@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # example of iterating all command line arguments using a for loop
 # thw WRONG WAY!!!

@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This is an example of how to slice an array in bash.
 # Run this example with command line arguments like this:
