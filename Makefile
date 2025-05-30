@@ -5,7 +5,7 @@
 DO_MKDBG:=0
 # do you want dependency on the Makefile itself ?
 DO_ALLDEP:=1
-# do you want to check bash syntax?
+# do you want to check sh syntax?
 DO_CHECK_SYNTAX:=1
 # do you want to run mdl on md files?
 DO_MD_MDL:=1
@@ -26,7 +26,7 @@ Q:=@
 #.SILENT:
 endif # DO_MKDBG
 
-ALL_SH:=$(shell find src -type f -and -name "*.bash")
+ALL_SH:=$(shell find src -type f -and -name "*.sh")
 ALL_STAMP:=$(addprefix out/, $(addsuffix .stamp, $(ALL_SH)))
 
 MD_SRC:=$(shell find src -type f -and -name "*.md")
@@ -56,7 +56,7 @@ all: $(ALL)
 .PHONY: check
 check:
 	$(info doing [$@])
-	$(Q)git grep "<<" src | grep -v "'COMMENT'" | grep -v "<<<" | grep -v multi_line_comment.bash || exit 0
+	$(Q)git grep "<<" src | grep -v "'COMMENT'" | grep -v "<<<" | grep -v multi_line_comment.sh || exit 0
 
 .PHONY: debug
 debug:
