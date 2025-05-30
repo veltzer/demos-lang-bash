@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This is an example of doing profiling in bash using the date(1) utility and bc(1).
 # Notes:

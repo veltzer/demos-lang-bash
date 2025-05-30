@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This is an example of how to remove a value from an array in bash.
 # If the value appears several times all of it's appearences

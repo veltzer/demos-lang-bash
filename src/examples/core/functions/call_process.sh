@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This is how to call another process and return it's output
 # as part of a function.

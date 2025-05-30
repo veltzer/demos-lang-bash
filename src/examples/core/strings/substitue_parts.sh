@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This is an example of how to substiture characters or parts
 # of strings in bash.

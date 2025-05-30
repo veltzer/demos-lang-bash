@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # examples of how to write functions in bash which accept any number
 # of arguments.

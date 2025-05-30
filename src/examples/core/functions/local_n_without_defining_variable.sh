@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example investigates whether we can do local -n on a variable which
 # is not yet defined.

@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example explores how a function in bash can pass all or some of it's own arguments
 # correctly to a sub function.

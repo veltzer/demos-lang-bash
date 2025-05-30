@@ -1,4 +1,4 @@
-#!/bin/bash -eu
+\#\!/bin/bash -eu
 
 # the next line is a poor excuse for the second line...
 # tar --create --gzip --ignore-failed-read -f /tmp/backup.tar.gz /etc 2> /dev/null

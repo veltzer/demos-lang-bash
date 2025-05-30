@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This is an example of how to remove the suffix off a file name in bash.
 # The first method below is recommended because it does not call any

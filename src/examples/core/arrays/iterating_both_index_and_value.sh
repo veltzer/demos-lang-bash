@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example shows how to iterate both the index and value of an array in bash.
 #

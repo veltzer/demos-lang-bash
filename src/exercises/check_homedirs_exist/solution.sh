@@ -1,4 +1,4 @@
-#!/bin/bash -eu
+\#\!/bin/bash -eu
 
 grep ":/bin/bash$" /etc/passwd | cut -d : -f 6 | while read -r line
 do

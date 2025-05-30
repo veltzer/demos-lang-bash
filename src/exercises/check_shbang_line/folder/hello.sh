@@ -1,2 +1,2 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 echo hi

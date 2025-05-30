@@ -1,4 +1,4 @@
-#!/bin/bash -eu
+\#\!/bin/bash -eu
 
 i=$#
 while test $i -ge 0

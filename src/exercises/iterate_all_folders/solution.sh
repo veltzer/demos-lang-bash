@@ -1,4 +1,4 @@
-#!/bin/bash -eu
+\#\!/bin/bash -eu
 
 for dir in /etc/*/
 do

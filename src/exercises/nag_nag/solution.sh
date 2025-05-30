@@ -1,4 +1,4 @@
-#!/bin/bash -eu
+\#\!/bin/bash -eu
 
 x=0
 while true

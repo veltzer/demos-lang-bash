@@ -1,4 +1,4 @@
-#!/bin/bash -eu
+\#\!/bin/bash -eu
 
 # create the files for doing the solution
 rm -f *.tar

@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example shows how to pass variables by reference to bash function
 # corretly. This is trickier than it sounds.

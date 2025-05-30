@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example shows how you can switch stdout and stderr for a program.
 # This is useful in a cade in which you want to pipe errors out and not output.

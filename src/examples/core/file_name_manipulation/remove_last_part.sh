@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This is an example of how to remove the last part of a filename.
 # The better way is not to use the 'dirname(1)' utility but rather to use the bash

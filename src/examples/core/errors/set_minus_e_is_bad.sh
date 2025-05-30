@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example shows why "set -e" or -e at the shbang line are bad for you
 # It turns out that the specific example presented here actually works well

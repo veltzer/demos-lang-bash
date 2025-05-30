@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This is an example of how to write an "if" statement in bash which checks whether a variable
 # has a postive or negative value.

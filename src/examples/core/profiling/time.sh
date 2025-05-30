@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This is an example of using the bash 'time' keyword to time parts of a bash script.
 # NOTES:

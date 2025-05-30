@@ -1,4 +1,4 @@
-#!/bin/bash -ux
+\#\!/bin/bash -eu
 
 # Sometimes you want to write a piece of code and make sure that some bash options
 # are set in a certain way in it (-e, -x etc)

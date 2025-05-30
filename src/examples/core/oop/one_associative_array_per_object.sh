@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example show basic object oriented programming using bash.
 # This approach uses a rather standard way of implementing object

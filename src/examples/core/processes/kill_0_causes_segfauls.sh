@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example shows that kill 0 in bash causes a segfault, see the other
 # example of how to avoid this segfault.

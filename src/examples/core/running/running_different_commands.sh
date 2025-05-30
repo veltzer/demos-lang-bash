@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This is an example of how to put an entire command line in a variable and run it later
 # note that redirection cannot happen in this case.

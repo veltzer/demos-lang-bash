@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example shows that collecting a value from a function via
 # back ticks or $() is fine but actually runs the function in a

@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example shows how to source a file which you are not sure has loud
 # code or maybe returns an error

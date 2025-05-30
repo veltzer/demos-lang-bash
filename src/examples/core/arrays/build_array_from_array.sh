@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example shows how to build an array from the values of another array.
 # This is something akin to a "map" function in functional programming.

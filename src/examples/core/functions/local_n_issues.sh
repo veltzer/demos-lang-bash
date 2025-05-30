@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example shows when using "local -n" can cause issues
 # The solution? use a rare variable name (starts with underscore?) for

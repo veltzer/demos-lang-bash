@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example shows that 'set -e' will also cause script termination
 # if a bash function is called and returns an error (!=0)

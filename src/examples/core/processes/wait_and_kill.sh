@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example shows the various ways in which you can kill your children
 # when your process dies. The tree ways are the three signal handlers

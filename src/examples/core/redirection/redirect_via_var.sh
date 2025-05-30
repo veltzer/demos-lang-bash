@@ -1,4 +1,4 @@
-#!/bin/bash -u
+\#\!/bin/bash -eu
 
 # This example examines if you can redirect via a varible.
 # This means put "> [...]" and the like statements in a varialbe and
