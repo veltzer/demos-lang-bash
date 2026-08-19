@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+""" Allocate memory forever so the OOM killer eventually kills us. """
+
 import time
 import os
 import signal

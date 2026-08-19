@@ -5,6 +5,6 @@
 
 How would you do it?
 * go from process to the list of its sockets via `/proc/[pid]/fd/socket:[]`
-    now we have a list of it's sockets.
+  now we have a list of it's sockets.
 * look at `/proc/net/tcp` find the line where the fd = the file that you are looking for
-    and extract the `tx_queue` and `rx_queue` fields.
+  and extract the `tx_queue` and `rx_queue` fields.

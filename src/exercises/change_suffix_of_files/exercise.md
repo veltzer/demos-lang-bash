@@ -20,4 +20,4 @@ hints:
 compgen -G A
 ```
 
-* This will return an exit code indicating whether files that match pattern A exist or don't exist.
+- This will return an exit code indicating whether files that match pattern A exist or don't exist.

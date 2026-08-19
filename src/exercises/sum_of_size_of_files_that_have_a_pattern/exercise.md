@@ -14,5 +14,5 @@ You are required (for good reasons) to write a script with two phases:
 * second phase will add up all the sizes
 
 Hint:
-- you cannot use the -exec flag to find(1) more than once. You have to think of other
+* you cannot use the -exec flag to find(1) more than once. You have to think of other
 alternatives that we studied in class.
