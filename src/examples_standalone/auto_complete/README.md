@@ -20,4 +20,4 @@ The program gets the prefix in it's command line arguments and the full line
 in an environment variable called `COMP_LINE`
 
 References:
-* [link](https://askubuntu.com/questions/68175/how-to-create-script-with-auto-complete)
+* [How to create a script with auto-complete (Ask Ubuntu)](https://askubuntu.com/questions/68175/how-to-create-script-with-auto-complete)
