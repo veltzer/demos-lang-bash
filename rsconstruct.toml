@@ -62,13 +62,3 @@ src_dirs = ["config"]
 
 [processor.taplo]
 src_dirs = ["."]
-
-[processor.htmlhint]
-src_dirs = ["src"]
-
-[processor.tidy]
-src_dirs = ["src"]
-
-[processor.eslint]
-src_dirs = ["config"]
-args = ["-c", "config/eslint.config.js"]
