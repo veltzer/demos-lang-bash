@@ -44,9 +44,6 @@ src_dirs = ["src", "config"]
 [processor.mypy]
 src_dirs = ["src", "config"]
 
-[processor.requirements]
-src_dirs = ["src", "config"]
-
 # ─── shell ───────────────────────────────────────────────────────────────────
 
 [processor.shellcheck]
