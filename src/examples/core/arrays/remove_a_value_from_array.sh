@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how to remove a value from an array in bash.
 # If the value appears several times all of it's appearences
@@ -13,9 +13,9 @@ function remove_value() {
 	new_array=()
 	for current_value in "${array[@]}"
 	do
-		if [ "$current_value" != "$value" ]
+		if [ "${current_value}" != "${value}" ]
 		then
-			new_array+=("$current_value")
+			new_array+=("${current_value}")
 		fi
 	done
 	array=("${new_array[@]}")

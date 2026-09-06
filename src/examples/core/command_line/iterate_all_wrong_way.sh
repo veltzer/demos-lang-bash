@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # example of iterating all command line arguments using a for loop
 # thw WRONG WAY!!!
@@ -9,5 +9,5 @@
 # shellcheck disable=SC2068
 for x in $@
 do
-	echo $x
+	echo "${x}"
 done

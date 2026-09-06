@@ -1,1 +1,1 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu

@@ -1,4 +1,7 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# the variables here are set indirectly, by name (eval or local -n),
+# which shellcheck cannot follow
+# shellcheck disable=SC2154
 
 # This is an example of how to measure the time a bash function takes using
 # data(1)
@@ -9,18 +12,21 @@ function measure() {
 	local __user_var=$1
 	local count=$2
 	local function_name=$3
-	local start=$(date +%s.%N)
-	let "i=0"
-	while [ $i -lt $count ]
+	local start
+	start=$(date +%s.%N)
+	((i=0))
+	while [ ${i} -lt "${count}" ]
 	do
-		$function_name
-		let "i=i+1"
+		${function_name}
+		((i=i+1))
 	done
 	local ret=$?
-	local end=$(date +%s.%N)
-	local diff=$(echo "($end - $start)/$count" | bc -l)
-	eval $__user_var=$diff
-	return $ret
+	local end
+	end=$(date +%s.%N)
+	local diff
+	diff=$(echo "(${end} - ${start})/${count}" | bc -l)
+	eval "${__user_var}"="${diff}"
+	return ${ret}
 }
 
 function my_func() {
@@ -28,4 +34,4 @@ function my_func() {
 }
 
 measure t 10000 my_func
-echo "average time is [$t]"
+echo "average time is [${t}]"

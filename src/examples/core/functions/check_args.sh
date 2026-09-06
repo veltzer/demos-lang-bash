@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how to check that a function has been passed a value.
 #
@@ -6,7 +6,6 @@
 # https://unix.stackexchange.com/questions/239125/how-do-i-check-whether-a-variable-has-been-passed-to-a-function-in-bash
 
 function func1 {
-	local arg=$1
 	if [[ -n "$1" ]]
 	then
 		echo "have a value"
@@ -16,7 +15,6 @@ function func1 {
 }
 
 function func2 {
-	local arg=$1
 	if [[ "${1:+present}" ]]
 	then
 		echo "have a value"
@@ -26,7 +24,6 @@ function func2 {
 }
 
 function func3 {
-	local arg=$1
 	if [[ $# == 1 ]]
 	then
 		echo "have a value"

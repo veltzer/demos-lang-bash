@@ -1,3 +1,3 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 echo $(($1+$2))

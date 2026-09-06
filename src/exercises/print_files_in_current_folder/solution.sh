@@ -1,6 +1,6 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 folder="$1"
-for filename in $folder/*
+for filename in "${folder}"/*
 do
-	echo $filename
+	echo "${filename}"
 done

@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 my_array=(5 4 3)
 echo "${my_array[0]}"

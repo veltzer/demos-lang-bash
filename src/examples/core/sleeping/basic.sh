@@ -1,9 +1,9 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is a script that never dies and keeps printing stuff at a low rate.
 # Useful for demos.
 
-while [[ true ]]
+while true
 do
 	echo nag nag...
 	sleep 1

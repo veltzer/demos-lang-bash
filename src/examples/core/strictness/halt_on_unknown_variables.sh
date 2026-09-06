@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This shows how to make bash more strict in that it will error
 # and will stop on any undefined variable that requires expansion.
@@ -18,8 +18,8 @@
 # http://redsymbol.net/articles/unofficial-bash-strict-mode/
 
 set +u
-echo "before $UNDEFINED"
+echo "before ${UNDEFINED}"
 set -u
-echo "in $UNDEFINED"
+echo "in ${UNDEFINED}"
 set +u
-echo "after $UNDEFINED"
+echo "after ${UNDEFINED}"

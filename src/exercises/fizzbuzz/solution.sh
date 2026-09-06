@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is a solution to the fizz buzz riddle in bash
 

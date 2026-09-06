@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 if test $# -ne 1
 then
@@ -8,15 +8,15 @@ fi
 
 arg=$1
 
-if test -d $arg
+if test -d "${arg}"
 then
-	ls $arg
+	ls "${arg}"
 	exit 0
 fi
 
-if test -f $arg
+if test -f "${arg}"
 then
-	cat $arg
+	cat "${arg}"
 	exit 0
 fi
 

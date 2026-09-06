@@ -1,4 +1,6 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# splitting the comma-separated tuple by word splitting is the technique shown
+# shellcheck disable=SC2206
 
 # This is an example that shows that the exit code of a shell pipe
 # is the exit code *of the last component* of the pipe.
@@ -19,7 +21,7 @@ do
 			x3s=(${x3//,/ })
 			${x1s[0]} | ${x2s[0]} | ${x3s[0]}
 			res=$?
-			echo "${x1s[1]}${x2s[1]}${x3s[1]} -> $res"
+			echo "${x1s[1]}${x2s[1]}${x3s[1]} -> ${res}"
 		done
 	done
 done

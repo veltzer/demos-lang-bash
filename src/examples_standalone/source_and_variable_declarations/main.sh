@@ -1,4 +1,10 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# the variables here are set indirectly, by name (eval or local -n),
+# which shellcheck cannot follow
+# shellcheck disable=SC2154
+# this example is about sourcing itself: the paths are dynamic or relative
+# by design, so shellcheck cannot follow them
+# shellcheck disable=SC1090,SC1091
 
 # This example explores what is the relation between the 'source'
 # bash builtin command and variables defined in the sourced files.
@@ -14,11 +20,11 @@
 
 var="main_value"
 source "${BASH_SOURCE%/*}/sourced.bashinc"
-if [ "$var" != "sourced_value" ]
+if [ "${var}" != "sourced_value" ]
 then
 	echo "ERROR"
 fi
-if [ "$my_var" != "sourced_value" ]
+if [ "${my_var}" != "sourced_value" ]
 then
 	echo "ERROR"
 fi

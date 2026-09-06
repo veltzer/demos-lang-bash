@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example shows why "set -e" or -e at the shbang line are bad for you
 # It turns out that the specific example presented here actually works well
@@ -18,5 +18,6 @@ else
 fi
 
 i=0
-let i++
-echo "i is $i"
+# (( )) returns 1 when the result is 0, which is the trap this file is about
+((i++))
+echo "i is ${i}"

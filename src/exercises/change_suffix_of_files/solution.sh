@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 if [[ "$#" -ne 2 ]]
 then
@@ -9,11 +9,11 @@ fi
 from_suffix=$1 # .JPG
 to_suffix=$2 # .jpg
 
-if compgen -G *${from_suffix} > /dev/null
+if compgen -G ./*"${from_suffix}" > /dev/null
 then
-	for file in *${from_suffix}
+	for file in ./*"${from_suffix}"
 	do
-		new_name=`basename "${file}" ${from_suffix}`${to_suffix}
+		new_name=$(basename "${file}" "${from_suffix}")${to_suffix}
 		mv "${file}" "${new_name}"
 	done
 else

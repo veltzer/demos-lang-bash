@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example shows how to correctly add compoents to envrionment
 # or non environment variables like 'PATH'.
@@ -12,20 +12,20 @@ PATH="/usr/bin:/sbin"
 PATH="/sbin:/usr/bin"
 
 pathadd_after() {
-	if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]
+	if [ -d "$1" ] && [[ ":${PATH}:" != *":$1:"* ]]
 	then
-		PATH="${PATH:+"$PATH:"}$1"
+		PATH="${PATH:+"${PATH}:"}$1"
 	fi
 }
 
 pathadd_before() {
-	if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]
+	if [ -d "$1" ] && [[ ":${PATH}:" != *":$1:"* ]]
 	then
-		PATH="$1${PATH:+"$PATH:"}"
+		PATH="$1${PATH:+"${PATH}:"}"
 	fi
 }
 
 pathadd_after /usr/bin
 pathadd_before /usr/bin
 
-echo $PATH
+echo "${PATH}"

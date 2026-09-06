@@ -1,4 +1,6 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# the loop variable is required by for even though the body ignores it
+# shellcheck disable=SC2034
 
 # This example tests who is faster: true, : or 'echo > /dev/null'
 

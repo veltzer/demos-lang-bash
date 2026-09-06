@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example shows how to iterate an array of elements
 #
@@ -10,5 +10,5 @@ arr=(red "yellow green" blue)
 
 for x in "${arr[@]}"
 do
-	echo $x
+	echo "${x}"
 done

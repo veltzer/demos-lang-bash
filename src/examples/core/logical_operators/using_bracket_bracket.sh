@@ -1,4 +1,6 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# this example is about the test syntax itself, so it compares literals
+# shellcheck disable=SC2050
 
 # This is an example of how to write simple logical operators in bash.
 # NOTES:
@@ -22,13 +24,13 @@ then
 	echo "ERROR"
 fi
 
-let "a=2"
-let "b=2"
-if [[ $a = 1 && $b = 2 ]]
+((a=2))
+((b=2))
+if [[ ${a} = 1 && ${b} = 2 ]]
 then
 	echo "ERROR"
 fi
-if [[ $a = 1 || $b = 1 ]]
+if [[ ${a} = 1 || ${b} = 1 ]]
 then
 	echo "ERROR"
 fi

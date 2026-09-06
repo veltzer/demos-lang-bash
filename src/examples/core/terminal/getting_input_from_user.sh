@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how to get input from the user in bash.
 # Notes:
@@ -7,8 +7,8 @@
 # References:
 # - https://askubuntu.com/questions/446156/pause-execution-and-wait-for-user-input
 
-read -p "What is your name: " name
-echo "your name is $name"
+read -r -p "What is your name: " name
+echo "your name is ${name}"
 
 # ask the user to press any key
-read -n 1 -p "press any key" -s
+read -r -n 1 -p "press any key" -s

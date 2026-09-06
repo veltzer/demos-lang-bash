@@ -1,10 +1,10 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
-for dir in $(find /etc -maxdepth 1 -mindepth 1 -type d)
+while IFS= read -r -d "" dir
 do
-    if [ "$dir" != "." ]
+    if [ "${dir}" != "." ]
     then
-        basename=$(basename "$dir")
+        basename=$(basename "${dir}")
         echo "${basename}"
     fi
-done
+done < <(find /etc -maxdepth 1 -mindepth 1 -type d -print0)

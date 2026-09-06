@@ -1,11 +1,11 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 clear
 
 phonebook="phonebook.txt"
 
 function is_there {
-	grep "^$name," $phonebook > /dev/null
+	grep "^${name}," ${phonebook} > /dev/null
 }
 
 function read_name {
@@ -27,12 +27,12 @@ echo "=================================="
 echo "=== PhoneBook version 6.7 beta ==="
 echo "=================================="
 
-if [[ -f $phonebook ]]
+if [[ -f ${phonebook} ]]
 then
-	echo "found phonebook in [$phonebook]. using it"
+	echo "found phonebook in [${phonebook}]. using it"
 else
-	touch $phonebook
-	echo "haven't found phonebook. Created one in [$phonebook]."
+	touch ${phonebook}
+	echo "haven't found phonebook. Created one in [${phonebook}]."
 fi
 
 read -r
@@ -41,7 +41,7 @@ clear
 PS3="please enter your selection> "
 select item in insert delete search printbook printcount update exit
 do
-	case $item in
+	case ${item} in
 		insert)
 			echo
 			echo "in insert"
@@ -52,7 +52,7 @@ do
 				error_name_there
 			else
 				read_phone
-				echo "$name,$phone" >> $phonebook
+				echo "${name},${phone}" >> ${phonebook}
 			fi
 			;;
 		delete)
@@ -62,8 +62,8 @@ do
 			read_name
 			if is_there
 			then
-				grep -v "^$name," $phonebook > tmp.txt
-				mv tmp.txt $phonebook
+				grep -v "^${name}," ${phonebook} > tmp.txt
+				mv tmp.txt ${phonebook}
 			else
 				error_name_not_there
 			fi
@@ -75,7 +75,7 @@ do
 			read_name
 			if is_there
 			then
-				grep "^$name," $phonebook | cut -f 2 -d ,
+				grep "^${name}," ${phonebook} | cut -f 2 -d ,
 			else
 				error_name_not_there
 			fi
@@ -84,13 +84,13 @@ do
 			echo
 			echo "in printbook"
 			echo "=================================="
-			sort -t , < "$phonebook" | less
+			sort -t , < "${phonebook}" | less
 			;;
 		printcount)
 			echo
 			echo "in printcount"
 			echo "=================================="
-			wc -l $phonebook | cut -f 1 -d " "
+			wc -l ${phonebook} | cut -f 1 -d " "
 			;;
 		update)
 			echo
@@ -100,9 +100,9 @@ do
 			if is_there
 			then
 				read_phone
-				grep -v "^$name," $phonebook > tmp.txt
-				mv tmp.txt $phonebook
-				echo "$name,$phone" >> $phonebook
+				grep -v "^${name}," ${phonebook} > tmp.txt
+				mv tmp.txt ${phonebook}
+				echo "${name},${phone}" >> ${phonebook}
 			else
 				error_name_not_there
 			fi

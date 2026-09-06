@@ -1,13 +1,13 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 ./my_proc.py &
 pid=$!
 
-if wait $pid
+if wait ${pid}
 then
 	echo "It exited successfully"
 else
 	code=$?
-	echo "It exited with failure ($?)"
+	echo "It exited with failure (${code})"
 	tail -5 /var/log/syslog
 fi

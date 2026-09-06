@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example explores how to get the results of bash globbing
 # into a bash array.
@@ -25,5 +25,5 @@ echo "${A[@]}"
 A=(compgen -G "/etc/a*")
 echo "${A[@]}"
 
-A=($(compgen -G "/etc/a*"))
+mapfile -t A < <(compgen -G "/etc/a*")
 echo "${A[@]}"

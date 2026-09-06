@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how to exit early from a function
 # Take away: use return
@@ -6,12 +6,12 @@
 function myfunc {
 	local arg=$1
 	echo "start"
-	if [[ $arg -eq 1 ]]
+	if [[ ${arg} -eq 1 ]]
 	then
 		return
 	fi
 	echo "mid"
-	if [[ $arg -eq 2 ]]
+	if [[ ${arg} -eq 2 ]]
 	then
 		return
 	fi

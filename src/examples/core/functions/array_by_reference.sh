@@ -1,13 +1,16 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# the variables here are set indirectly, by name (eval or local -n),
+# which shellcheck cannot follow
+# shellcheck disable=SC2154
 
 function create_array_local() {
 	local __var=$1
-	declare -ga $__var
+	declare -ga "${__var}"
 }
 
 function create_array_eval() {
 	local __var=$1
-	eval "declare -ga $__var"
+	eval "declare -ga ${__var}"
 }
 
 function add_element() {
@@ -22,6 +25,6 @@ declare -p arr1
 create_array_eval arr2
 declare -p arr2
 f=(1 2 3)
-echo ${f[*]}
+echo "${f[*]}"
 add_element f 4
-echo ${f[*]}
+echo "${f[*]}"

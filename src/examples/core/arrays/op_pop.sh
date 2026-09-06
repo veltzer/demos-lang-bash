@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how to pop a value of a bash array
 #
@@ -11,6 +11,6 @@ echo "${array[@]}"
 # lets pop an element
 val=${array[${#array[@]}-1]}
 unset 'array[${#array[@]}-1]'
-echo "val is [$val]"
+echo "val is [${val}]"
 
 echo "${array[@]}"

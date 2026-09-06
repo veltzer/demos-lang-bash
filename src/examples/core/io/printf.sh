@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how to format output text in bash using the builtin
 # 'printf' command
@@ -14,9 +14,9 @@
 # and the second way is better because it does not invoke a subshell.
 
 ((x=100))
-while [[ $x -gt 0 ]]
+while [[ ${x} -gt 0 ]]
 do
-	printf "%06d\r" "$x"
+	printf "%06d\r" "${x}"
 	((x=x-1))
 	sleep 1
 done

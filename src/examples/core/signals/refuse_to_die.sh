@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of a process in bash which catches the SIGTERM signal from the
 # OS and refuses to die...
@@ -9,10 +9,10 @@ function my_signal() {
 
 trap my_signal SIGTERM
 
-let "i=0"
+((i=0))
 while true
 do
-	echo "[$i] nag...nag..."
+	echo "[${i}] nag...nag..."
 	sleep 1
-	let "i=i+1"
+	((i=i+1))
 done

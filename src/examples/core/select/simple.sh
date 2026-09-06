@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of building a simple menu in bash using the
 # 'select' statement.
@@ -11,7 +11,7 @@
 
 select s in a b quit
 do
-	case $s in
+	case ${s} in
 		a)
 			echo "you selected a";;
 		b)

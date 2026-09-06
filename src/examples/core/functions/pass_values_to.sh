@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is how to pass values to a function
 #
@@ -13,12 +13,12 @@
 
 function func1 {
 	local arg=$1
-	echo "arg is [$arg]"
+	echo "arg is [${arg}]"
 }
 
 function func2 {
 	arg=$1
-	echo "arg is [$arg]"
+	echo "arg is [${arg}]"
 }
 
 function func3 {
@@ -27,13 +27,13 @@ function func3 {
 
 function func4 {
 	# not quoting $1, $2, ... is a mistake when just using them
-	echo $1
+	echo "$1"
 }
 
 function func5 {
 	# you can put quotations around $1, $2, ... but it is superfluous
 	local arg="$1"
-	echo "arg is [$arg]"
+	echo "arg is [${arg}]"
 }
 
 func1 "hello world"

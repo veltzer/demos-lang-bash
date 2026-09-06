@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how to pass an array by reference to a bash function
 #
@@ -10,7 +10,7 @@
 function add_value() {
 	local -n array=$1
 	local value=$2
-	array+=("$value")
+	array+=("${value}")
 }
 
 my_array=(a b c d e f g)

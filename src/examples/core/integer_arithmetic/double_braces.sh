@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example shows how you can do integer arithmetic with braces in bash.
 #
@@ -8,8 +8,8 @@
 x=0
 x=$((x+1))
 x=$((x+1))
-echo $x
+echo ${x}
 
 y=5
 y=$((y*5))
-echo $y
+echo ${y}

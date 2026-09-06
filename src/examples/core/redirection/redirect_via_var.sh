@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example examines if you can redirect via a varible.
 # This means put "> [...]" and the like statements in a varialbe and
@@ -10,7 +10,7 @@
 # That is the reason for the difference in the output between the next two lines...
 
 REDIRECT="> /dev/null"
-ls $REDIRECT
+ls "${REDIRECT}"
 ls > /dev/null # the output from this is not shown
 # this does not help either
-eval "ls $REDIRECT"
+eval "ls ${REDIRECT}"

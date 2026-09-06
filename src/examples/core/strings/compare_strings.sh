@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how to compare strings
 #
@@ -14,11 +14,11 @@
 
 a="foo"
 b="bar"
-[ "$a" = "$b" ]
+[ "${a}" = "${b}" ]
 echo $?
-[ "$a" != "$b" ]
+[ "${a}" != "${b}" ]
 echo $?
-[[ "$a" == "$b" ]]
+[[ "${a}" == "${b}" ]]
 echo $?
-[[ "$a" != "$b" ]]
+[[ "${a}" != "${b}" ]]
 echo $?

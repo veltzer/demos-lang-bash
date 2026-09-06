@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how to get a suffix and a prefix from a string.
 # References:
@@ -9,8 +9,8 @@ str='hello world'
 suffix='rld'
 prefix='hel'
 
-no_prefix=${str#$prefix}
-no_suffix=${str%$suffix}
+no_prefix=${str#"${prefix}"}
+no_suffix=${str%"${suffix}"}
 
-echo "$no_prefix"
-echo "$no_suffix"
+echo "${no_prefix}"
+echo "${no_suffix}"

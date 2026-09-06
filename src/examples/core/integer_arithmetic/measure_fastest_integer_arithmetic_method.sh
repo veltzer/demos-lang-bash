@@ -1,4 +1,11 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# expr is one of the arithmetic methods this benchmark compares
+# shellcheck disable=SC2003
+# the variables here are set indirectly, by name (eval or local -n),
+# which shellcheck cannot follow
+# shellcheck disable=SC2154
+# the benchmark must do the work; the result itself is not needed
+# shellcheck disable=SC2034
 
 # There are several ways to do integer arithmetic in bash which are:
 # - braces
@@ -34,28 +41,28 @@ function add_let() {
 	local a=$1
 	local b=$2
 	local result
-	let "result=$a+$b"
+	((result=a+b))
 }
 
 function add_expr() {
 	local a=$1
 	local b=$2
 	local result
-	result=$(expr $a + $b)
+	result=$(expr "${a}" + "${b}")
 }
 
 function add_bc() {
 	local a=$1
 	local b=$2
 	local result
-	result=$(echo $a + $b | bc)
+	result=$(echo "${a}" + "${b}" | bc)
 }
 
 # lets measure
 count=1000
 function many_wrap() {
 	local function_name=$1
-	for (( i=0; i<$count; i++ ))
+	for (( i=0; i<count; i++ ))
 	do
 		"${function_name}" 2 2
 	done
@@ -65,7 +72,7 @@ measure diff_braces many_wrap add_braces
 measure diff_let many_wrap add_let
 measure diff_expr many_wrap add_expr
 measure diff_bc many_wrap add_bc
-echo "diff_braces is [$diff_braces]"
-echo "diff_let is [$diff_let]"
-echo "diff_expr is [$diff_expr]"
-echo "diff_bc is [$diff_bc]"
+echo "diff_braces is [${diff_braces}]"
+echo "diff_let is [${diff_let}]"
+echo "diff_expr is [${diff_expr}]"
+echo "diff_bc is [${diff_bc}]"

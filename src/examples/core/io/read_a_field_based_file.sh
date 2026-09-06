@@ -1,4 +1,6 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# read must name every field even where only some are printed
+# shellcheck disable=SC2034
 
 # This example shows how to read files for which each line is a list
 # of fields separated by some separator.
@@ -19,5 +21,5 @@ file="/etc/passwd"
 while IFS=: read -r f1 f2 f3 f4 f5 f6 f7
 do
 	# display fields using f1, f2,..,f7
-	printf 'username: %s, shell: %s, homedir: %s\n' "$f1" "$f7" "$f6"
-done < "$file"
+	printf 'username: %s, shell: %s, homedir: %s\n' "${f1}" "${f7}" "${f6}"
+done < "${file}"

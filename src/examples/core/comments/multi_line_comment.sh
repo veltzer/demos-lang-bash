@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how to do multi line comments in bash.
 # The result? the <<'FOO'... FOO idiom seems to be the best.
@@ -12,13 +12,13 @@ function check() {
 	local val=$2
 	local name=$3
 	local exit_code=$4
-	if [[ "$a" -ne $val ]]
+	if [[ "${a}" -ne ${val} ]]
 	then
 		echo "${name}: not evaulated"
 	else
 		echo "${name}: evaluated"
 	fi
-	if [[ "$exit_code" -ne 0 ]]
+	if [[ "${exit_code}" -ne 0 ]]
 	then
 		echo "${name}: doesn't have 0 exit code"
 	else
@@ -43,7 +43,7 @@ $$foo (single $ will cause an error, bad)
 ${a=5} (evaluated, bad)
 
 COMMENT
-check $a 5 "first version" $?
+check "${a}" 5 "first version" $?
 
 false
 
@@ -59,7 +59,7 @@ $foo (no error, good)
 ${a=6} (not evaluated, good)
 
 '
-check $a 6 "second version" $?
+check "${a}" 6 "second version" $?
 
 false
 
@@ -74,7 +74,7 @@ $foo (no error, good)
 ${a=7} (not evaluated, good)
 
 COMMENT
-check $a 7 "third version" $?
+check "${a}" 7 "third version" $?
 
 
 false
@@ -91,7 +91,7 @@ $foo (no error, good)
 ${a=8} (not evaluated, good)
 
 COMMENT
-check $a 8 "fourth version" $?
+check "${a}" 8 "fourth version" $?
 
 false
 
@@ -103,4 +103,4 @@ false
 #
 # $foo (no error, good)
 # ${a=8} (not evaluated, good)
-check $a 8 "fifth version" $?
+check "${a}" 8 "fifth version" $?

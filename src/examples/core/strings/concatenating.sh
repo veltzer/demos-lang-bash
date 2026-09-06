@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example that shows how to concatenate strings in bash.
 #
@@ -7,5 +7,5 @@
 
 a="foo"
 b="bar"
-c="$a$b"
-echo "c is [$c]"
+c="${a}${b}"
+echo "c is [${c}]"

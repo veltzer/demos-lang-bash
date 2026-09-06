@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # An example that shows that variables in bash functions are global by default
 # So what should you do? always use local
@@ -9,8 +9,8 @@ function change_globals {
 }
 
 function print_them {
-	echo ${arr[6]}
-	echo $var
+	echo "${arr[6]}"
+	echo ${var}
 }
 
 function change_locals {

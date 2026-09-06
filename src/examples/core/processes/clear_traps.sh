@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example explains how to clear a trapped signal
 # basically it's just doing "trap - [signals numbers]
@@ -13,17 +13,17 @@ function signal_handler() {
 trap signal_handler SIGINT
 echo "Press CTRL+C for the next 10 seconds to invoke signal handler..."
 ((x=10))
-while [[ $x -gt 0 ]]
+while [[ ${x} -gt 0 ]]
 do
-	echo "$x"
+	echo "${x}"
 	((x--))
 	sleep 1
 done
 trap - SIGINT
 ((x=10))
-while [[ $x -gt 0 ]]
+while [[ ${x} -gt 0 ]]
 do
-	echo "$x"
+	echo "${x}"
 	((x--))
 	sleep 1
 done

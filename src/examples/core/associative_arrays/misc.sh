@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example shows how to use associative array in bash.
 #
@@ -26,19 +26,19 @@ hashmap["ke y2"]="val ue2"
 # we get an error for an unbound variable. This is critical
 # if you are running in a script with -u
 set +u
-echo ${hashmap["notthere"]}
+echo "${hashmap["notthere"]}"
 set -u
 
 # iterate all keys and values
 for key in "${!hashmap[@]}"
 do
-	echo $key "${hashmap[$key]}"
+	echo "${key}" "${hashmap[${key}]}"
 done
 
 # iterate all values
 for value in "${hashmap[@]}"
 do
-	echo $value
+	echo "${value}"
 done
 
 # finding number of elements

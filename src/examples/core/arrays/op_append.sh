@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how to append to an array in bash.
 #
@@ -20,7 +20,7 @@ my_array+=('bar')
 printf "%s\n" "${my_array[@]}"
 echo "==============="
 value="this is a value"
-my_array+=("$value")
+my_array+=("${value}")
 printf "%s\n" "${my_array[@]}"
 echo "==============="
 other_array=(a b c)

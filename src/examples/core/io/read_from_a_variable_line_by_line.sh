@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This shows how to process a variable of list type, entry by entry.
 # References:
@@ -7,5 +7,5 @@
 list=$(dpkg --list php\* | awk '/ii/{print $2}')
 while IFS= read -r line
 do
-	printf '%s\n' "$line"
-done <<< "$list"
+	printf '%s\n' "${line}"
+done <<< "${list}"

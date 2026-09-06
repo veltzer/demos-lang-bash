@@ -1,4 +1,6 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# this example is about the expr command itself
+# shellcheck disable=SC2003,SC2005,SC2046
 
 # This is an example of how to use the expr(1) command line utility
 #

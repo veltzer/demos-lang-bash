@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This program shows how to check in bash if a certain program is in the path.
 #
@@ -11,7 +11,7 @@
 
 function is_in_path() {
 	local prog=$1
-	hash $prog 2> /dev/null
+	hash "${prog}" 2> /dev/null
 }
 
 if is_in_path ls

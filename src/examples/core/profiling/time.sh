@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of using the bash 'time' keyword to time parts of a bash script.
 # NOTES:
@@ -14,9 +14,9 @@
 
 function real_long_time() {
 	local x=0
-	while [[ $x -lt 100000 ]]
+	while [[ ${x} -lt 100000 ]]
 	do
-		let "x=x+1"
+		((x=x+1))
 	done
 	return 1
 }
@@ -49,4 +49,4 @@ time real_long_time
 TIMEFORMAT='%R'
 t=$( (time real_long_time) 2>&1)
 echo $?
-echo "t is [$t]"
+echo "t is [${t}]"

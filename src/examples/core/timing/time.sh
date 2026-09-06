@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how to time a bash function using the time(1)
 #
@@ -18,10 +18,10 @@ function set_a_shell_variable() {
 }
 
 time set_a_shell_variable
-if [ "$x" != 7 ]
+if [ "${x}" != 7 ]
 then
 	echo "ERROR"
 fi
 
 res=$({ time sleep 2; } 2>&1)
-echo "res is [$res]"
+echo "res is [${res}]"

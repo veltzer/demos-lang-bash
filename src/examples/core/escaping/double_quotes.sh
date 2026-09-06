@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how use double quotes to escape the shell.
 # Things to remember:
@@ -15,7 +15,7 @@
 # This is passed as one argument
 echo "Hello, World!"
 # Intepolation
-echo "HOME is $HOME"
+echo "HOME is ${HOME}"
 echo "HOME is ${HOME}"
 # No interpolation
 echo "HOME is \$HOME"

@@ -1,4 +1,6 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# losing the variable in the subshell is why this solution is named 'wrong'
+# shellcheck disable=SC2030,SC2031
 
 find /etc -type f -and -name "*.conf" -exec ls -l {} \; 2> /dev/null | tr -s " " |
 	cut -f 5 -d " " > sizes.txt
@@ -6,6 +8,6 @@ find /etc -type f -and -name "*.conf" -exec ls -l {} \; 2> /dev/null | tr -s " "
 sum=0
 cat sizes.txt | while read -r line
 do
-	let "sum=sum+line"
+	((sum=sum+line))
 done
-echo "sum is $sum"
+echo "sum is ${sum}"

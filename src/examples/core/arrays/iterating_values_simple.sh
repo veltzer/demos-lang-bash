@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example shows how to iterate an array in bash.
 #
@@ -8,5 +8,5 @@
 array=("one" "two" "three")
 for elem in "${array[@]}"
 do
-	echo "$elem"
+	echo "${elem}"
 done

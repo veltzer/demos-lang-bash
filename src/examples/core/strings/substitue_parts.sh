@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how to substiture characters or parts
 # of strings in bash.
@@ -8,4 +8,4 @@
 orig="AxxBCyyyDEFzzLMN"
 mod=${orig//[xyz]/_}
 
-echo ${mod}
+echo "${mod}"

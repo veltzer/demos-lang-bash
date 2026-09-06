@@ -1,4 +1,8 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# this example is about sourcing itself: the paths are dynamic or relative
+# by design, so shellcheck cannot follow them
+# the echo is what produces the process output being sourced, so it stays
+# shellcheck disable=SC1090,SC1091,SC2046,SC2116
 
 # This is an example of how to source the output of some process.
 # This enables you to write processes that output the changes in the
@@ -11,13 +15,13 @@
 # - http://stackoverflow.com/questions/1279953/how-to-execute-the-output-of-a-command-within-the-current-shell
 
 export FOO=1
-echo $FOO
+echo ${FOO}
 source <(echo export FOO=2)
-echo $FOO
+echo ${FOO}
 eval $(echo export FOO=3)
-echo $FOO
+echo ${FOO}
 filename=$(mktemp)
-echo "export FOO=4" >> $filename
-source $filename
-rm $filename
-echo $FOO
+echo "export FOO=4" >> "${filename}"
+source "${filename}"
+rm "${filename}"
+echo ${FOO}

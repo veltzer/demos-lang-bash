@@ -1,13 +1,13 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 filename="$1"
 output="good_ips.txt"
 
-touch "$output"
+touch "${output}"
 while IFS= read -r ip
 do
-	if ping -w 2 $ip
+	if ping -w 2 "${ip}"
 	then
-		echo $ip >> $output
+		echo "${ip}" >> ${output}
 	fi
-done < "$filename"
+done < "${filename}"

@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how the pid of a certain process/thread in bash.
 # Note that you don't want to use the standard ps output
@@ -43,10 +43,10 @@ pid6=`ps -eL | grep " init" | grep -v grep | tr -s " " | cut -d " " -f 3`
 # shellcheck disable=SC2006
 pid7=`pidof init`
 
-echo "pid1 is $pid1"
-echo "pid2 is $pid2"
-echo "pid3 is $pid3"
-echo "pid4 is $pid4"
-echo "pid5 is $pid5"
-echo "pid6 is $pid6"
-echo "pid7 is $pid7"
+echo "pid1 is ${pid1}"
+echo "pid2 is ${pid2}"
+echo "pid3 is ${pid3}"
+echo "pid4 is ${pid4}"
+echo "pid5 is ${pid5}"
+echo "pid6 is ${pid6}"
+echo "pid7 is ${pid7}"

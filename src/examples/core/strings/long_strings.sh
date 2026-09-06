@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how to define long strings
 # in bash.
@@ -13,4 +13,4 @@ select c1, c2 from foo
 where c1='something'
 EOF
 
-echo "$sql"
+echo "${sql}"

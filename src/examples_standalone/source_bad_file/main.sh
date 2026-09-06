@@ -1,4 +1,7 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# this example is about sourcing itself: the paths are dynamic or relative
+# by design, so shellcheck cannot follow them
+# shellcheck disable=SC1090,SC1091
 
 # This example shows how to source a file which you are not sure has loud
 # code or maybe returns an error
@@ -16,18 +19,18 @@
 echo "before bad_syntax"
 result=0
 source bad_syntax.bashinc > /dev/null 2> /dev/null || result=1
-echo $result
+echo ${result}
 echo "after bad_syntax"
 
 echo "before command_fail"
 result=0
 source command_fail.bashinc > /dev/null 2> /dev/null || result=1
-echo $result
+echo ${result}
 echo "after command_fail"
 
 
 echo "before loud"
 result=0
 source loud.bashinc > /dev/null 2> /dev/null || result=1
-echo $result
+echo ${result}
 echo "after loud"

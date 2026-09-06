@@ -1,4 +1,6 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# this example is about how quotes inside a variable are not respected
+# shellcheck disable=SC2089,SC2090
 
 # This is an example of how to put an entire command line in a variable and run it later
 # note that redirection cannot happen in this case.
@@ -13,4 +15,4 @@ then
 fi
 
 # now run the command
-$command
+${command}

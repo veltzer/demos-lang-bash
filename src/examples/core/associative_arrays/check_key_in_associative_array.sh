@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example shows how to check if a key is in an associative array.
 #
@@ -26,7 +26,7 @@ fi
 function exists() {
 	local __user_var=$1
 	local key=$2
-	eval "[ \${${__user_var}['$key']+muahaha} ]"
+	eval "[ \${${__user_var}['${key}']+muahaha} ]"
 }
 
 if ! exists hashmap key1

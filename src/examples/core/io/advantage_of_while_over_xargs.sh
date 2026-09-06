@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example shows the advantage of the:
 #	[command] | while read
@@ -13,4 +13,4 @@ while read -r line
 do
 	((x=x+line))
 done <<< $(seq 10)
-echo "$x"
+echo "${x}"

@@ -1,4 +1,6 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# the unreachable line is what this example demonstrates: exit in a subshell
+# shellcheck disable=SC2317
 
 # This is an example of how to do some type of 'exception handling'
 # in bash by using a subshell and exit.
@@ -11,14 +13,14 @@
 
 function exit_with_error() {
 	local code=$1
-	exit $code
+	exit "${code}"
 }
 
 function set_minus_e() {
 	local code=$1
 	set -e
 	true
-	exit $code
+	exit "${code}"
 	set +e
 }
 
@@ -30,8 +32,8 @@ function set_minus_e() {
 # "(function) || result=$?" construct.
 result=0
 expected=5
-(exit_with_error $expected) || result=$?
-if [ "$result" != "$expected" ]
+(exit_with_error ${expected}) || result=$?
+if [ "${result}" != "${expected}" ]
 then
 	echo "ERROR"
 fi
@@ -46,22 +48,22 @@ fi
 # the next statement is to cancel the 'set -e' at the shbang line above
 set +e
 expected=0
-(set_minus_e $expected)
+(set_minus_e ${expected})
 result=$?
 # just to make sure that we are still not strict
 false
-if [ "$result" != "$expected" ]
+if [ "${result}" != "${expected}" ]
 then
 	echo "ERROR"
 fi
 
 set +e
 expected=7
-(set_minus_e $expected)
+(set_minus_e ${expected})
 result=$?
 # just to make sure that we are still not strict
 false
-if [ "$result" != "$expected" ]
+if [ "${result}" != "${expected}" ]
 then
 	echo "ERROR"
 fi

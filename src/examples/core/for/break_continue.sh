@@ -1,11 +1,11 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # this script shows how to break in the middle of a for loop and use continue to return to the loop
 
 for x in {1..10}
 do
-	echo $x
-	if [[ $x -eq 5 ]]
+	echo "${x}"
+	if [[ ${x} -eq 5 ]]
 	then
 		echo "yes, x is 5"
 		break
@@ -14,9 +14,9 @@ done
 
 for x in {1..10}
 do
-	if [[ $(( $x % 2 )) -eq 1 ]]
+	if [[ $(( x % 2 )) -eq 1 ]]
 	then
 		continue
 	fi
-	echo $x
+	echo "${x}"
 done

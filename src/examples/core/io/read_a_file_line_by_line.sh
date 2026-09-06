@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example shows how to work with files, reading them line by line.
 #
@@ -20,5 +20,5 @@ filename="/etc/passwd"
 while IFS= read -r line
 do
 	# do somthing with $line
-	printf '%s\n' "$line"
-done < "$filename"
+	printf '%s\n' "${line}"
+done < "${filename}"

@@ -1,6 +1,6 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 while read -r line
 do
-	echo $line
+	echo "${line}"
 done

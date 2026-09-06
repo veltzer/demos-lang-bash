@@ -1,4 +1,6 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# the assignment being lost is exactly what this example demonstrates
+# shellcheck disable=SC2034
 
 # This example shows that collecting a value from a function via
 # back ticks or $() is fine but actually runs the function in a
@@ -7,7 +9,7 @@
 
 function is_declared() {
 	local varname=$1
-	declare -p "$varname" > /dev/null 2> /dev/null
+	declare -p "${varname}" > /dev/null 2> /dev/null
 }
 
 function foo() {
@@ -16,7 +18,7 @@ function foo() {
 }
 
 y=$(foo)
-if [ "$y" = "the_result" ]
+if [ "${y}" = "the_result" ]
 then
 	echo "correct return value from function"
 fi
@@ -27,7 +29,7 @@ fi
 
 # shellcheck disable=SC2006
 y=`foo`
-if [ "$y" = "the_result" ]
+if [ "${y}" = "the_result" ]
 then
 	echo "correct return value from function"
 fi

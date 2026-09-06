@@ -1,4 +1,6 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# this example is about single quotes not expanding $, which is the point
+# shellcheck disable=SC2016
 
 # This is an example of how use single quotes to escape the shell.
 # Things to remember:

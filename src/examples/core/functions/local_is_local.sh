@@ -1,4 +1,6 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# the variable is reached through a local -n nameref, which shellcheck cannot follow
+# shellcheck disable=SC2034
 
 # This example investigates whether local variables in bash are really local
 # The result? YES IT IS.
@@ -12,20 +14,20 @@ function func_c() {
 function func_b() {
 	local x
 	x=7
-	echo "before func_c $x"
+	echo "before func_c ${x}"
 	func_c x
-	echo "after func_c $x"
+	echo "after func_c ${x}"
 }
 
 function func_a() {
 	local x
 	x=5
-	echo "before func_b $x"
+	echo "before func_b ${x}"
 	func_b
-	echo "after func_b $x"
+	echo "after func_b ${x}"
 }
 
 x=13
-echo "before func_b $x"
+echo "before func_b ${x}"
 func_a
-echo "after func_b $x"
+echo "after func_b ${x}"

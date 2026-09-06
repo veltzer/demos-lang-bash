@@ -1,12 +1,12 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # part="$1"
 
 for filename in /proc/*
 do
-	filename=$(basename $filename)
+	filename=$(basename "${filename}")
 	if [[ "${filename}" =~ ^[0-9]*$ ]]
 	then
-		echo ${filename}
+		echo "${filename}"
 	fi
 done

@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # An attempt to make a zombie in bash
 # This is not possible. Why? because bash installs
@@ -15,7 +15,7 @@
 echo "running process in the background..."
 sleep 5 &
 PID=$!
-echo "the pid is [$PID]..."
+echo "the pid is [${PID}]..."
 
 ((x=0))
 while true

@@ -1,4 +1,6 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# the point is to inspect $? right after ':' and 'false'
+# shellcheck disable=SC2181
 
 # This example shows that ':' is an actual command (builtin) which accepts arguments,
 # does nothing and changes '$?' to '0'.

@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example explores how to get a value from a hashmap
 #
@@ -17,17 +17,17 @@ hashmap[ke y3]="val ue3"
 
 # get a single value out of a hashmap
 val1=${hashmap["ke y1"]}
-if [ "$val1" != "val ue1" ]
+if [ "${val1}" != "val ue1" ]
 then
 	echo "ERROR"
 fi
 val2=${hashmap['ke y2']}
-if [ "$val2" != "val ue2" ]
+if [ "${val2}" != "val ue2" ]
 then
 	echo "ERROR"
 fi
 val3=${hashmap[ke y3]}
-if [ "$val3" != "val ue3" ]
+if [ "${val3}" != "val ue3" ]
 then
 	echo "ERROR"
 fi

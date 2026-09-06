@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example shows how to read an array from a file.
 # Note:
@@ -16,24 +16,24 @@ filename="data/list_of_values.txt"
 my_array=()
 while read -r F
 do
-	my_array+=("$F")
-done < "$filename"
+	my_array+=("${F}")
+done < "${filename}"
 echo $?
 declare -p my_array
 
-readarray -t my_array_2 < "$filename"
+readarray -t my_array_2 < "${filename}"
 echo $?
 declare -p my_array_2
 
-mapfile -t my_array_3 < "$filename"
+mapfile -t my_array_3 < "${filename}"
 echo $?
 declare -p my_array_3
 
-read -r -a my_array_4 -d $'\n' < "$filename"
+read -r -a my_array_4 -d $'\n' < "${filename}"
 echo $?
 # shellcheck disable=SC2154
 declare -p my_array_4
 
-IFS=$'\n' read -d '' -r -a my_array_5 < "$filename"
+IFS=$'\n' read -d '' -r -a my_array_5 < "${filename}"
 echo $?
 declare -p my_array_5

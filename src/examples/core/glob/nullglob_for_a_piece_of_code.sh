@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example shows how to use nullglob to get strict globbing
 # and to enable and disable it just for a small piece of code.
@@ -14,7 +14,7 @@
 shopt -s nullglob
 for x in /tmp/doesntexist*.foo
 do
-	echo $x
+	echo "${x}"
 done
 shopt -u nullglob
 
@@ -26,13 +26,13 @@ function save_nullglob() {
 }
 
 function restore_nullglob() {
-	$nullglob
+	${nullglob}
 }
 
 save_nullglob
 shopt -s nullglob
 for x in /tmp/doesntexist*.foo
 do
-	echo $x
+	echo "${x}"
 done
 restore_nullglob

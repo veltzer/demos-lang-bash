@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # example of bash assignment
 # The conclusion is that you don't need to do:
@@ -7,5 +7,5 @@
 # 'b' contains spaces and the like.
 
 a="one two"
-b=$a
-echo $b
+b=${a}
+echo "${b}"

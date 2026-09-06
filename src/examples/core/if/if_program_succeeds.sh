@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example shows the best way to check if a program fails in bash
 # Notes:
@@ -12,7 +12,7 @@
 
 true
 code=$?
-if [ $code -eq 0 ]
+if [ ${code} -eq 0 ]
 then
 	echo "yes, program succeeded"
 fi

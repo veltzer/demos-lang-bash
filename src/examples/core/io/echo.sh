@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # this example shows how to create text counters using bash and the
 # built-in "echo -en".
@@ -7,9 +7,9 @@
 # turning into small number of digits.
 
 ((x=100))
-while [[ $x -gt 0 ]]
+while [[ ${x} -gt 0 ]]
 do
-	echo -en "$x \r"
+	echo -en "${x} \r"
 	((x=x-1))
 	sleep 1
 done

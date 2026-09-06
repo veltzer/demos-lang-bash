@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example explores how a function in bash can pass all or some of it's own arguments
 # correctly to a sub function.
@@ -47,7 +47,7 @@ function up4() {
 	then
 		echo "problem"
 	fi
-	count \$\* $*
+	count \$\* "$*"
 }
 
 up1 "this is" "an example"

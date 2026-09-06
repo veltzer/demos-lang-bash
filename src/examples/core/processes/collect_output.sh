@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example shows how to collect output of processes in bash.
 # Basically there are two ways: backticks and $().
@@ -8,5 +8,5 @@
 x=$(date)
 # shellcheck disable=SC2006
 y=`date`
-echo "x is $x"
-echo "y is $y"
+echo "x is ${x}"
+echo "y is ${y}"

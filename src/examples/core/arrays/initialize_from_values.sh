@@ -1,4 +1,6 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# array_print takes the array by name (local -n), which shellcheck cannot follow
+# shellcheck disable=SC2034
 
 # This is a simple array example in bash.
 # we create the array the bash way
@@ -59,10 +61,10 @@ array_print my_array6
 
 echo "assign from variable"
 my_var="0 value 1 value 2 value"
-my_array7=("$my_var")
+my_array7=("${my_var}")
 array_print my_array7
 
 echo "assign from variable (one value)"
 my_var="one_value"
-my_array8=("$my_var")
+my_array8=("${my_var}")
 array_print my_array8

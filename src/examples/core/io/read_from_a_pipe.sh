@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example shows how to read from a pipe
 # The difference between the first example and the second is that
@@ -10,13 +10,13 @@
 dpkg --list | while IFS= read -r line
 do
 	((numlines+=1))
-	printf '%s\n' "$line"
+	printf '%s\n' "${line}"
 done
 
 IFS=$'\n'
 IFS=" "
 while read -r line
 do
-	echo "line is $line"
-	printf '%s\n' "$line"
+	echo "line is ${line}"
+	printf '%s\n' "${line}"
 done <<< $(seq 10)

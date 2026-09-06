@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how to remove the last n characters from a string in bash
 # References:
@@ -9,10 +9,10 @@ str='hello world'
 # with a constant value
 
 first_word=${str::-6}
-echo "[$first_word]"
+echo "[${first_word}]"
 
 # with a variable
 
 num_to_remove=6
 first_word=${str::-${num_to_remove}}
-echo "[$first_word]"
+echo "[${first_word}]"

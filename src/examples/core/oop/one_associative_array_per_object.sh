@@ -1,4 +1,7 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# the variables here are set indirectly, by name (eval or local -n),
+# which shellcheck cannot follow
+# shellcheck disable=SC2154
 
 # This example show basic object oriented programming using bash.
 # This approach uses a rather standard way of implementing object
@@ -26,32 +29,32 @@ source src/includes/assoc.bashinc
 
 function oo_new() {
 	local __obj_name=$1
-	eval "declare -gA $__obj_name=()"
+	eval "declare -gA ${__obj_name}=()"
 }
 
 function oo_set_attr() {
 	local __obj_name=$1
 	local attr=$2
 	local value=$3
-	eval "${__obj_name}['$attr']='$value'"
+	eval "${__obj_name}['${attr}']='${value}'"
 }
 
 function oo_get_attr() {
 	local __obj_name=$1
 	local __var_name=$2
 	local attr=$3
-	eval "$__var_name=\${${__obj_name}['$attr']}"
+	eval "${__var_name}=\${${__obj_name}['${attr}']}"
 }
 
 function oo_print() {
 	local __obj_name=$1
-	assoc_print "$__obj_name"
+	assoc_print "${__obj_name}"
 }
 
 function oo_len() {
 	local __obj_name=$1
 	local __var_name=$2
-	assoc_len "$__obj_name" "$__var_name"
+	assoc_len "${__obj_name}" "${__var_name}"
 }
 
 # the testing code
@@ -60,18 +63,18 @@ oo_new obj
 oo_set_attr obj name mark
 oo_set_attr obj surname veltzer
 oo_get_attr obj name name
-if [ "$name" != "mark" ]
+if [ "${name}" != "mark" ]
 then
 	echo "ERROR"
 fi
 oo_get_attr obj surname surname
-if [ "$surname" != "veltzer" ]
+if [ "${surname}" != "veltzer" ]
 then
 	echo "ERROR"
 fi
 oo_print obj
 oo_len obj len
-if [ "$len" != "2" ]
+if [ "${len}" != "2" ]
 then
 	echo "ERROR"
 fi

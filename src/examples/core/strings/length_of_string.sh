@@ -1,4 +1,6 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# this compares ${#var} with the expr forms, so expr length is deliberate
+# shellcheck disable=SC2308
 
 # This is an example of how to know the string length in bash.
 #
@@ -10,9 +12,9 @@ strvar='hello world'
 # first is the best way and probably fastest
 echo "${#strvar}"
 # shellcheck disable=SC2003
-expr length "$strvar"
+expr length "${strvar}"
 expr "${strvar}" : '.*'
 # who do you do this with (()) 'expr' is antiquated and
 # ((length "$strvar"))
-echo -n "$strvar" | wc -c
-echo -n "$strvar" | awk '{print length}'
+echo -n "${strvar}" | wc -c
+echo -n "${strvar}" | awk '{print length}'

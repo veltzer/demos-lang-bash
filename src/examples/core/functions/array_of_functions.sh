@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example shows how to store an array of functions.
 #
@@ -20,6 +20,6 @@ array+=(b)
 # run all functions
 for i in "${!array[@]}"
 do
-	echo "running [${array[$i]}]"
-	${array[$i]}
+	echo "running [${array[${i}]}]"
+	${array[${i}]}
 done

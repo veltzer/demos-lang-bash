@@ -1,4 +1,6 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# the unquoted array expansion is part of the stack-trace walk shown here
+# shellcheck disable=SC2048
 
 # example of how to print a stack trace in bash
 
@@ -7,13 +9,13 @@ function print_stack {
 	for curr in ${FUNCNAME[*]}
 	do
 		# do not print the print_stack function itself (it really does not matter)
-		if [[ $x != 0 ]]
+		if [[ ${x} != 0 ]]
 		then
-			local line=${BASH_LINENO[$x-1]}
-			local source=${BASH_SOURCE[$x-1]}
-			echo $curr,$line,$source
+			local line=${BASH_LINENO[${x}-1]}
+			local source=${BASH_SOURCE[${x}-1]}
+			echo "${curr}","${line}","${source}"
 		fi
-		let "x=x+1"
+		((x=x+1))
 	done
 }
 

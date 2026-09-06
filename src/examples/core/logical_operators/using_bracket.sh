@@ -1,4 +1,6 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# this example is about the test syntax itself, so it compares literals
+# shellcheck disable=SC2050
 
 # This example shows how to use logical operators when using the '['/'test' shell builtin.
 # Note that '[' and '[[' are not the same as '[[' is a shell keyword and not a shell
@@ -31,15 +33,15 @@ else
 	error ${LINENO} "problem" 1
 fi
 
-let "a=2"
-let "b=2"
-if [ $a = 1 ] || [ $b = 2 ]
+((a=2))
+((b=2))
+if [ ${a} = 1 ] || [ ${b} = 2 ]
 then
 	true
 else
 	error ${LINENO} "problem" 1
 fi
-if [ $a = 2 ] && [ $b = 2 ]
+if [ ${a} = 2 ] && [ ${b} = 2 ]
 then
 	true
 else

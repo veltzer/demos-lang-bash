@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how to check if a string starts with something
 #
@@ -8,25 +8,25 @@
 str='hello world'
 
 # this solution is based on '[[' which is a shell builtin
-if [[ "$str" == hello* ]]
+if [[ "${str}" == hello* ]]
 then
 	echo "yes"
 fi
 
 # this does not work
-if [[ "$str" == "hello*" ]]
+if [[ "${str}" == "hello*" ]]
 then
 	echo "yes"
 fi
 
 # the best solution by regexp (bash3 and onwards)
-if [[ "$str" =~ ^hello.* ]]
+if [[ "${str}" =~ ^hello.* ]]
 then
 	echo "yes"
 fi
 
 # the best solution by regexp (bash3 and onwards)
-if [[ "$str" =~ ^hello ]]
+if [[ "${str}" =~ ^hello ]]
 then
 	echo "yes"
 fi

@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how to check the exit code of a child
 # References:
@@ -52,14 +52,14 @@ function mytest {
 	"$@"
 	local status=$?
 	echo "entering with $1"
-	if [ $status -ne 0 ]
+	if [ ${status} -ne 0 ]
 	then
 		echo "error with $1" >&2
-		echo "faking exit with status $status"
+		echo "faking exit with status ${status}"
 		# exit $status
 	fi
-	echo "returning with status $status"
-	return $status
+	echo "returning with status ${status}"
+	return ${status}
 }
 mytest false
 mytest true

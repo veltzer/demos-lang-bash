@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This demo shows how to add to the path variable in a way that does
 # not add junk.
@@ -13,11 +13,11 @@ function path_add {
 }
 
 FOO=""
-echo $FOO
-FOO=$(path_add "$FOO" IAddedThis)
-echo $FOO
+echo "${FOO}"
+FOO=$(path_add "${FOO}" IAddedThis)
+echo "${FOO}"
 
 BAR="somevalue"
-echo $BAR
-BAR=$(path_add "$BAR" IAddedThis)
-echo $BAR
+echo ${BAR}
+BAR=$(path_add "${BAR}" IAddedThis)
+echo "${BAR}"

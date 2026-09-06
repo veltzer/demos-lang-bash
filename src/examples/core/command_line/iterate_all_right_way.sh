@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how to iterate properly all the command line arguments.
 # You can test this by giving arguments of like this:
@@ -13,6 +13,6 @@
 # the right way to iterate an array
 for elem in "$@"
 do
-	echo $elem
+	echo "${elem}"
 done
 echo "size of the array is $#"

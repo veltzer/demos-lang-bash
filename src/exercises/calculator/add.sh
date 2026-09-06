@@ -1,5 +1,5 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
-let "result=$1+$2"
+((result=$1+$2))
 # (( result=$1+$2 ))
-echo "result is $result"
+echo "result is ${result}"

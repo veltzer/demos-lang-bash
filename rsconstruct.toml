@@ -26,6 +26,7 @@ src_dirs = ["tera.templates"]
 
 [processor.rumdl]
 src_dirs = ["src"]
+src_files = ["README.md"]
 
 [processor.zspell]
 src_dirs = ["src"]
@@ -43,9 +44,11 @@ src_dirs = ["src", "config"]
 
 # ─── shell ───────────────────────────────────────────────────────────────────
 
+# --external-sources lets shellcheck follow the tracked src/includes/*.bashinc
+# that the examples source, so the helpers they define are seen.
 [processor.shellcheck]
 src_dirs = ["src", "config"]
-args = ["--severity=error", "--shell=bash"]
+args = ["--external-sources"]
 
 # ─── lua ─────────────────────────────────────────────────────────────────────
 

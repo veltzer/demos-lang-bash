@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is a basic example of how to work with config files in bash
 # using an associative array.
@@ -19,7 +19,7 @@ assoc_config_read config "data/more.ini"
 assoc_print config
 # get a single config file which is in the config
 assoc_get config val "one"
-echo "val of [one] is [$val]"
+echo "val of [one] is [${val}]"
 # get a single config file which is not in the config
 assoc_get config val "nonexist"
-echo "val of [nonexist] is [$val]"
+echo "val of [nonexist] is [${val}]"

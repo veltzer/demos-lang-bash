@@ -1,4 +1,7 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# the variables here are set indirectly, by name (eval or local -n),
+# which shellcheck cannot follow
+# shellcheck disable=SC2154
 
 # This example show basic object oriented programming using bash.
 # This approach uses just one hashmap for all attributes of all objects
@@ -18,16 +21,16 @@ declare -A _object_attrs=()
 
 function new_object() {
 	local __resultvar=$1
-	local val=$_object_count
-	let "_object_count++"
-	eval $__resultvar="'$val'"
+	local val=${_object_count}
+	((_object_count++))
+	eval "${__resultvar}"="'${val}'"
 }
 
 function set_attr() {
 	local id=$1
 	local attr=$2
 	local value=$3
-	_object_attrs["${id}.${attr}"]="$value"
+	_object_attrs["${id}.${attr}"]="${value}"
 }
 
 function get_attr() {
@@ -39,7 +42,7 @@ function get_attr() {
 function print_all() {
 	for key in "${!_object_attrs[@]}"
 	do
-		echo $key ${_object_attrs[$key]}
+		echo "${key}" "${_object_attrs[${key}]}"
 	done
 }
 
@@ -51,40 +54,40 @@ function Person() {
 	local name=$2
 	local surname=$3
 	new_object id
-	set_attr $id name $name
-	set_attr $id surname $surname
-	eval $__resultvar="'$id'"
+	set_attr "${id}" name "${name}"
+	set_attr "${id}" surname "${surname}"
+	eval "${__resultvar}"="'${id}'"
 }
 
 function get_name() {
 	local id=$1
-	get_attr $id name
+	get_attr "${id}" name
 }
 
 function set_name() {
 	local id=$1
 	local name=$2
-	set_attr $id name $name
+	set_attr "${id}" name "${name}"
 }
 
 function set_surname() {
 	local id=$1
 	local surname=$2
-	set_attr $id surname $surname
+	set_attr "${id}" surname "${surname}"
 }
 
 function get_surname() {
 	local id=$1
-	get_attr $id surname
+	get_attr "${id}" surname
 }
 
 Person p1 "mark" "veltzer"
 Person p2 "linus" "torvalds"
 # declare | grep _object
-get_name $p1
-get_surname $p1
-get_name $p2
-get_surname $p2
-set_name $p1 "doron"
-get_name $p1
+get_name "${p1}"
+get_surname "${p1}"
+get_name "${p2}"
+get_surname "${p2}"
+set_name "${p1}" "doron"
+get_name "${p1}"
 print_all

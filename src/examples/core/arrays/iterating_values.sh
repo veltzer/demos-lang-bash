@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example shows how to iterate an array in bash.
 #
@@ -18,21 +18,21 @@ echo 'for elem in "${z[@]}"'
 i=0
 for elem in "${z[@]}"
 do
-	if [ "$i" -ge "${#z[@]}" ]
+	if [ "${i}" -ge "${#z[@]}" ]
 	then
-		echo -e "\tERROR inedx too large [$i] [${#z[@]}] [$elem]"
+		echo -e "\tERROR inedx too large [${i}] [${#z[@]}] [${elem}]"
 		((i++))
 		continue
 	fi
-	if [ "$elem" != "${z[$i]}" ]
+	if [ "${elem}" != "${z[${i}]}" ]
 	then
-		echo -e "\tERROR [$elem] != [${z[$i]}]"
+		echo -e "\tERROR [${elem}] != [${z[${i}]}]"
 	fi
 	((i++))
 done
-if [ "$i" -ne 3 ]
+if [ "${i}" -ne 3 ]
 then
-	echo -e "\tERROR number of elements $i != 3"
+	echo -e "\tERROR number of elements ${i} != 3"
 fi
 
 # shellcheck disable=SC2016
@@ -41,21 +41,21 @@ i=0
 # shellcheck disable=SC2068
 for elem in ${z[@]}
 do
-	if [ "$i" -ge "${#z[@]}" ]
+	if [ "${i}" -ge "${#z[@]}" ]
 	then
-		echo -e "\tERROR inedx too large [$i] [${#z[@]}] [$elem]"
+		echo -e "\tERROR inedx too large [${i}] [${#z[@]}] [${elem}]"
 		((i++))
 		continue
 	fi
-	if [ "$elem" != "${z[$i]}" ]
+	if [ "${elem}" != "${z[${i}]}" ]
 	then
-		echo -e "\tERROR [$elem] != [${z[$i]}]"
+		echo -e "\tERROR [${elem}] != [${z[${i}]}]"
 	fi
 	((i++))
 done
-if [ "$i" -ne 3 ]
+if [ "${i}" -ne 3 ]
 then
-	echo -e "\tERROR number of elements $i != 3"
+	echo -e "\tERROR number of elements ${i} != 3"
 fi
 
 # shellcheck disable=SC2016
@@ -64,65 +64,65 @@ i=0
 # shellcheck disable=SC2066
 for elem in "${z[*]}"
 do
-	if [ "$i" -ge "${#z[@]}" ]
+	if [ "${i}" -ge "${#z[@]}" ]
 	then
-		echo -e "\tERROR inedx too large [$i] [${#z[@]}] [$elem]"
+		echo -e "\tERROR inedx too large [${i}] [${#z[@]}] [${elem}]"
 		((i++))
 		continue
 	fi
-	if [ "$elem" != "${z[$i]}" ]
+	if [ "${elem}" != "${z[${i}]}" ]
 	then
-		echo -e "\tERROR [$elem] != [${z[$i]}]"
+		echo -e "\tERROR [${elem}] != [${z[${i}]}]"
 	fi
 	((i++))
 done
-if [ "$i" -ne 3 ]
+if [ "${i}" -ne 3 ]
 then
-	echo -e "\tERROR number of elements $i != 3"
+	echo -e "\tERROR number of elements ${i} != 3"
 fi
 
 # shellcheck disable=SC2016
 echo 'for elem in "$z"'
 i=0
 # shellcheck disable=SC2128,SC2066
-for elem in "$z"
+for elem in "${z}"
 do
-	if [ "$i" -ge "${#z[@]}" ]
+	if [ "${i}" -ge "${#z[@]}" ]
 	then
-		echo -e "\tERROR inedx too large [$i] [${#z[@]}] [$elem]"
+		echo -e "\tERROR inedx too large [${i}] [${#z[@]}] [${elem}]"
 		((i++))
 		continue
 	fi
-	if [ "$elem" != "${z[$i]}" ]
+	if [ "${elem}" != "${z[${i}]}" ]
 	then
-		echo -e "\tERROR [$elem] != [${z[$i]}]"
+		echo -e "\tERROR [${elem}] != [${z[${i}]}]"
 	fi
 	((i++))
 done
-if [ "$i" -ne 3 ]
+if [ "${i}" -ne 3 ]
 then
-	echo -e "\tERROR number of elements $i != 3"
+	echo -e "\tERROR number of elements ${i} != 3"
 fi
 
 # shellcheck disable=SC2016
 echo 'for elem in $z'
 i=0
 # shellcheck disable=SC2128
-for elem in $z
+for elem in ${z}
 do
-	if [ "$i" -ge "${#z[@]}" ]
+	if [ "${i}" -ge "${#z[@]}" ]
 	then
-		echo -e "\tERROR inedx too large [$i] [${#z[@]}] [$elem]"
+		echo -e "\tERROR inedx too large [${i}] [${#z[@]}] [${elem}]"
 		((i++))
 		continue
 	fi
-	if [ "$elem" != "${z[$i]}" ]
+	if [ "${elem}" != "${z[${i}]}" ]
 	then
-		echo -e "\tERROR [$elem] != [${z[$i]}]"
+		echo -e "\tERROR [${elem}] != [${z[${i}]}]"
 	fi
 	((i++))
 done
-if [ "$i" -ne 3 ]
+if [ "${i}" -ne 3 ]
 then
-	echo -e "\tERROR number of elements $i != 3"
+	echo -e "\tERROR number of elements ${i} != 3"
 fi

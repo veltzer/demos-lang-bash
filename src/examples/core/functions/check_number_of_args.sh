@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how to check that a correct number of arguments has been passed
 # to a bash function.

@@ -1,4 +1,6 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# array_print takes the array by name (local -n), which shellcheck cannot follow
+# shellcheck disable=SC2034
 
 # This example shows how to initialize an array from a glob pattern
 #

@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # examples of how to write functions in bash which accept any number
 # of arguments.
@@ -11,8 +11,8 @@ function print_all_args {
 	local item
 	for item in "$@"
 	do
-		echo "argument $x is $item"
-		let "x=x+1"
+		echo "argument ${x} is ${item}"
+		((x=x+1))
 	done
 }
 
@@ -20,9 +20,9 @@ function add_all_args {
 	local sum=0
 	for item in "$@"
 	do
-		let "sum+=item"
+		((sum+=item))
 	done
-	echo "sum is $sum"
+	echo "sum is ${sum}"
 }
 
 # this functions demostrates how to create useful shortcuts
@@ -30,7 +30,7 @@ function add_all_args {
 
 progname=$0
 function myecho {
-	echo "$progname" "$@"
+	echo "${progname}" "$@"
 }
 
 # this function return an error. Not by an explicit statement

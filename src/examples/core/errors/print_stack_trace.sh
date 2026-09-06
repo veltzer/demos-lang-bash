@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how to use the 'caller' builtin in order to build
 # a 'die' like function.
@@ -8,7 +8,7 @@
 
 die() {
 	local frame=0
-	while caller $frame
+	while caller ${frame}
 	do
 		((frame++));
 	done

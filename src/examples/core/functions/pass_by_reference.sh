@@ -1,4 +1,6 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# this example passes variables by name (eval and local -n), which shellcheck cannot follow
+# shellcheck disable=SC2034
 
 # This example shows how to pass values by reference
 # to bash functions
@@ -16,13 +18,13 @@ source src/includes/array.bashinc
 function using_eval() {
 	local var1=$1
 	local value=$2
-	eval "$var1=$value"
+	eval "${var1}=${value}"
 }
 
 function using_minus_n() {
 	local -n var2=$1
 	local value=$2
-	var2=$value
+	var2=${value}
 }
 
 function array_with_minus_n() {
@@ -32,7 +34,7 @@ function array_with_minus_n() {
 
 a=5
 using_eval a 6
-if [ "$a" != 6 ]
+if [ "${a}" != 6 ]
 then
 	echo "ERROR 1"
 fi
@@ -40,14 +42,14 @@ fi
 # show that this method has problem with same named variables
 var=6
 using_eval var 7
-if [ "$var" != 6 ]
+if [ "${var}" != 6 ]
 then
 	echo "ERROR 2"
 fi
 
 a=7
 using_minus_n a 8
-if [ "$a" != 8 ]
+if [ "${a}" != 8 ]
 then
 	echo "ERROR 3"
 fi
@@ -61,7 +63,7 @@ fi
 
 my_array=9
 using_minus_n my_array 10
-if [ "$my_array" != 10 ]
+if [ "${my_array}" != 10 ]
 then
 	echo "ERROR 5"
 fi

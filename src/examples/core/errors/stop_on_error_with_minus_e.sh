@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how to make bash stricter.
 # The "set -e" (or setting -e at the shbang)

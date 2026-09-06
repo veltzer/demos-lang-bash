@@ -1,4 +1,7 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# the variables here are set indirectly, by name (eval or local -n),
+# which shellcheck cannot follow
+# shellcheck disable=SC2154
 
 # There are several ways to return values from a bash function:
 # - echo the value and let the caller capture it using backticks
@@ -42,8 +45,8 @@ function add_echo() {
 	local a=$1
 	local b=$2
 	local result
-	let "result=$a+$b"
-	echo $result
+	((result=a+b))
+	echo ${result}
 }
 
 function add_ref() {
@@ -51,8 +54,8 @@ function add_ref() {
 	local a=$2
 	local b=$3
 	local result
-	let "result=$a+$b"
-	eval "$__user_var=$result"
+	((result=a+b))
+	eval "${__user_var}=${result}"
 }
 
 array_new __return_values
@@ -61,24 +64,24 @@ function add_stack() {
 	local a=$1
 	local b=$2
 	local result
-	let "result=$a+$b"
-	array_push __return_values $result
+	((result=a+b))
+	array_push __return_values ${result}
 }
 
 # lets see if all is well
 c=$(add_echo 2 2)
-if [ "$c" != "4" ]
+if [ "${c}" != "4" ]
 then
 	echo "ERROR"
 fi
 add_ref d 2 2
-if [ "$d" != "4" ]
+if [ "${d}" != "4" ]
 then
 	echo "ERROR"
 fi
 add_stack 2 2
 array_pop __return_values e
-if [ "$e" != "4" ]
+if [ "${e}" != "4" ]
 then
 	echo "ERROR"
 fi
@@ -86,19 +89,19 @@ fi
 # lets measure
 count=1000
 function wrap_echo() {
-	for (( i=0; i<$count; i++ ))
+	for (( i=0; i<count; i++ ))
 	do
 		c=$(add_echo 2 2)
 	done
 }
 function wrap_ref() {
-	for (( i=0; i<$count; i++ ))
+	for (( i=0; i<count; i++ ))
 	do
 		add_ref d 2 2
 	done
 }
 function wrap_stack() {
-	for (( i=0; i<$count; i++ ))
+	for (( i=0; i<count; i++ ))
 	do
 		add_stack 2 2
 		array_pop __return_values e
@@ -109,6 +112,6 @@ measure diff_echo wrap_echo 4
 measure diff_ref wrap_ref 4
 measure diff_stack wrap_stack 4
 # shellcheck disable=SC2154
-echo "diff_echo is [$diff_echo]"
-echo "diff_ref is [$diff_ref]"
-echo "diff_stack is [$diff_stack]"
+echo "diff_echo is [${diff_echo}]"
+echo "diff_ref is [${diff_ref}]"
+echo "diff_stack is [${diff_stack}]"

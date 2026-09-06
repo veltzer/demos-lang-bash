@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example shows how to test if a variable is empty.
 # The best way is the -z shown below.
@@ -11,20 +11,20 @@
 # - https://serverfault.com/questions/7503/how-to-determine-if-a-bash-variable-is-empty
 
 myvar=""
-if [ -z "$myvar" ]
+if [ -z "${myvar}" ]
 then
 	echo "yes, it is empty"
 else
 	echo "no, it is not empty"
 fi
 myvar="somevalue"
-if [ -z "$myvar" ]
+if [ -z "${myvar}" ]
 then
 	echo "yes, it is empty"
 else
 	echo "no, it is not empty"
 fi
-if [ -z "$no_such_var" ]
+if [ -z "${no_such_var}" ]
 then
 	echo "yes, it is empty"
 fi

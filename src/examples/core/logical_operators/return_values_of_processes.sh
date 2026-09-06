@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example shows how to do logical operators on the return
 # values of processes.
@@ -15,17 +15,17 @@ function print_truth_table() {
 	do
 		for y in true false
 		do
-			if [ $op = "&&" ]
+			if [ "${op}" = "&&" ]
 			then
-				$x && $y
+				${x} && ${y}
 				a=$?
 			fi
-			if [ $op = "||" ]
+			if [ "${op}" = "||" ]
 			then
-				$x || $y
+				${x} || ${y}
 				a=$?
 			fi
-			echo "$x $op $y = $a"
+			echo "${x} ${op} ${y} = ${a}"
 		done
 	done
 }

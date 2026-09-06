@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example shows how to check if a file is readable or writable in bash.
 # References:
@@ -6,7 +6,7 @@
 
 function readable() {
 	local filename=$1
-	[ -r "$filename" ]
+	[ -r "${filename}" ]
 	return $?
 
 }

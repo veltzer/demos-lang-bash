@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of how to remove a prefix from a string, if it exists
 # References:
@@ -7,11 +7,11 @@
 # this is the removal of the prefix
 str='hello world'
 prefix='hel'
-no_prefix=${str#$prefix}
-echo "$no_prefix"
+no_prefix=${str#"${prefix}"}
+echo "${no_prefix}"
 
 # this shows that if the prefix does not exist, nothing happens
 str='hello world'
 prefix='rld'
-no_prefix=${str#$prefix}
-echo "$no_prefix"
+no_prefix=${str#"${prefix}"}
+echo "${no_prefix}"

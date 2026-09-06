@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This script checks if a file is in a folder
 # References:
@@ -6,7 +6,7 @@
 
 f1="/etc/foo"
 f2="/etc"
-if [ "${f1##${f2}}" != "${f1}" ]
+if [ "${f1##"${f2}"}" != "${f1}" ]
 then
 	echo "yes"
 else
@@ -14,7 +14,7 @@ else
 fi
 f1="/var/foo"
 f2="/etc"
-if [ "${f1##${f2}}" != "${f1}" ]
+if [ "${f1##"${f2}"}" != "${f1}" ]
 then
 	echo "yes"
 else

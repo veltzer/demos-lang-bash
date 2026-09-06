@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This is an example of doing profiling in bash using the date(1) utility and bc(1).
 # Notes:
@@ -11,22 +11,23 @@
 
 function real_long_time() {
 	local x=0
-	while [[ $x -lt 100000 ]]
+	while [[ ${x} -lt 100000 ]]
 	do
-		let "x=x+1"
+		((x=x+1))
 	done
 	return 1
 }
 
 function measure() {
 	local function_name=$1
-	local start=$(date +%s.%N)
-	$function_name
-	local ret=$?
-	local end=$(date +%s.%N)
-	diff=$(echo "$end - $start" | bc -l)
+	local start
+	start=$(date +%s.%N)
+	${function_name}
+	local end
+	end=$(date +%s.%N)
+	diff=$(echo "${end} - ${start}" | bc -l)
 	return $?
 }
 
 measure real_long_time
-printf "%.3f\n" $diff
+printf "%.3f\n" "${diff}"

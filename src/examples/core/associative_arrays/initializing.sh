@@ -1,4 +1,6 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
+# assoc_print takes the map by name (local -n), which shellcheck cannot follow
+# shellcheck disable=SC2034
 
 # This is an example showing the different ways to initalize an associative array
 # in bash.

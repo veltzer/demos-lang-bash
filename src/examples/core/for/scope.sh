@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example examines the scope of a variable first defined
 # a for loop in bash
@@ -26,7 +26,7 @@ function loop_over_local() {
 }
 
 loop_over_no_local
-if [ "$x" != "blue" ]
+if [ "${x}" != "blue" ]
 then
 	echo "ERROR"
 fi

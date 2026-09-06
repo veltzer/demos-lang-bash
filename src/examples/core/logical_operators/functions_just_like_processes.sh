@@ -1,4 +1,4 @@
-\#\!/bin/bash -eu
+#!/bin/bash -eu
 
 # This example shows that as far as bash boolean operators are concerned
 # then functions in bash returning 0 and 1 are just like processes having
@@ -18,17 +18,17 @@ function print_truth_table() {
 	do
 		for y in yes no
 		do
-			if [ $op = "&&" ]
+			if [ "${op}" = "&&" ]
 			then
-				$x && $y
+				${x} && ${y}
 				a=$?
 			fi
-			if [ $op = "||" ]
+			if [ "${op}" = "||" ]
 			then
-				$x || $y
+				${x} || ${y}
 				a=$?
 			fi
-			echo "$x $op $y = $a"
+			echo "${x} ${op} ${y} = ${a}"
 		done
 	done
 }
