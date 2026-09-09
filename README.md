@@ -1,11 +1,11 @@
 <!-- This file is generated. Do not edit it by hand: your changes will be
      lost on the next build. Edit the template it is rendered from, or the
      values that template reads, and build again. -->
-# *demos-bash* project by Mark Veltzer
+# *demos-lang-bash* project by Mark Veltzer
 
 description: demos for the bash programming language
 
-project website: https://veltzer.github.io/demos-bash
+project website: https://veltzer.github.io/demos-lang-bash
 
 author: Mark Veltzer
 
@@ -15,11 +15,11 @@ version: 0.0.1
 
 ## github
 
-![License](https://img.shields.io/github/license/veltzer/demos-bash)
+![License](https://img.shields.io/github/license/veltzer/demos-lang-bash)
 
 ## build
 
-![build](https://github.com/veltzer/demos-bash/workflows/build/badge.svg)
+![build](https://github.com/veltzer/demos-lang-bash/workflows/build/badge.svg)
 ## Number of examples
 
 Currently there are 267 examples in this repo.
