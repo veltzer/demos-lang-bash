@@ -18,7 +18,7 @@ reject_dot_src_dirs = true
 # listed here must exist: rsconstruct rejects a missing one at config load.
 # Repos still on config/*.py keep a dep_inputs override in their local
 # overlay until converted.
-[processor.tera]
+[processor.generator.tera]
 dep_auto = [
 	"config/project.lua",
 	"config/personal.lua",
@@ -28,40 +28,40 @@ src_dirs = ["tera.templates"]
 
 # ─── markdown ────────────────────────────────────────────────────────────────
 
-[processor.rumdl]
+[processor.checker.rumdl]
 src_dirs = ["src"]
 src_files = ["README.md"]
 
-[processor.zspell]
+[processor.checker.zspell]
 src_dirs = ["src"]
 
 # ─── python ──────────────────────────────────────────────────────────────────
 
-[processor.ruff]
+[processor.checker.ruff]
 src_dirs = ["src", "config"]
 
 
-[processor.mypy]
+[processor.checker.mypy]
 src_dirs = ["src", "config"]
 
 # ─── shell ───────────────────────────────────────────────────────────────────
 
 # --external-sources lets shellcheck follow the tracked src/includes/*.bashinc
 # that the examples source, so the helpers they define are seen.
-[processor.shellcheck]
+[processor.checker.shellcheck]
 src_dirs = ["src", "config"]
 args = ["--external-sources"]
 
 # ─── lua ─────────────────────────────────────────────────────────────────────
 
-[processor.luacheck]
+[processor.checker.luacheck]
 src_dirs = ["config"]
 
 # ─── toml / yaml / json ──────────────────────────────────────────────────────
 
-[processor.taplo]
+[processor.checker.taplo]
 src_files = [".rumdl.toml", "pyproject.toml", "rsconstruct.toml"]
 
 # lint the GitHub Actions workflow files with actionlint
-[processor.actionlint]
+[processor.checker.actionlint]
 src_dirs = [".github/workflows"]
