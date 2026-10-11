@@ -46,11 +46,11 @@ src_dirs = ["src", "config"]
 
 # ─── shell ───────────────────────────────────────────────────────────────────
 
-# --external-sources lets shellcheck follow the tracked src/includes/*.bashinc
+# external_sources lets ishellcheck follow the tracked src/includes/*.bashinc
 # that the examples source, so the helpers they define are seen.
-[processor.checker.shellcheck]
+[processor.checker.ishellcheck]
 src_dirs = ["src", "config"]
-args = ["--external-sources"]
+external_sources = true
 
 # ─── lua ─────────────────────────────────────────────────────────────────────
 
