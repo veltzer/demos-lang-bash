@@ -5,7 +5,7 @@
 
 description: demos for the bash programming language
 
-project website: https://veltzer.github.io/demos-lang-bash
+project website: <https://veltzer.github.io/demos-lang-bash>
 
 author: Mark Veltzer
 
