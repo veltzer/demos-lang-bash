@@ -10,6 +10,7 @@ part of the files name is replaced by an underscore.
 At the beginning of your script, make sure you are given a folder parameter
 by the user.
 Hint:
+
 * the variable $# contains the number of arguments to your script
 
 At the beginning of the your script, when you receive a folder name, make sure

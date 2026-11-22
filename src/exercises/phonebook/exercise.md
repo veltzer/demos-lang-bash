@@ -3,9 +3,11 @@
 Write a phone book application in ksh.
 
 The application should present a menu to the user with the following entries:
+
 1) insert a name. 2) delete a name. 3) search for a name. 4) show current phonebook. 5) show number of entries in current phonebook. 6) update a name. 7) exit.
 
 The user will select the operation required.
+
 1. insert a name - will receive a name, check that it is not in the current phonebook and
 will emit an error and will return to the loop if that is the case. If the name is a new
 one then it will request a phone number and will insert that name into the phonebook.
@@ -22,6 +24,7 @@ phonebook, then will receive a phone number and will update that entry to this p
 7. exit - will exit the application with a "success" return code.
 
 Technical instructions
+
 * Use select for the menu.
 * Use exit to exit the application.
 * Use PS3 environment var to customize the prompt.

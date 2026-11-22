@@ -34,6 +34,7 @@ Write a script to find the folder with the most hardlinks in /etc. Use ls or sta
 Don't worry about folders you can't access, You can dis-regard all of those.
 
 Hints:
+
 - if you want find(1) to work with an expression you can do:
 
 ```bash
