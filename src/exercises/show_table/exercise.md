@@ -1,4 +1,5 @@
 # Show table
+
 Write a script that shows a file in a tabular format.
 Here is an example of a file:
 
