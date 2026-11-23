@@ -21,6 +21,10 @@ if choice=$(kdialog --menu "Choose an option:" "${options[@]}"); then
         "optquit")
             kdialog --msgbox "Goodbye!"
             ;;
+        *)
+            echo "unexpected choice: ${choice}" >&2
+            exit 1
+            ;;
     esac
 else
     kdialog --msgbox "Cancelled."

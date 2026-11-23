@@ -16,5 +16,5 @@ echo "the pid of 10 is ${PID10}..."
 while [[ ${x} -gt 0 ]]
 do
 	sleep 1
-	ps -p ${PID5}
+	ps -p "${PID5}"
 done

@@ -15,13 +15,13 @@
 # - http://stackoverflow.com/questions/1279953/how-to-execute-the-output-of-a-command-within-the-current-shell
 
 export FOO=1
-echo ${FOO}
+echo "${FOO}"
 source <(echo export FOO=2)
-echo ${FOO}
+echo "${FOO}"
 eval $(echo export FOO=3)
-echo ${FOO}
+echo "${FOO}"
 filename=$(mktemp)
 echo "export FOO=4" >> "${filename}"
 source "${filename}"
 rm "${filename}"
-echo ${FOO}
+echo "${FOO}"

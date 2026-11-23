@@ -3,7 +3,7 @@
 ./my_proc.py &
 pid=$!
 
-if wait ${pid}
+if wait "${pid}"
 then
 	echo "It exited successfully"
 else

@@ -15,7 +15,7 @@ function find_func {
 	do
 		if [[ ${ff} = ${name} ]]
 		then
-			return ${counter}
+			return "${counter}"
 		fi
 	done
 	newloc=${#FUNCS}

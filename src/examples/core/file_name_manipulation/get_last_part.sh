@@ -9,7 +9,7 @@
 # - https://stackoverflow.com/questions/965053/extract-filename-and-extension-in-bash
 
 path="/var/lib/foo.bar"
-result="$(basename ${path})"
+result="$(basename "${path}")"
 if [ "${result}" != "foo.bar" ]
 then
 	echo "ERROR"

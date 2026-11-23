@@ -32,7 +32,7 @@ function set_minus_e() {
 # "(function) || result=$?" construct.
 result=0
 expected=5
-(exit_with_error ${expected}) || result=$?
+(exit_with_error "${expected}") || result=$?
 if [ "${result}" != "${expected}" ]
 then
 	echo "ERROR"
@@ -48,7 +48,7 @@ fi
 # the next statement is to cancel the 'set -e' at the shbang line above
 set +e
 expected=0
-(set_minus_e ${expected})
+(set_minus_e "${expected}")
 result=$?
 # just to make sure that we are still not strict
 false
@@ -59,7 +59,7 @@ fi
 
 set +e
 expected=7
-(set_minus_e ${expected})
+(set_minus_e "${expected}")
 result=$?
 # just to make sure that we are still not strict
 false

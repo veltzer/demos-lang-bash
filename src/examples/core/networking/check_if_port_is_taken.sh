@@ -7,7 +7,7 @@
 # References:
 # - https://www.cyberciti.biz/faq/how-do-i-check-if-a-port-is-in-use-on-linux/
 
-if [[ $(ss --no-header --tcp --listening "sport = :$1") ]]
+if [[ -n "$(ss --no-header --tcp --listening "sport = :$1")" ]]
 then
 	echo "port [$1] is busy"
 else

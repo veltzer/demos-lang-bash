@@ -8,6 +8,6 @@ while IFS= read -r ip
 do
 	if ping -w 2 "${ip}"
 	then
-		echo "${ip}" >> ${output}
+		echo "${ip}" >> "${output}"
 	fi
 done < "${filename}"

@@ -15,7 +15,7 @@ function func1 {
 }
 
 function func2 {
-	if [[ "${1:+present}" ]]
+	if [[ -n "${1:+present}" ]]
 	then
 		echo "have a value"
 	else

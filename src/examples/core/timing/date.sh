@@ -15,7 +15,7 @@ function measure() {
 	local start
 	start=$(date +%s.%N)
 	((i=0))
-	while [ ${i} -lt "${count}" ]
+	while [ "${i}" -lt "${count}" ]
 	do
 		${function_name}
 		((i=i+1))
@@ -26,7 +26,7 @@ function measure() {
 	local diff
 	diff=$(echo "(${end} - ${start})/${count}" | bc -l)
 	eval "${__user_var}"="${diff}"
-	return ${ret}
+	return "${ret}"
 }
 
 function my_func() {

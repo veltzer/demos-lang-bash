@@ -10,7 +10,7 @@ function change_globals {
 
 function print_them {
 	echo "${arr[6]}"
-	echo ${var}
+	echo "${var}"
 }
 
 function change_locals {

@@ -8,7 +8,7 @@
 # - https://gist.github.com/ahendrix/7030300
 
 # this is the current line number
-echo ${LINENO}
+echo "${LINENO}"
 echo "${BASH_SOURCE}"
 # this does not work
 # echo ${FUNCNAME}

@@ -30,7 +30,7 @@ do
 			# echo "$sock_number"
 			# we need to find the line(s) with this number ($sock_number) in /proc/net/tcp in the
 			# 11th column
-			cat /proc/net/tcp | grep "${sock_number}" | tr -s " " | cut -d " " -f 6 | tr ":" " "
+			grep "${sock_number}" /proc/net/tcp | tr -s " " | cut -d " " -f 6 | tr ":" " "
 		fi
 	done
 done

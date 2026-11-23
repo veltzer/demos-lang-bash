@@ -15,9 +15,9 @@ sleep 10 &
 PID10=$!
 echo "the pid of 10 is ${PID10}..."
 echo "going to wait for sleep 5..."
-wait ${PID5}
+wait "${PID5}"
 echo "yes, 5 is done and status is $?"
 echo "going to wait for sleep 10..."
-wait ${PID10}
+wait "${PID10}"
 echo "yes, 10 is done and status is $?"
 echo "done waiting..."

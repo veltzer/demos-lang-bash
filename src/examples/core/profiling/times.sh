@@ -31,7 +31,7 @@ function measure() {
 	ret=$?
 	t2=$(times)
 	echo "${t2}" "${t1}"
-	return ${ret}
+	return "${ret}"
 }
 
 measure bad

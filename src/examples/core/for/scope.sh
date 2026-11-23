@@ -31,7 +31,7 @@ then
 	echo "ERROR"
 fi
 loop_over_local
-if ! [ -z ${y+x} ]
+if [ -n "${y+x}" ]
 then
 	echo "ERROR"
 fi

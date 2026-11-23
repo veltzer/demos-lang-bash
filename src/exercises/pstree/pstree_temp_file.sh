@@ -14,15 +14,15 @@ filename=/tmp/out.txt
 # user is there to make sure that we always have 4 columns
 # bacause brain dead ps does not have a clear option not to align
 # columns and we need consistency for tr
-ps -e --no-headers -o pid,ppid,comm > ${filename}
+ps -e --no-headers -o pid,ppid,comm > "${filename}"
 
 # note that we get the number of lines from the $filename file
 # and do not run ps(1) again to avoid consistency problems
-numlines=$(wc -l ${filename} | cut -d " " -f 1)
+numlines=$(wc -l "${filename}" | cut -d " " -f 1)
 
 # save the old file descriptor
 exec 3>&0
-exec 0< ${filename}
+exec 0< "${filename}"
 
 PID_TO_NAME=()
 PID_TO_PPID=()
@@ -42,7 +42,7 @@ do
 done
 # restore the file descriptor
 exec 0>&3
-rm -f ${filename}
+rm -f "${filename}"
 
 function print_proc {
 	local num=$1

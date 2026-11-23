@@ -19,18 +19,18 @@
 echo "before bad_syntax"
 result=0
 source bad_syntax.bashinc > /dev/null 2> /dev/null || result=1
-echo ${result}
+echo "${result}"
 echo "after bad_syntax"
 
 echo "before command_fail"
 result=0
 source command_fail.bashinc > /dev/null 2> /dev/null || result=1
-echo ${result}
+echo "${result}"
 echo "after command_fail"
 
 
 echo "before loud"
 result=0
 source loud.bashinc > /dev/null 2> /dev/null || result=1
-echo ${result}
+echo "${result}"
 echo "after loud"

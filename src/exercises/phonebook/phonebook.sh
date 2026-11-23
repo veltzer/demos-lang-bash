@@ -5,7 +5,7 @@ clear
 phonebook="phonebook.txt"
 
 function is_there {
-	grep "^${name}," ${phonebook} > /dev/null
+	grep "^${name}," "${phonebook}" > /dev/null
 }
 
 function read_name {
@@ -31,7 +31,7 @@ if [[ -f ${phonebook} ]]
 then
 	echo "found phonebook in [${phonebook}]. using it"
 else
-	touch ${phonebook}
+	touch "${phonebook}"
 	echo "haven't found phonebook. Created one in [${phonebook}]."
 fi
 
@@ -52,7 +52,7 @@ do
 				error_name_there
 			else
 				read_phone
-				echo "${name},${phone}" >> ${phonebook}
+				echo "${name},${phone}" >> "${phonebook}"
 			fi
 			;;
 		delete)
@@ -62,8 +62,8 @@ do
 			read_name
 			if is_there
 			then
-				grep -v "^${name}," ${phonebook} > tmp.txt
-				mv tmp.txt ${phonebook}
+				grep -v "^${name}," "${phonebook}" > tmp.txt
+				mv tmp.txt "${phonebook}"
 			else
 				error_name_not_there
 			fi
@@ -75,7 +75,7 @@ do
 			read_name
 			if is_there
 			then
-				grep "^${name}," ${phonebook} | cut -f 2 -d ,
+				grep "^${name}," "${phonebook}" | cut -f 2 -d ,
 			else
 				error_name_not_there
 			fi
@@ -90,7 +90,7 @@ do
 			echo
 			echo "in printcount"
 			echo "=================================="
-			wc -l ${phonebook} | cut -f 1 -d " "
+			wc -l "${phonebook}" | cut -f 1 -d " "
 			;;
 		update)
 			echo
@@ -100,9 +100,9 @@ do
 			if is_there
 			then
 				read_phone
-				grep -v "^${name}," ${phonebook} > tmp.txt
-				mv tmp.txt ${phonebook}
-				echo "${name},${phone}" >> ${phonebook}
+				grep -v "^${name}," "${phonebook}" > tmp.txt
+				mv tmp.txt "${phonebook}"
+				echo "${name},${phone}" >> "${phonebook}"
 			else
 				error_name_not_there
 			fi
@@ -111,6 +111,9 @@ do
 			echo
 			echo "in exit"
 			exit 0
+			;;
+		*)
+			echo "invalid selection [${REPLY}]" >&2
 			;;
 	esac
 done

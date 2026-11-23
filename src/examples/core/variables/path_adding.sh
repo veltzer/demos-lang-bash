@@ -18,6 +18,6 @@ FOO=$(path_add "${FOO}" IAddedThis)
 echo "${FOO}"
 
 BAR="somevalue"
-echo ${BAR}
+echo "${BAR}"
 BAR=$(path_add "${BAR}" IAddedThis)
 echo "${BAR}"

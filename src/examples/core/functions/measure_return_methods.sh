@@ -46,7 +46,7 @@ function add_echo() {
 	local b=$2
 	local result
 	((result=a+b))
-	echo ${result}
+	echo "${result}"
 }
 
 function add_ref() {
@@ -65,7 +65,7 @@ function add_stack() {
 	local b=$2
 	local result
 	((result=a+b))
-	array_push __return_values ${result}
+	array_push __return_values "${result}"
 }
 
 # lets see if all is well

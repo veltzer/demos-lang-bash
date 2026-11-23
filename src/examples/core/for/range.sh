@@ -47,7 +47,7 @@ done
 # with variables
 min=3
 max=7
-for i in $(seq ${min} ${max})
+for i in $(seq "${min}" "${max}")
 do
 	echo "${i}"
 done

@@ -8,7 +8,7 @@
 
 die() {
 	local frame=0
-	while caller ${frame}
+	while caller "${frame}"
 	do
 		((frame++));
 	done

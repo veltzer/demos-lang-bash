@@ -18,6 +18,7 @@
 # http://redsymbol.net/articles/unofficial-bash-strict-mode/
 
 set +u
+# shellcheck disable=SC2154  # teaching: UNDEFINED is deliberately never assigned
 echo "before ${UNDEFINED}"
 set -u
 echo "in ${UNDEFINED}"

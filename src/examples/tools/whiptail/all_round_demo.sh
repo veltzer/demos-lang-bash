@@ -15,7 +15,7 @@ whiptail --title "Check list example" --checklist \
 {
     for ((i = 0 ; i <= 100 ; i+=5)); do
         sleep 0.1
-        echo ${i}
+        echo "${i}"
     done
 } | whiptail --gauge "Please wait while we are sleeping..." 6 50 0
 
@@ -25,7 +25,7 @@ COLOR=$(whiptail --inputbox "What is your favorite Color?" 8 78 Blue --title "Ex
                                                                         # A trick to swap stdout and stderr.
 # Again, you can pack this inside if, but it seems really long for some 80-col terminal users.
 exitstatus=$?
-if [ ${exitstatus} = 0 ]; then
+if [ "${exitstatus}" = 0 ]; then
     echo "User selected Ok and entered " "${COLOR}"
 else
     echo "User selected Cancel."
@@ -50,7 +50,7 @@ PASSWORD=$(whiptail --passwordbox "please enter your secret password" 8 78 --tit
 # A trick to swap stdout and stderr.
 # Again, you can pack this inside if, but it seems really long for some 80-col terminal users.
 exitstatus=$?
-if [ ${exitstatus} = 0 ]; then
+if [ "${exitstatus}" = 0 ]; then
 	echo "User selected Ok and entered " "${PASSWORD}"
 else
 	echo "User selected Cancel."

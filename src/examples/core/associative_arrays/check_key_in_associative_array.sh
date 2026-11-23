@@ -12,11 +12,11 @@ declare -A hashmap
 hashmap["key1"]="value1"
 hashmap["key2"]="value2"
 
-if ! [ "${hashmap['key1']+muhaha}" ]
+if [ -z "${hashmap['key1']+muhaha}" ]
 then
 	echo "ERROR"
 fi
-if [ "${hashmap['notthere']+muhaha}" ]
+if [ -n "${hashmap['notthere']+muhaha}" ]
 then
 	echo "ERROR"
 fi

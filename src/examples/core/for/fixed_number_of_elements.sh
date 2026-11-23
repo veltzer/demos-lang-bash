@@ -5,5 +5,5 @@
 
 for x in red yellow green
 do
-	echo ${x}
+	echo "${x}"
 done

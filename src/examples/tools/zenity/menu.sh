@@ -21,6 +21,10 @@ if choice=$(zenity --list --title="Selection Menu" --column="Options" "${options
         "Quit")
             zenity --info --text="Goodbye!"
             ;;
+        *)
+            echo "unexpected choice: ${choice}" >&2
+            exit 1
+            ;;
     esac
 else
     zenity --info --text="Cancelled."

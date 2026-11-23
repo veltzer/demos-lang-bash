@@ -13,7 +13,7 @@
 
 false
 code=$?
-if [ ${code} -ne 0 ]
+if [ "${code}" -ne 0 ]
 then
 	echo "yes, program fails"
 fi

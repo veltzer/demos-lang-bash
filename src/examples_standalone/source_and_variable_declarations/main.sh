@@ -28,11 +28,11 @@ if [ "${my_var}" != "sourced_value" ]
 then
 	echo "ERROR"
 fi
-if [ "${my_unset_var-}" ]
+if [ -n "${my_unset_var-}" ]
 then
 	echo "ERROR"
 fi
-if [ "${my_unseen_var-}" ]
+if [ -n "${my_unseen_var-}" ]
 then
 	echo "ERROR"
 fi

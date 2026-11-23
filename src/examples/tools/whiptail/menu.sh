@@ -7,7 +7,7 @@
 
 result=$(whiptail --menu "title of menu" 15 50 5 1 a 2 b 3 c 3>&2 2>&1 1>&3)
 code=$?
-if [ ${code} -eq 0 ]
+if [ "${code}" -eq 0 ]
 then
 	echo "you chose [${result}]"
 else
