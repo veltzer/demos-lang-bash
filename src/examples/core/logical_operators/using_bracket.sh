@@ -1,6 +1,4 @@
 #!/bin/bash -eu
-# this example is about the test syntax itself, so it compares literals
-# shellcheck disable=SC2050
 
 # This example shows how to use logical operators when using the '['/'test' shell builtin.
 # Note that '[' and '[[' are not the same as '[[' is a shell keyword and not a shell
@@ -12,8 +10,13 @@
 # look at man builtins and look for 'test'.
 # - if you wish to do logical operators combined with '[' you must use -a, -o and more.
 
+s1='foo'
+s2='bar'
+n2=2
+n3=3
+n4=4
 # shellcheck disable=SC2292  # teaching: this example is about the [ builtin itself
-if [ 'foo' = 'foo' ]
+if [ "${s1}" = 'foo' ]
 then
 	true
 else
@@ -21,7 +24,7 @@ else
 fi
 
 # shellcheck disable=SC2292  # teaching: this example is about the [ builtin itself
-if [ 'foo' != 'bar' ]
+if [ "${s1}" != "${s2}" ]
 then
 	true
 else
@@ -29,7 +32,7 @@ else
 fi
 
 # shellcheck disable=SC2292  # teaching: this example is about the [ builtin itself
-if [ 2 != 3 ] && [ 3 != 4 ]
+if [ "${n2}" != "${n3}" ] && [ "${n3}" != "${n4}" ]
 then
 	true
 else

@@ -1,6 +1,4 @@
 #!/bin/bash -eu
-# printing the array unindexed is what this stack-trace example shows
-# shellcheck disable=SC2128
 
 # This example explores magic variables in bash that can help with error handling.
 #
@@ -9,7 +7,7 @@
 
 # this is the current line number
 echo "${LINENO}"
-echo "${BASH_SOURCE}"
+echo "${BASH_SOURCE[0]}"
 # this does not work
 # echo ${FUNCNAME}
 echo "========================="

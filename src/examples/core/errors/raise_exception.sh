@@ -8,12 +8,10 @@
 function error() {
 	local message=$1
 	local code=$2
-	local a caller_info
+	local caller_info caller_line caller_function caller_file
 	caller_info=$(caller 0)
-	mapfile -t a <<<"${caller_info}"
-	local caller_line="${a[0]}"
-	local caller_function="${a[1]}"
-	local caller_file="${a[2]}"
+	# caller prints "line function file" on one line
+	read -r caller_line caller_function caller_file <<<"${caller_info}"
 	echo "error in file [${caller_file}], function [${caller_function}], line [${caller_line}], message [${message}], code [${code}]"
 	exit "${code}"
 }

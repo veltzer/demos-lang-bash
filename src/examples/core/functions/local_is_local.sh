@@ -1,6 +1,4 @@
 #!/bin/bash -eu
-# the variable is reached through a local -n nameref, which shellcheck cannot follow
-# shellcheck disable=SC2034
 
 # This example investigates whether local variables in bash are really local
 # The result? YES IT IS.
@@ -9,6 +7,7 @@
 function func_c() {
 	local -n var=$1
 	var=8
+	echo "inside func_c ${var}"
 }
 
 function func_b() {

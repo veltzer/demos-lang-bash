@@ -50,6 +50,5 @@ if [[ "$(declare -p hashmap)" =~ "declare -A" ]]; then
 fi
 
 # print an associative array (only values)
-# shellcheck disable=SC2145
-echo "this is the hashmap ${hashmap[@]}"
+echo "this is the hashmap" "${hashmap[@]}"
 echo "this is the hashmap ${hashmap[*]}"

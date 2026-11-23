@@ -5,8 +5,11 @@
 # - http://stackoverflow.com/questions/26675681/bash-how-to-check-the-exit-status-using-an-if-statement
 # - http://stackoverflow.com/questions/5195607/checking-bash-exit-status-of-several-commands-efficiently
 
+# This example inspects $? after commands that fail, which errexit (the -e
+# in the shebang) would abort on, so it is turned off here.
+set +e
 false
-# shellcheck disable=SC2181
+# shellcheck disable=SC2181  # teaching: checking $? after the command is one of the exit-code checks this example compares with the direct if form
 if [[ $? -ne 0 ]]
 then
 	echo "command which should fail failed"
@@ -14,7 +17,7 @@ else
 	echo "command which should fail succeeded"
 fi
 true
-# shellcheck disable=SC2181
+# shellcheck disable=SC2181  # teaching: checking $? after the command is one of the exit-code checks this example compares with the direct if form
 if [[ $? -ne 0 ]]
 then
 	echo "command which should succeed failed"

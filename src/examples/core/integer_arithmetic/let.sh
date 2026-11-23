@@ -1,6 +1,4 @@
 #!/bin/bash -eu
-# this example is about the 'let' builtin itself, so it uses it throughout
-# shellcheck disable=SC2219
 
 # This is an example of basic integer arithmetic in the shell using the 'let' shell builtin.
 #
@@ -14,20 +12,28 @@
 # References:
 # - https://ryanstutorials.net/bash-scripting-tutorial/bash-arithmetic.php
 
-let "x=0"
+{
+	# shellcheck disable=SC2219  # teaching: this example is about the 'let' builtin itself
+	let "x=0"
+}
 echo "${x}"
+# shellcheck disable=SC2219  # teaching: this example is about the 'let' builtin itself
 let "x=x+1"
 echo "${x}"
+# shellcheck disable=SC2219  # teaching: this example is about the 'let' builtin itself
 let "x+=1"
 echo "${x}"
 # yes, the bash has ++
+# shellcheck disable=SC2219  # teaching: this example is about the 'let' builtin itself
 let "x++"
 echo "${x}"
 
 function foo() {
 	local y
+	# shellcheck disable=SC2219  # teaching: this example is about the 'let' builtin itself
 	let "y=0"
 	echo "${x}"
+	# shellcheck disable=SC2219  # teaching: this example is about the 'let' builtin itself
 	let "y=y+1"
 	echo "${x}"
 }

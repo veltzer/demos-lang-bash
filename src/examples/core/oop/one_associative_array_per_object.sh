@@ -1,7 +1,4 @@
 #!/bin/bash -eu
-# the variables here are set indirectly, by name (eval or local -n),
-# which shellcheck cannot follow
-# shellcheck disable=SC2154
 
 # This example show basic object oriented programming using bash.
 # This approach uses a rather standard way of implementing object
@@ -62,6 +59,8 @@ function oo_len() {
 oo_new obj
 oo_set_attr obj name mark
 oo_set_attr obj surname veltzer
+name=""
+surname=""
 oo_get_attr obj name name
 if [[ "${name}" != "mark" ]]
 then

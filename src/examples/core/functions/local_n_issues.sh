@@ -1,6 +1,4 @@
 #!/bin/bash -eu
-# this example is about local -n namerefs, which shellcheck cannot follow
-# shellcheck disable=SC2034
 
 # This example shows when using "local -n" can cause issues
 # The solution? use a rare variable name (starts with underscore?) for
@@ -12,7 +10,7 @@
 function func() {
 	local -n var=$1
 	local value=$2
-	var=$2
+	var=${value}
 }
 
 foo=5

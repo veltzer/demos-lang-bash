@@ -1,7 +1,4 @@
 #!/bin/bash -eu
-# the variables here are set indirectly, by name (eval or local -n),
-# which shellcheck cannot follow
-# shellcheck disable=SC2154
 
 # This is an example of how to measure the time a bash function takes using
 # data(1)
@@ -33,5 +30,6 @@ function my_func() {
 	:
 }
 
+t=""
 measure t 10000 my_func
 echo "average time is [${t}]"

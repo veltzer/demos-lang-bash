@@ -1,12 +1,10 @@
 #!/bin/bash -eu
-# the unquoted array expansion is part of the stack-trace walk shown here
-# shellcheck disable=SC2048
 
 # example of how to print a stack trace in bash
 
 function print_stack {
 	local x=0
-	for curr in ${FUNCNAME[*]}
+	for curr in "${FUNCNAME[@]}"
 	do
 		# do not print the print_stack function itself (it really does not matter)
 		if [[ ${x} != 0 ]]

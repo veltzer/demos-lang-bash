@@ -29,7 +29,7 @@ function check() {
 
 false
 
-# shellcheck disable=SC2188
+# shellcheck disable=SC2188  # teaching: a heredoc with no command is the multi line comment idiom being shown
 <<COMMENT
 
 - evaluates the content of the comment (bad)
@@ -47,7 +47,7 @@ check "${a}" 5 "first version" $?
 
 false
 
-# shellcheck disable=SC2016
+# shellcheck disable=SC2016  # teaching: the single quoted string is the multi line comment idiom, nothing is meant to expand in it
 : '
 
 - wont evaluate the content of the comment (good)
@@ -79,7 +79,7 @@ check "${a}" 7 "third version" $?
 
 false
 
-# shellcheck disable=SC2188
+# shellcheck disable=SC2188  # teaching: a heredoc with no command is the multi line comment idiom being shown
 <<'COMMENT'
 
 - wont evaluate the content of the comment (good)

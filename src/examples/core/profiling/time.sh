@@ -28,21 +28,33 @@ function real_long_time() {
 time ls -l
 
 # this is the default way to use time with a functoin (same as above)
+# real_long_time returns 1 and time preserves that, so we collect it with
+# the 'set +e'; $?; 'set -e' construct to keep the script from stopping here
+set +e
 time real_long_time
+rc=$?
+set -e
+echo "real_long_time returned ${rc}"
 
 # this is the default way to use time with a block of code
+set +e
 time {
 	real_long_time
 	real_long_time
 }
+set -e
 
 # this is how we change the output format
 TIMEFORMAT='It took %R in real time'
+set +e
 time real_long_time
+set -e
 
 # to suppress output
 TIMEFORMAT=''
+set +e
 time real_long_time
+set -e
 
 # capture the time it took
 # The problem with this approach is that the function that is run by time
@@ -50,6 +62,9 @@ time real_long_time
 # and therefore the function cannot change any environment variable and so it's
 # in effect running in a different mode than the regular one.
 TIMEFORMAT='%R'
+set +e
 t=$( (time real_long_time) 2>&1)
-echo $?
+rc=$?
+set -e
+echo "${rc}"
 echo "t is [${t}]"

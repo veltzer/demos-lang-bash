@@ -1,7 +1,4 @@
 #!/bin/bash -eu
-# the variables here are set indirectly, by name (eval or local -n),
-# which shellcheck cannot follow
-# shellcheck disable=SC2154
 
 # This example show basic object oriented programming using bash.
 # This approach uses just one hashmap for all attributes of all objects
@@ -81,6 +78,8 @@ function get_surname() {
 	get_attr "${id}" surname
 }
 
+p1=""
+p2=""
 Person p1 "mark" "veltzer"
 Person p2 "linus" "torvalds"
 # declare | grep _object

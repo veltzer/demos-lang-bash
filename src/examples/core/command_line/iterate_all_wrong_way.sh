@@ -6,8 +6,10 @@
 # example: script x y with do x and y together.
 # This is also a warning from shellcheck
 
-# shellcheck disable=SC2068
-for x in $@
-do
-	echo "${x}"
-done
+{
+	# shellcheck disable=SC2068  # teaching: unquoted $@ is the WRONG WAY this example shows, it splits arguments that were passed as one
+	for x in $@
+	do
+		echo "${x}"
+	done
+}

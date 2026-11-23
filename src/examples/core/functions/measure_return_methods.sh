@@ -1,7 +1,4 @@
 #!/bin/bash -eu
-# the variables here are set indirectly, by name (eval or local -n),
-# which shellcheck cannot follow
-# shellcheck disable=SC2154
 
 # There are several ways to return values from a bash function:
 # - echo the value and let the caller capture it using backticks
@@ -77,12 +74,14 @@ if [[ "${c}" != "4" ]]
 then
 	echo "ERROR"
 fi
+d=""
 add_ref d 2 2
 if [[ "${d}" != "4" ]]
 then
 	echo "ERROR"
 fi
 add_stack 2 2
+e=""
 array_pop __return_values e
 if [[ "${e}" != "4" ]]
 then
@@ -111,10 +110,12 @@ function wrap_stack() {
 	done
 }
 
+diff_echo=""
+diff_ref=""
+diff_stack=""
 measure diff_echo wrap_echo 4
 measure diff_ref wrap_ref 4
 measure diff_stack wrap_stack 4
-# shellcheck disable=SC2154
 echo "diff_echo is [${diff_echo}]"
 echo "diff_ref is [${diff_ref}]"
 echo "diff_stack is [${diff_stack}]"

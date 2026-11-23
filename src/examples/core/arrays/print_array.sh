@@ -11,7 +11,7 @@ my_array=("first value" "second value" "third value")
 echo "${my_array[@]}"
 echo "${my_array[*]}"
 # the next line does not work, as it only prints the first element of the array
-# shellcheck disable=SC2128
+# shellcheck disable=SC2128  # teaching: printing the array without an index only gives the first element, which is what this line demonstrates
 echo "${my_array}"
 # you can always iterate the array and print the values one by one
 for elem in "${my_array[@]}"

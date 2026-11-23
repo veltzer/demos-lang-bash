@@ -1,6 +1,4 @@
 #!/bin/bash -eu
-# the ordering of 2>&1 and >/dev/null is exactly what this example explains
-# shellcheck disable=SC2069
 
 # This is an example of how to capture the standard error
 #
@@ -9,7 +7,10 @@
 # - https://stackoverflow.com/questions/3130375/bash-script-store-stderr-in-a-variable
 
 # capture only the standard error of a process into a bash variable and throw stdout away
-ls -l /notexists 2>&1 >/dev/null
+{
+	# shellcheck disable=SC2069  # teaching: the ordering of 2>&1 and >/dev/null is exactly what this example explains
+	ls -l /notexists 2>&1 >/dev/null
+}
 var=$(ls -l /notexists 2>&1 >/dev/null)
 echo "hoho"
 if [[ "${var}" != "cat: /notexists: No such file or directory" ]]

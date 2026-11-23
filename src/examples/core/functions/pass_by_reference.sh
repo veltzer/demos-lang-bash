@@ -1,6 +1,4 @@
 #!/bin/bash -eu
-# this example passes variables by name (eval and local -n), which shellcheck cannot follow
-# shellcheck disable=SC2034
 
 # This example shows how to pass values by reference
 # to bash functions
@@ -25,11 +23,13 @@ function using_minus_n() {
 	local -n var2=$1
 	local value=$2
 	var2=${value}
+	echo "using_minus_n set ${var2}"
 }
 
 function array_with_minus_n() {
 	local -n var3=$1
 	var3=(1 2 3)
+	echo "array_with_minus_n set ${#var3[@]} elements"
 }
 
 a=5

@@ -70,7 +70,7 @@ return_via_var
 echo "var is ${var}"
 
 echo "now via return via var but in a subshell"
-# shellcheck disable=SC2091
+# shellcheck disable=SC2091  # teaching: calling the function inside $(...) runs it in a subshell, which is why the variable stays unset
 $(return_via_var)
 if [[ -z "${var}" ]]
 then
@@ -78,8 +78,8 @@ then
 fi
 
 echo "now via return via user var without subshell"
+foo=""
 return_via_user_var foo value
-# shellcheck disable=SC2154
 if [[ "${foo}" != "value" ]]
 then
 	echo "error, return value is wrong"
@@ -88,8 +88,8 @@ else
 fi
 
 echo "now via return via user var without subshell with local -n"
+bar=""
 return_via_user_var_local bar value
-# shellcheck disable=SC2154
 if [[ "${bar}" != "value" ]]
 then
 	echo "error, return value is wrong"

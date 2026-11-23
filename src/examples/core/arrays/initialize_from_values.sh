@@ -1,6 +1,4 @@
 #!/bin/bash -eu
-# array_print takes the array by name (local -n), which shellcheck cannot follow
-# shellcheck disable=SC2034
 
 # This is a simple array example in bash.
 # we create the array the bash way
@@ -39,8 +37,7 @@ my_array3[2]="2 value"
 array_print my_array3
 
 # just assign multiple values
-# shellcheck disable=SC2034
-my_array4=("0 value" "1 value" "2 value")
+declare -xa my_array4=("0 value" "1 value" "2 value")
 array_print my_array4
 
 # add values
@@ -50,6 +47,7 @@ my_array5+=("2 value")
 array_print my_array5
 
 # assign single values
+declare -xa my_array6
 my_array6[0]="0 value"
 my_array6[1]="1 value"
 my_array6[2]="2 value"
@@ -61,10 +59,10 @@ array_print my_array6
 
 echo "assign from variable"
 my_var="0 value 1 value 2 value"
-my_array7=("${my_var}")
+declare -xa my_array7=("${my_var}")
 array_print my_array7
 
 echo "assign from variable (one value)"
 my_var="one_value"
-my_array8=("${my_var}")
+declare -xa my_array8=("${my_var}")
 array_print my_array8

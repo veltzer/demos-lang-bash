@@ -1,15 +1,10 @@
 #!/bin/bash -eu
-# the variables here are set indirectly, by name (eval or local -n),
-# which shellcheck cannot follow
-# shellcheck disable=SC2154
-# the map is read through eval by name, which shellcheck cannot follow
-# shellcheck disable=SC2034
 
 # This example shows how to write a bash function that can get a value
 # from any hashmap without launching a subshell.
 
 # declare a hashmap
-declare -A hashmap
+declare -xA hashmap
 
 # insert values into a hashmap
 hashmap["key1"]="value1"
@@ -22,6 +17,8 @@ function get_value() {
 	eval "${__user_var}"'=${'"${map}"'['"${key}"']}'
 }
 
+val1=""
+val2=""
 get_value val1 key1 hashmap
 get_value val2 key2 hashmap
 if [[ "${val1}" != "value1" ]]

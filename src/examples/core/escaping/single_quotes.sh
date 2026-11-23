@@ -1,6 +1,4 @@
 #!/bin/bash -eu
-# this example is about single quotes not expanding $, which is the point
-# shellcheck disable=SC2016
 
 # This is an example of how use single quotes to escape the shell.
 # Things to remember:
@@ -15,8 +13,12 @@
 # This is passed as one argument
 echo 'Hello, World!'
 # No interpolation
+# shellcheck disable=SC2016  # teaching: single quotes not expanding $ is the point of this example
 echo 'HOME is $HOME'
+# shellcheck disable=SC2016  # teaching: single quotes not expanding $ is the point of this example
 echo 'HOME is ${HOME}'
 # Backslashes for escapring are just printed...
+# shellcheck disable=SC2016  # teaching: single quotes not expanding $ is the point of this example
 echo 'HOME is \$HOME'
+# shellcheck disable=SC2016  # teaching: single quotes not expanding $ is the point of this example
 echo 'HOME is \${HOME}'

@@ -1,6 +1,4 @@
 #!/bin/bash -eu
-# assoc_print takes the map by name (local -n), which shellcheck cannot follow
-# shellcheck disable=SC2034
 
 # This is an example showing the different ways to initalize an associative array
 # in bash.
@@ -16,11 +14,11 @@
 source src/includes/assoc.bashinc
 
 # one line for declaration and data
-declare -A map1=( ["ke y1"]="val ue1" ["ke y2"]="val ue2" )
+declare -xA map1=( ["ke y1"]="val ue1" ["ke y2"]="val ue2" )
 assoc_print map1
 
 # first declare and then add values
-declare -A map2
+declare -xA map2
 map2["ke y1"]="val ue1"
 map2["ke y2"]="val ue2"
 assoc_print map2

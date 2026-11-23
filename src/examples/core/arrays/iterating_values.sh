@@ -13,8 +13,7 @@
 # lets define an array
 z=("one two" "five six" "three four")
 
-# shellcheck disable=SC2016
-echo 'for elem in "${z[@]}"'
+echo "for elem in \"\${z[@]}\""
 i=0
 for elem in "${z[@]}"
 do
@@ -35,10 +34,9 @@ then
 	echo -e "\tERROR number of elements ${i} != 3"
 fi
 
-# shellcheck disable=SC2016
-echo 'for elem in ${z[@]}'
+echo "for elem in \${z[@]}"
 i=0
-# shellcheck disable=SC2068
+# shellcheck disable=SC2068  # teaching: this example shows the wrong ways to iterate an array next to the right one
 for elem in ${z[@]}
 do
 	if [[ "${i}" -ge "${#z[@]}" ]]
@@ -58,10 +56,9 @@ then
 	echo -e "\tERROR number of elements ${i} != 3"
 fi
 
-# shellcheck disable=SC2016
-echo 'for elem in "${z[*]}"'
+echo "for elem in \"\${z[*]}\""
 i=0
-# shellcheck disable=SC2066
+# shellcheck disable=SC2066  # teaching: this example shows the wrong ways to iterate an array next to the right one
 for elem in "${z[*]}"
 do
 	if [[ "${i}" -ge "${#z[@]}" ]]
@@ -81,10 +78,9 @@ then
 	echo -e "\tERROR number of elements ${i} != 3"
 fi
 
-# shellcheck disable=SC2016
-echo 'for elem in "$z"'
+echo "for elem in \"\$z\""
 i=0
-# shellcheck disable=SC2128,SC2066
+# shellcheck disable=SC2066,SC2128  # teaching: this example shows the wrong ways to iterate an array next to the right one
 for elem in "${z}"
 do
 	if [[ "${i}" -ge "${#z[@]}" ]]
@@ -104,10 +100,9 @@ then
 	echo -e "\tERROR number of elements ${i} != 3"
 fi
 
-# shellcheck disable=SC2016
-echo 'for elem in $z'
+echo "for elem in \$z"
 i=0
-# shellcheck disable=SC2128
+# shellcheck disable=SC2128  # teaching: this example shows the wrong ways to iterate an array next to the right one
 for elem in ${z}
 do
 	if [[ "${i}" -ge "${#z[@]}" ]]

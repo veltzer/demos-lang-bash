@@ -1,7 +1,4 @@
 #!/bin/bash -eu
-# this example is about sourcing itself: the paths are dynamic or relative
-# by design, so shellcheck cannot follow them
-# shellcheck disable=SC1090,SC1091
 
 # This is an example of sourcing files relative to the script
 # executing the 'source' command.
@@ -14,4 +11,5 @@
 # - https://stackoverflow.com/questions/6659689/referring-to-a-file-relative-to-executing-script
 # - http://mywiki.wooledge.org/BashFAQ/028
 
+# shellcheck source-path=SCRIPTDIR source=sourced.bashinc
 source "${BASH_SOURCE%/*}/sourced.bashinc"

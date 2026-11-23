@@ -1,6 +1,4 @@
 #!/bin/bash -eu
-# the assignment being lost is exactly what this example demonstrates
-# shellcheck disable=SC2034
 
 # This example shows that collecting a value from a function via
 # back ticks or $() is fine but actually runs the function in a
@@ -17,6 +15,7 @@ function is_declared() {
 
 function foo() {
 	x=7
+	echo "foo set x to ${x}" >&2
 	echo -n "the_result"
 }
 
@@ -34,7 +33,7 @@ then
 	echo "function call could not set variable which means it was in a subshell"
 fi
 
-# shellcheck disable=SC2006
+# shellcheck disable=SC2006  # teaching: the backtick form is the second way to capture output, shown next to $(...)
 y=`foo`
 if [[ "${y}" = "the_result" ]]
 then

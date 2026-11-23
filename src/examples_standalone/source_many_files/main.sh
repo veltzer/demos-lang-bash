@@ -1,7 +1,4 @@
 #!/bin/bash -eu
-# this example is about sourcing itself: the paths are dynamic or relative
-# by design, so shellcheck cannot follow them
-# shellcheck disable=SC1090,SC1091
 
 # This example shows that you cannot source more than one file in single bash 'source' command.
 # The loop which follows is the right way to do it.
@@ -20,6 +17,7 @@
 # this does not work:
 # -will only source the first file
 # -will fail if there is no file matching the pattern
+# shellcheck source=/dev/null
 source subfolder/*.bashinc
 
 # this one checks if there are matches before doing
@@ -30,6 +28,7 @@ if compgen -G "subfolder/*.bashinc" > /dev/null
 then
 	for x in subfolder/*.bashinc
 	do
+		# shellcheck source=/dev/null
 		source "${x}"
 	done
 fi
@@ -40,6 +39,7 @@ fi
 shopt -s nullglob
 for x in subfolder/*.bashinc
 do
+	# shellcheck source=/dev/null
 	source "${x}"
 done
 shopt -u nullglob
@@ -47,6 +47,7 @@ shopt -u nullglob
 # this handles no matches and is short
 for x in $(compgen -G "subfolder/*.bashinc")
 do
+	# shellcheck source=/dev/null
 	source "${x}"
 done
 

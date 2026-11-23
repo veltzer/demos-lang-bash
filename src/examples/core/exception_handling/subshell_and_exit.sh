@@ -1,6 +1,4 @@
 #!/bin/bash -eu
-# the unreachable line is what this example demonstrates: exit in a subshell
-# shellcheck disable=SC2317
 
 # This is an example of how to do some type of 'exception handling'
 # in bash by using a subshell and exit.
@@ -21,7 +19,6 @@ function set_minus_e() {
 	set -e
 	true
 	exit "${code}"
-	set +e
 }
 
 # This is an example of a parent which is strict (set -e)

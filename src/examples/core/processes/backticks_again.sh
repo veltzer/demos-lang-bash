@@ -24,26 +24,25 @@
 set -o pipefail
 
 # best
-# shellcheck disable=SC2006,2009
-pid1=`ps -e -L -o comm,pid | grep "^init " | tr -s " " | cut -d " " -f 2 || true`
+# shellcheck disable=SC2009  # teaching: grepping ps output is the technique this example walks through and compares; pidof (pid7) is the robust alternative
+pid1=$(ps -e -L -o comm,pid | grep "^init " | tr -s " " | cut -d " " -f 2 || true)
 # not the best
-# shellcheck disable=SC2006,2009
-pid2=`ps -e -L -o cmd,pid | grep "^/sbin/init " | tr -s " " | cut -d " " -f 2 || true`
+# shellcheck disable=SC2009  # teaching: grepping ps output is the technique this example walks through and compares; pidof (pid7) is the robust alternative
+pid2=$(ps -e -L -o cmd,pid | grep "^/sbin/init " | tr -s " " | cut -d " " -f 2 || true)
 # flakey
-# shellcheck disable=SC2006,2009
-pid3=`ps -e -L -o cmd,pid | grep "/sbin/init" | grep -v grep | tr -s " " | cut -d " " -f 2 || true`
+# shellcheck disable=SC2009  # teaching: grepping ps output is the technique this example walks through and compares; pidof (pid7) is the robust alternative
+pid3=$(ps -e -L -o cmd,pid | grep "/sbin/init" | grep -v grep | tr -s " " | cut -d " " -f 2 || true)
 # real flakey
-# shellcheck disable=SC2006,2009
-pid4=`ps -eL | grep " init$" | tr -s " " | cut -d " " -f 3 || true`
+# shellcheck disable=SC2009  # teaching: grepping ps output is the technique this example walks through and compares; pidof (pid7) is the robust alternative
+pid4=$(ps -eL | grep " init$" | tr -s " " | cut -d " " -f 3 || true)
 # really really flakey
-# shellcheck disable=SC2006,2009
-pid5=`ps -eL | grep " init" | tr -s " " | cut -d " " -f 3 || true`
+# shellcheck disable=SC2009  # teaching: grepping ps output is the technique this example walks through and compares; pidof (pid7) is the robust alternative
+pid5=$(ps -eL | grep " init" | tr -s " " | cut -d " " -f 3 || true)
 # absolutely nuts
-# shellcheck disable=SC2006,2009
-pid6=`ps -eL | grep " init" | grep -v grep | tr -s " " | cut -d " " -f 3 || true`
+# shellcheck disable=SC2009  # teaching: grepping ps output is the technique this example walks through and compares; pidof (pid7) is the robust alternative
+pid6=$(ps -eL | grep " init" | grep -v grep | tr -s " " | cut -d " " -f 3 || true)
 # great
-# shellcheck disable=SC2006
-pid7=`pidof init`
+pid7=$(pidof init)
 
 echo "pid1 is ${pid1}"
 echo "pid2 is ${pid2}"

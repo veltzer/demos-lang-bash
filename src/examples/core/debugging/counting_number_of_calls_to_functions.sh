@@ -1,6 +1,4 @@
 #!/bin/bash -eu
-# the unquoted array expansion and glob match are part of what is shown
-# shellcheck disable=SC2048,SC2053
 
 # counting numbers of calls to functions
 
@@ -11,9 +9,9 @@ CALLS=()
 function find_func {
 	local name=$1
 	local counter=0
-	for ff in ${FUNCS[*]}
+	for ff in "${FUNCS[@]}"
 	do
-		if [[ ${ff} = ${name} ]]
+		if [[ "${ff}" = "${name}" ]]
 		then
 			return "${counter}"
 		fi

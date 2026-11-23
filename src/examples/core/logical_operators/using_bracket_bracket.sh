@@ -1,6 +1,4 @@
 #!/bin/bash -eu
-# this example is about the test syntax itself, so it compares literals
-# shellcheck disable=SC2050
 
 # This is an example of how to write simple logical operators in bash.
 # NOTES:
@@ -9,17 +7,22 @@
 # References:
 # http://stackoverflow.com/questions/6270440/simple-logical-operators-in-bash
 
-if [[ 'foo' = 'bar' ]]
+s1='foo'
+s2='bar'
+n2=2
+n3=3
+n4=4
+if [[ "${s1}" = "${s2}" ]]
 then
 	echo "ERROR"
 fi
 
-if [[ 'foo' != 'foo' ]]
+if [[ "${s1}" != 'foo' ]]
 then
 	echo "ERROR"
 fi
 
-if [[ 2 == 3 || 3 == 4 ]]
+if [[ "${n2}" == "${n3}" || "${n3}" == "${n4}" ]]
 then
 	echo "ERROR"
 fi

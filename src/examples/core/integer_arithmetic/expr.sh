@@ -1,6 +1,4 @@
 #!/bin/bash -eu
-# this example is about the expr command itself
-# shellcheck disable=SC2003,SC2005,SC2046
 
 # This is an example of how to use the expr(1) command line utility
 #
@@ -13,7 +11,10 @@
 # References:
 # - https://ryanstutorials.net/bash-scripting-tutorial/bash-arithmetic.php
 
-result=$(expr 2 + 2)
+{
+	# shellcheck disable=SC2003  # teaching: this example is about the antiquated expr command itself
+	result=$(expr 2 + 2)
+}
 echo "${result}"
 # the next line will cause an error
 # echo $(expr 2.1 + 2.1)

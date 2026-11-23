@@ -6,7 +6,7 @@
 # - https://www.cyberciti.biz/faq/unix-linux-bsd-appleosx-bash-assign-variable-command-output/
 
 x=$(date)
-# shellcheck disable=SC2006
+# shellcheck disable=SC2006  # teaching: this example shows the two ways to collect output: backticks and $()
 y=`date`
 echo "x is ${x}"
 echo "y is ${y}"

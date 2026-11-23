@@ -1,6 +1,4 @@
 #!/bin/bash -eu
-# the point is to inspect $? right after ':' and 'false'
-# shellcheck disable=SC2181
 
 # This example shows that ':' is an actual command (builtin) which accepts arguments,
 # does nothing and changes '$?' to '0'.
@@ -12,8 +10,12 @@
 
 # this is s comment; this command will not be executed
 
+# This example inspects $? after commands that fail, which errexit (the -e
+# in the shebang) would abort on, so it is turned off here.
+set +e
 false
 : bla bla bla
+# shellcheck disable=SC2181  # teaching: the point is to inspect $? right after ':' to show it was reset to 0
 if [[ $? -ne 0 ]]
 then
 	echo "ERROR"
@@ -21,6 +23,7 @@ fi
 
 true
 : bla bla bla
+# shellcheck disable=SC2181  # teaching: the point is to inspect $? right after ':' to show it was reset to 0
 if [[ $? -ne 0 ]]
 then
 	echo "ERROR"

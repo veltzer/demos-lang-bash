@@ -39,6 +39,6 @@ get_abs_filename_no_subshell() {
 	fi
 }
 
+abs4=""
 get_abs_filename_no_subshell abs4 "${filename}"
-# shellcheck disable=SC2154
 echo "abs4 is [${abs4}]"

@@ -1,9 +1,4 @@
 #!/bin/bash -eu
-# the variables here are set indirectly, by name (eval or local -n),
-# which shellcheck cannot follow
-# shellcheck disable=SC2154
-# this example is about local -n namerefs, which shellcheck cannot follow
-# shellcheck disable=SC2034
 
 # This example investigates whether we can do local -n on a variable which
 # is not yet defined.
@@ -19,6 +14,7 @@ function set_to() {
 	local -n var=$1
 	local val=$2
 	var=${val}
+	echo "set_to set ${var}"
 }
 
 # you don't really need the complication of this function
@@ -27,15 +23,13 @@ function set_to_test() {
 	then
 		declare -g "$1"
 	fi
-	local -n var=$1
-	local val=$2
-	var=${val}
-}	
+	set_to "$1" "$2"
+}
 
 
 function function_without_pre_declaration() {
 	set_to x 7
-	echo "inside function x is ${x}"
+	echo "inside function x is ${x-}"
 }
 
 function function_with_pre_declaration() {
@@ -44,19 +38,30 @@ function function_with_pre_declaration() {
 	echo "inside function y is ${y}"
 }
 
+# y is local to function_with_pre_declaration, so it must not exist out here
+function report_y() {
+	if declare -p y 2> /dev/null
+	then
+		echo "y leaked out of the function"
+	else
+		echo "y did not leak out of the function"
+	fi
+}
+
 function test_it() {
 	function_without_pre_declaration
 	declare -p x
 	function_with_pre_declaration
-	declare -p y
+	report_y
 }
 
 test_it
-declare -p x y
+declare -p x
+report_y
 
 unset x y
 
 function_without_pre_declaration
 declare -p x
 function_with_pre_declaration
-declare -p y
+report_y

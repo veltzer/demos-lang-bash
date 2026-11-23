@@ -1,11 +1,4 @@
 #!/bin/bash -eu
-# expr is one of the arithmetic methods this benchmark compares
-# shellcheck disable=SC2003
-# the variables here are set indirectly, by name (eval or local -n),
-# which shellcheck cannot follow
-# shellcheck disable=SC2154
-# the benchmark must do the work; the result itself is not needed
-# shellcheck disable=SC2034
 
 # There are several ways to do integer arithmetic in bash which are:
 # - braces
@@ -35,6 +28,7 @@ function add_braces() {
 	local b=$2
 	local result
 	result=$((a+b))
+	echo "${result}"
 }
 
 function add_let() {
@@ -42,12 +36,14 @@ function add_let() {
 	local b=$2
 	local result
 	((result=a+b))
+	echo "${result}"
 }
 
 function add_expr() {
 	local a=$1
 	local b=$2
 	local result
+	# shellcheck disable=SC2003  # teaching: expr is one of the arithmetic methods this benchmark compares
 	result=$(expr "${a}" + "${b}")
 }
 
@@ -56,6 +52,7 @@ function add_bc() {
 	local b=$2
 	local result
 	result=$(echo "${a}" + "${b}" | bc)
+	echo "${result}"
 }
 
 # lets measure
@@ -64,10 +61,14 @@ function many_wrap() {
 	local function_name=$1
 	for (( i=0; i<count; i++ ))
 	do
-		"${function_name}" 2 2
+		"${function_name}" 2 2 > /dev/null
 	done
 }
 
+diff_braces=""
+diff_let=""
+diff_expr=""
+diff_bc=""
 measure diff_braces many_wrap add_braces
 measure diff_let many_wrap add_let
 measure diff_expr many_wrap add_expr

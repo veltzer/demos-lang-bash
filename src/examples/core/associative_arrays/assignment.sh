@@ -1,6 +1,4 @@
 #!/bin/bash -eu
-# assoc_print takes the map by name (local -n), which shellcheck cannot follow
-# shellcheck disable=SC2034
 
 # This example explores how to assign one associative array to another
 # THIS EXAMPLE DOES NOT WORK.
@@ -14,7 +12,7 @@ declare -A hashmap1
 hashmap1["key1"]="value1"
 hashmap1["key2"]="value2"
 
-declare -A hashmap2=${hashmap1[*]}
+declare -xA hashmap2=${hashmap1[*]}
 
 assoc_print hashmap1
 assoc_print hashmap2
