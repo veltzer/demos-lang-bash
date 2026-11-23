@@ -8,19 +8,19 @@
 filename="/etc.tar/file.tar.gz"
 # anything after the last dot
 result="${filename##*.}"
-if [ "${result}" != "gz" ]
+if [[ "${result}" != "gz" ]]
 then
 	echo "ERROR"
 fi
 # anything after the first dot (could be dangerous if the path has dots)
 result="${filename#*.}"
-if [ "${result}" != "tar/file.tar.gz" ]
+if [[ "${result}" != "tar/file.tar.gz" ]]
 then
 	echo "ERROR"
 fi
 # first get the basename and only then use #*.
 result="${filename##*/}"
-if [ "${result}" != "file.tar.gz" ]
+if [[ "${result}" != "file.tar.gz" ]]
 then
 	echo "ERROR"
 fi

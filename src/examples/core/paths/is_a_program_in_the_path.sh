@@ -14,18 +14,30 @@ function is_in_path() {
 	hash "${prog}" 2> /dev/null
 }
 
-if is_in_path ls
+set +e
+is_in_path ls
+rc=$?
+set -e
+if [[ "${rc}" -eq 0 ]]
 then
 	echo "ls is in the path"
 fi
 
-if ! is_in_path lss
+set +e
+is_in_path lss
+rc=$?
+set -e
+if [[ "${rc}" -ne 0 ]]
 then
 	echo "lss is not in the path"
 fi
 
 alias foo=bar
-if is_in_path foo
+set +e
+is_in_path foo
+rc=$?
+set -e
+if [[ "${rc}" -eq 0 ]]
 then
 	echo "foo is in the path"
 fi

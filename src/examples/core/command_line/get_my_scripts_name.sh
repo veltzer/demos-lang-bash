@@ -8,5 +8,11 @@
 me=$(basename "$0")
 echo "${me}"
 
-me="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
+if [[ -L "$0" ]]
+then
+	target=$(readlink "$0")
+else
+	target="$0"
+fi
+me=$(basename "${target}")
 echo "${me}"

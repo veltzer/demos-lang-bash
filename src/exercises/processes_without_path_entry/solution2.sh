@@ -1,5 +1,7 @@
 #!/bin/bash -eu
 
+set -o pipefail
+
 # part="$1"
 
 ps -e -o pid --no-header | while IFS= read -r line

@@ -12,6 +12,9 @@
 #	(time [arguments]) 2>)
 # - see below how to capture it's output to a variable.
 
+# make functions called inside $(...) keep "set -e"
+shopt -s inherit_errexit
+
 function real_long_time() {
 	local x=0
 	while [[ ${x} -lt 100000 ]]

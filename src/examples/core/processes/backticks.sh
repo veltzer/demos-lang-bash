@@ -3,12 +3,16 @@
 # This example tries to show how backticks work in the shell.
 # Note that this also deals with nested backticks
 
+set -o pipefail
+
 # very simple: execute a command and replace `[cmd]` with its output
 # shellcheck disable=SC2006,SC2005
-echo "`date`"
+now=`date`
+echo "${now}"
 # the command can be a shell command with redirection, variables, pipe and all
 # shellcheck disable=SC2006,SC2005
-echo "`date | cut -f 2 -d " "`"
+clock=`date | cut -f 2 -d " "`
+echo "${clock}"
 # another example with dirname(1)
 # shellcheck disable=SC2006,SC2005
 echo "`dirname a/b/c`"

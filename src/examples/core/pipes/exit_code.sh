@@ -5,8 +5,10 @@
 # This is an example that shows that the exit code of a shell pipe
 # is the exit code *of the last component* of the pipe.
 
+# shellcheck disable=SC2312  # teaching: the exit status of a pipe is that of its last component, the masked earlier ones are the lesson
 true | false
 echo "01: $?"
+# shellcheck disable=SC2312  # teaching: the exit status of a pipe is that of its last component, the masked earlier ones are the lesson
 false | true
 echo "10: $?"
 
@@ -19,6 +21,7 @@ do
 		for x3 in true,0 false,1
 		do
 			x3s=(${x3//,/ })
+			# shellcheck disable=SC2312  # teaching: the exit status of a pipe is that of its last component, the masked earlier ones are the lesson
 			${x1s[0]} | ${x2s[0]} | ${x3s[0]}
 			res=$?
 			echo "${x1s[1]}${x2s[1]}${x3s[1]} -> ${res}"

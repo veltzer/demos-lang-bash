@@ -12,14 +12,14 @@ PATH="/usr/bin:/sbin"
 PATH="/sbin:/usr/bin"
 
 pathadd_after() {
-	if [ -d "$1" ] && [[ ":${PATH}:" != *":$1:"* ]]
+	if [[ -d "$1" ]] && [[ ":${PATH}:" != *":$1:"* ]]
 	then
 		PATH="${PATH:+"${PATH}:"}$1"
 	fi
 }
 
 pathadd_before() {
-	if [ -d "$1" ] && [[ ":${PATH}:" != *":$1:"* ]]
+	if [[ -d "$1" ]] && [[ ":${PATH}:" != *":$1:"* ]]
 	then
 		PATH="$1${PATH:+"${PATH}:"}"
 	fi

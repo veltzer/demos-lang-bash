@@ -5,7 +5,7 @@
 # - https://www.cyberciti.biz/tips/shell-scripting-bash-how-to-create-temporary-random-file-name.html
 
 tfile=$(mktemp /tmp/foo.XXXXXXXXX)
-if [ -f "${tfile}" ]
+if [[ -f "${tfile}" ]]
 then
 	echo "yes, the file [${tfile}] is there"
 fi

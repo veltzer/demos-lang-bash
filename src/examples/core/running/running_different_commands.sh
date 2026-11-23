@@ -6,10 +6,10 @@
 # note that redirection cannot happen in this case.
 
 command=
-if [ "$#" -eq 0 ]
+if [[ "$#" -eq 0 ]]
 then
         command="ls -l"
-elif [ "$#" -eq 1 ]
+elif [[ "$#" -eq 1 ]]
 then
 	command="find /etc -name \"*ab\" 2> /dev/null"
 fi

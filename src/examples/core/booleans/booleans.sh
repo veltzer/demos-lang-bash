@@ -25,14 +25,14 @@ else
 fi
 a=true
 b=false
-# shellcheck disable=SC2166
+# shellcheck disable=SC2166,SC2292  # teaching: shows -a inside [ ]
 if [ "${a}" = true -a "${b}" = true ]
 then
 	echo "a -a b is true"
 else
 	echo "a -a b is false"
 fi
-# shellcheck disable=SC2166
+# shellcheck disable=SC2166,SC2292  # teaching: shows -o inside [ ]
 if [ "${a}" = true -o "${b}" = true ]
 then
 	echo "a -o b is true"

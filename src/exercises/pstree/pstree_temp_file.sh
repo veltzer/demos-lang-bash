@@ -18,7 +18,7 @@ ps -e --no-headers -o pid,ppid,comm > "${filename}"
 
 # note that we get the number of lines from the $filename file
 # and do not run ps(1) again to avoid consistency problems
-numlines=$(wc -l "${filename}" | cut -d " " -f 1)
+numlines=$(wc -l < "${filename}")
 
 # save the old file descriptor
 exec 3>&0

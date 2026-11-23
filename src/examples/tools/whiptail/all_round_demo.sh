@@ -1,5 +1,7 @@
 #!/bin/bash -eu
 
+set -o pipefail
+
 # Demo of check list using whiptail
 # https://gist.githubusercontent.com/ictlyh/b2eb85b80b20d2e2f91d5b7c44e07d6a/raw/2f213f0a94452a9c5c84b2b5debc62e5e8c45746/whiptail-demo.sh
 
@@ -25,7 +27,7 @@ COLOR=$(whiptail --inputbox "What is your favorite Color?" 8 78 Blue --title "Ex
                                                                         # A trick to swap stdout and stderr.
 # Again, you can pack this inside if, but it seems really long for some 80-col terminal users.
 exitstatus=$?
-if [ "${exitstatus}" = 0 ]; then
+if [[ "${exitstatus}" = 0 ]]; then
     echo "User selected Ok and entered " "${COLOR}"
 else
     echo "User selected Cancel."
@@ -50,7 +52,7 @@ PASSWORD=$(whiptail --passwordbox "please enter your secret password" 8 78 --tit
 # A trick to swap stdout and stderr.
 # Again, you can pack this inside if, but it seems really long for some 80-col terminal users.
 exitstatus=$?
-if [ "${exitstatus}" = 0 ]; then
+if [[ "${exitstatus}" = 0 ]]; then
 	echo "User selected Ok and entered " "${PASSWORD}"
 else
 	echo "User selected Cancel."

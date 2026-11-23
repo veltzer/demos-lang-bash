@@ -13,6 +13,8 @@
 # - notice the local definitions which are important in order for
 # the recursion to work.
 
+set -o pipefail
+
 source src/includes/assoc.bashinc
 
 ps -o comm,pid,ppid --no-headers -e | (
@@ -25,7 +27,11 @@ ps -o comm,pid,ppid --no-headers -e | (
 		pid=${arr[1]}
 		ppid=${arr[2]}
 		pid_to_comm[${pid}]=${comm}
-		if ! assoc_key_exists pid_to_children "${ppid}"
+		set +e
+		assoc_key_exists pid_to_children "${ppid}"
+		rc=$?
+		set -e
+		if [[ "${rc}" -ne 0 ]]
 		then
 			assoc_set pid_to_children "${ppid}" ""
 		fi
@@ -38,7 +44,12 @@ ps -o comm,pid,ppid --no-headers -e | (
 		local width=$(( depth * 8 ))
 		printf "%${width}s%s\n" "" "${comm}(${pid})"
 		depth=$((depth+1))
-		if ! assoc_key_exists pid_to_children "${pid}"
+		local rc
+		set +e
+		assoc_key_exists pid_to_children "${pid}"
+		rc=$?
+		set -e
+		if [[ "${rc}" -ne 0 ]]
 		then
 			assoc_set pid_to_children "${pid}" ""
 		fi

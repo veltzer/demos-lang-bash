@@ -51,4 +51,5 @@ do
 done
 
 # will fail if there is no file matching the pattern
-source <(cat subfolder/*.bashinc)
+contents=$(cat subfolder/*.bashinc)
+source /dev/stdin <<< "${contents}"

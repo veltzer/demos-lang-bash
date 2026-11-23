@@ -4,7 +4,7 @@
 # to a bash function.
 
 function func {
-	if [ "$#" -ne 2 ]
+	if [[ "$#" -ne 2 ]]
 	then
 		echo "usage: ${FUNCNAME[0]} <arg1> <arg2>"
 		return

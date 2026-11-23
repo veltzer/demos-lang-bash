@@ -25,25 +25,25 @@ function no {
 }
 
 function func() {
-	[ -r "/etc/passwd" ]
+	[[ -r "/etc/passwd" ]]
 	return $?
 }
 
 function implicit_return_1() {
-	[ -r "/etc/passwd" ]
+	[[ -r "/etc/passwd" ]]
 }
 
 function implicit_return_2() {
-	[ -r "/etc/shadow" ]
+	[[ -r "/etc/shadow" ]]
 }
 
 function implicit_return_3() {
-	[ -r "/etc/passwd" ]
+	[[ -r "/etc/passwd" ]]
 	return
 }
 
 function implicit_return_4() {
-	[ -r "/etc/shadow" ]
+	[[ -r "/etc/shadow" ]]
 	return
 }
 
@@ -51,31 +51,69 @@ function empty_function() {
 	:
 }
 
-if yes
+# call each predicate outside of the condition and look at its status,
+# this keeps "set -e" enabled inside the function bodies
+set +e
+yes
+rc=$?
+set -e
+if [[ "${rc}" -eq 0 ]]
 then echo "yes"
 fi
-if ! no
+set +e
+no
+rc=$?
+set -e
+if [[ "${rc}" -ne 0 ]]
 then echo "no"
 fi
-if func
+set +e
+func
+rc=$?
+set -e
+if [[ "${rc}" -eq 0 ]]
 then echo "yes, /etc/passwd is readable"
 fi
-if implicit_return_1
+set +e
+implicit_return_1
+rc=$?
+set -e
+if [[ "${rc}" -eq 0 ]]
 then echo "yes, /etc/passwd is readable"
 fi
-if ! implicit_return_2
+set +e
+implicit_return_2
+rc=$?
+set -e
+if [[ "${rc}" -ne 0 ]]
 then echo "yes, /etc/shadow is unreadable"
 fi
-if implicit_return_3
+set +e
+implicit_return_3
+rc=$?
+set -e
+if [[ "${rc}" -eq 0 ]]
 then echo "yes, /etc/passwd is readable"
 fi
-if ! implicit_return_4
+set +e
+implicit_return_4
+rc=$?
+set -e
+if [[ "${rc}" -ne 0 ]]
 then echo "yes, /etc/shadow is unreadable"
 fi
-if empty_function
+set +e
+empty_function
+rc=$?
+set -e
+if [[ "${rc}" -eq 0 ]]
 then echo "yes, empty function returns 0"
 fi
-if ! empty_function
+set +e
+empty_function
+rc=$?
+set -e
+if [[ "${rc}" -ne 0 ]]
 then :
 else echo "yes, empty function returns 0"
 fi

@@ -1,5 +1,7 @@
 #!/bin/bash -eu
 
+set -o pipefail
+
 # part="$1"
 
 ps -ef | tail +2 | tr -s " " | cut -f 2 -d " " | while IFS= read -r pid

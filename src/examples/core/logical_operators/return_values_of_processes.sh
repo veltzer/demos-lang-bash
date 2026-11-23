@@ -15,12 +15,12 @@ function print_truth_table() {
 	do
 		for y in true false
 		do
-			if [ "${op}" = "&&" ]
+			if [[ "${op}" = "&&" ]]
 			then
 				${x} && ${y}
 				a=$?
 			fi
-			if [ "${op}" = "||" ]
+			if [[ "${op}" = "||" ]]
 			then
 				${x} || ${y}
 				a=$?

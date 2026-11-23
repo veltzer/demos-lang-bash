@@ -12,11 +12,11 @@ declare -A hashmap
 hashmap["key1"]="value1"
 hashmap["key2"]="value2"
 
-if [ -z "${hashmap['key1']+muhaha}" ]
+if [[ -z "${hashmap['key1']+muhaha}" ]]
 then
 	echo "ERROR"
 fi
-if [ -n "${hashmap['notthere']+muhaha}" ]
+if [[ -n "${hashmap['notthere']+muhaha}" ]]
 then
 	echo "ERROR"
 fi
@@ -29,11 +29,21 @@ function exists() {
 	eval "[ \${${__user_var}['${key}']+muahaha} ]"
 }
 
-if ! exists hashmap key1
+# capture the status of the predicate function instead of calling it
+# in a condition, which would disable "set -e" inside it
+set +e
+exists hashmap key1
+rc=$?
+set -e
+if [[ "${rc}" -ne 0 ]]
 then
 	echo "ERROR"
 fi
-if exists hashmap notthere
+set +e
+exists hashmap notthere
+rc=$?
+set -e
+if [[ "${rc}" -eq 0 ]]
 then
 	echo "ERROR"
 fi

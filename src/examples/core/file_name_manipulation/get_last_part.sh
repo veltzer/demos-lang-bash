@@ -10,12 +10,12 @@
 
 path="/var/lib/foo.bar"
 result="$(basename "${path}")"
-if [ "${result}" != "foo.bar" ]
+if [[ "${result}" != "foo.bar" ]]
 then
 	echo "ERROR"
 fi
 result="${path##*/}"
-if [ "${result}" != "foo.bar" ]
+if [[ "${result}" != "foo.bar" ]]
 then
 	echo "ERROR"
 fi

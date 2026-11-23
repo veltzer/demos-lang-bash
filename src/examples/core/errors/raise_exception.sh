@@ -8,8 +8,9 @@
 function error() {
 	local message=$1
 	local code=$2
-	local a
-	mapfile -t a < <(caller 0)
+	local a caller_info
+	caller_info=$(caller 0)
+	mapfile -t a <<<"${caller_info}"
 	local caller_line="${a[0]}"
 	local caller_function="${a[1]}"
 	local caller_file="${a[2]}"

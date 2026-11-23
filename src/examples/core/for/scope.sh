@@ -26,12 +26,12 @@ function loop_over_local() {
 }
 
 loop_over_no_local
-if [ "${x}" != "blue" ]
+if [[ "${x}" != "blue" ]]
 then
 	echo "ERROR"
 fi
 loop_over_local
-if [ -n "${y+x}" ]
+if [[ -n "${y+x}" ]]
 then
 	echo "ERROR"
 fi

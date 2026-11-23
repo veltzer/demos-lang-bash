@@ -3,6 +3,9 @@
 # This demo shows how to add to the path variable in a way that does
 # not add junk.
 
+# make functions called inside $(...) keep "set -e"
+shopt -s inherit_errexit
+
 function path_add {
 	if [[ "$1" = "" ]]
 	then

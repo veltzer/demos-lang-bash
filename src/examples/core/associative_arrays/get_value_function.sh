@@ -24,11 +24,11 @@ function get_value() {
 
 get_value val1 key1 hashmap
 get_value val2 key2 hashmap
-if [ "${val1}" != "value1" ]
+if [[ "${val1}" != "value1" ]]
 then
 	echo "ERROR"
 fi
-if [ "${val2}" != "value2" ]
+if [[ "${val2}" != "value2" ]]
 then
 	echo "ERROR"
 fi

@@ -11,7 +11,7 @@ then
 fi
 	echo "you must pass exactly two arguments to this script..."
 
-if [ "$#" -ne 2 ]
+if [[ "$#" -ne 2 ]]
 then
 	echo "you must pass exactly two arguments to this script..."
 	exit 1

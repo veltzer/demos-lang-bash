@@ -8,14 +8,14 @@
 # for relative paths
 filename="var/lib/foo.lock"
 result="${filename#*/}"
-if [ "${result}" != "lib/foo.lock" ]
+if [[ "${result}" != "lib/foo.lock" ]]
 then
 	echo "ERROR"
 fi
 # for absolute paths
 filename="/var/lib/foo.lock"
 result="${filename#/*/}"
-if [ "${result}" != "lib/foo.lock" ]
+if [[ "${result}" != "lib/foo.lock" ]]
 then
 	echo "ERROR"
 fi

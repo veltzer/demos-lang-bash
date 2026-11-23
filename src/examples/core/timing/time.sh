@@ -18,7 +18,7 @@ function set_a_shell_variable() {
 }
 
 time set_a_shell_variable
-if [ "${x}" != 7 ]
+if [[ "${x}" != 7 ]]
 then
 	echo "ERROR"
 fi

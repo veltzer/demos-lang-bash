@@ -8,12 +8,12 @@
 
 filename="/var/lib/foo.lock"
 result=$(dirname "${filename}")
-if [ "${result}" != "/var/lib" ]
+if [[ "${result}" != "/var/lib" ]]
 then
 	echo "ERROR"
 fi
 result="${filename%/*}"
-if [ "${result}" != "/var/lib" ]
+if [[ "${result}" != "/var/lib" ]]
 then
 	echo "ERROR"
 fi

@@ -4,7 +4,7 @@
 # References:
 # - http://www.cyberciti.biz/faq/unix-howto-read-line-by-line-from-file/
 
-list=$(dpkg --list php\* | awk '/ii/{print $2}')
+list=$({ dpkg --list php\* || true; } | awk '/ii/{print $2}')
 while IFS= read -r line
 do
 	printf '%s\n' "${line}"

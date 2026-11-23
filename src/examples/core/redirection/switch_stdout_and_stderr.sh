@@ -7,6 +7,6 @@
 # - https://stackoverflow.com/questions/13299317/io-redirection-swapping-stdout-and-stderr
 
 echo we will now see errors instead of output
-find /etc 2> /dev/null 3>&2 2>&1 1>&3 | head
+{ find /etc 2> /dev/null 3>&2 2>&1 1>&3 || true; } | head
 echo simpler
-find /etc 2>&1 1> /dev/null | head
+{ find /etc 2>&1 1> /dev/null || true; } | head

@@ -16,37 +16,37 @@ then
 fi
 
 # test if 'somevar' is not set
-if [ -n "${somevar+x}" ]
+if [[ -n "${somevar+x}" ]]
 then
 	echo "ERROR"
 fi
 somevar=7
 # test if 'somevar' is set
-if [ -z "${somevar}" ]
+if [[ -z "${somevar}" ]]
 then
 	echo "ERROR"
 fi
 # even shorter, -n is the default test
-if [ -z "${somevar}" ]
+if [[ -z "${somevar}" ]]
 then
 	echo "ERROR"
 fi
 unset somevar
 # this should not happen
-if [ -n "${somevar-}" ]
+if [[ -n "${somevar-}" ]]
 then
 	echo "ERROR"
 fi
 
-if [ -n "${unsetvar+x}" ]
+if [[ -n "${unsetvar+x}" ]]
 then
 	echo "ERROR"
 fi
-if [ -n "${unsetvar-}" ]
+if [[ -n "${unsetvar-}" ]]
 then
 	echo "ERROR"
 fi
-if [ -z "${somevar+x}" ]
+if [[ -z "${somevar+x}" ]]
 then
 	echo "ERROR"
 fi

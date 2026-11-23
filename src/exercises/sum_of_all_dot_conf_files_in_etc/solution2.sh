@@ -1,6 +1,8 @@
 #!/bin/bash -eu
 
-find /etc -type f -and -name "*.conf" -exec ls -l {} \; 2> /dev/null | tr -s " " |
+set -o pipefail
+
+{ find /etc -type f -and -name "*.conf" -exec ls -l {} \; 2> /dev/null || true; } | tr -s " " |
 	cut -f 5 -d " " > sizes.txt
 
 sum=0

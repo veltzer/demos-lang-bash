@@ -6,6 +6,8 @@
 # runs in a subshell. in the second example the while loop is the
 # first command and so runs in the shell proper.
 
+set -o pipefail
+
 ((numlines=0))
 dpkg --list | while IFS= read -r line
 do
@@ -13,10 +15,11 @@ do
 	printf '%s\n' "${line}"
 done
 
+numbers=$(seq 10)
 IFS=$'\n'
 IFS=" "
 while read -r line
 do
 	echo "line is ${line}"
 	printf '%s\n' "${line}"
-done <<< $(seq 10)
+done <<< "${numbers}"

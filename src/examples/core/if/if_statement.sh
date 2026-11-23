@@ -13,10 +13,8 @@ else
 	echo "strange Linux system you have here..."
 fi
 
-# this example shows the -a form too, which is why it is used here
-# shellcheck disable=SC2166
 # [ ] does accept -a, which is what this block shows
-# shellcheck disable=SC2166
+# shellcheck disable=SC2166,SC2292  # teaching: shows -a inside [ ]
 if [ -d /etc -a -f /etc/passwd ]
 then
 	echo "/etc is a folder and /etc/passwd is a file..."

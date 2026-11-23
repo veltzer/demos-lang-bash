@@ -19,7 +19,7 @@
 
 result=$(dialog --menu "title of menu" 0 0 0 1 a 2 b 3 c --output-fd 1)
 code=$?
-if [ "${code}" -eq 0 ]
+if [[ "${code}" -eq 0 ]]
 then
 	echo "you chose [${result}]"
 else

@@ -15,7 +15,7 @@ function measure() {
 	local start
 	start=$(date +%s.%N)
 	((i=0))
-	while [ "${i}" -lt "${count}" ]
+	while [[ "${i}" -lt "${count}" ]]
 	do
 		${function_name}
 		((i=i+1))

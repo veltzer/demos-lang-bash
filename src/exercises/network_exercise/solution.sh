@@ -1,11 +1,13 @@
 #!/bin/bash -eu
 
+set -o pipefail
+
 # this script will received the name of the process
 # that we want statistics for
 # for example: zoom
 
 # the next block of code checks that we have EXACTLY one argument
-if [ $# != 1 ]
+if [[ $# != 1 ]]
 then
 	echo "please pass a single program name"
 	exit 1
@@ -30,7 +32,7 @@ do
 			# echo "$sock_number"
 			# we need to find the line(s) with this number ($sock_number) in /proc/net/tcp in the
 			# 11th column
-			grep "${sock_number}" /proc/net/tcp | tr -s " " | cut -d " " -f 6 | tr ":" " "
+			{ grep "${sock_number}" /proc/net/tcp || true; } | tr -s " " | cut -d " " -f 6 | tr ":" " "
 		fi
 	done
 done

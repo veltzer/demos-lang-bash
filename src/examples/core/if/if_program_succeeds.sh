@@ -12,7 +12,7 @@
 
 true
 code=$?
-if [ "${code}" -eq 0 ]
+if [[ "${code}" -eq 0 ]]
 then
 	echo "yes, program succeeded"
 fi

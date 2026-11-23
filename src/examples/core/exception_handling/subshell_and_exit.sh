@@ -29,11 +29,13 @@ function set_minus_e() {
 # correctly. Planly running the child will not do since
 # if the child returns a failed error code the parent
 # will die too. That is the reason for the
-# "(function) || result=$?" construct.
-result=0
+# "set +e; (function); result=$?; set -e" construct.
 expected=5
-(exit_with_error "${expected}") || result=$?
-if [ "${result}" != "${expected}" ]
+set +e
+(exit_with_error "${expected}")
+result=$?
+set -e
+if [[ "${result}" != "${expected}" ]]
 then
 	echo "ERROR"
 fi
@@ -52,7 +54,7 @@ expected=0
 result=$?
 # just to make sure that we are still not strict
 false
-if [ "${result}" != "${expected}" ]
+if [[ "${result}" != "${expected}" ]]
 then
 	echo "ERROR"
 fi
@@ -63,7 +65,7 @@ expected=7
 result=$?
 # just to make sure that we are still not strict
 false
-if [ "${result}" != "${expected}" ]
+if [[ "${result}" != "${expected}" ]]
 then
 	echo "ERROR"
 fi

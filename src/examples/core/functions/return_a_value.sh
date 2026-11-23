@@ -15,6 +15,9 @@
 # References:
 # - http://www.linuxjournal.com/content/return-values-bash-functions
 
+# make functions called inside $(...) keep "set -e"
+shopt -s inherit_errexit
+
 function return_via_echo {
 	echo hello
 }
@@ -69,7 +72,7 @@ echo "var is ${var}"
 echo "now via return via var but in a subshell"
 # shellcheck disable=SC2091
 $(return_via_var)
-if [ -z "${var}" ]
+if [[ -z "${var}" ]]
 then
 	echo "yes, var is undefined"
 fi
@@ -77,7 +80,7 @@ fi
 echo "now via return via user var without subshell"
 return_via_user_var foo value
 # shellcheck disable=SC2154
-if [ "${foo}" != "value" ]
+if [[ "${foo}" != "value" ]]
 then
 	echo "error, return value is wrong"
 else
@@ -87,7 +90,7 @@ fi
 echo "now via return via user var without subshell with local -n"
 return_via_user_var_local bar value
 # shellcheck disable=SC2154
-if [ "${bar}" != "value" ]
+if [[ "${bar}" != "value" ]]
 then
 	echo "error, return value is wrong"
 else

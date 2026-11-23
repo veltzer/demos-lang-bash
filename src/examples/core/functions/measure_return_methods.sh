@@ -37,6 +37,9 @@
 # return values via the variable by reference method.
 # note that this method has it's drawbacks too.
 
+# make functions called inside $(...) keep "set -e"
+shopt -s inherit_errexit
+
 source src/includes/array.bashinc
 source src/includes/var.bashinc
 source src/includes/measure.bashinc
@@ -70,18 +73,18 @@ function add_stack() {
 
 # lets see if all is well
 c=$(add_echo 2 2)
-if [ "${c}" != "4" ]
+if [[ "${c}" != "4" ]]
 then
 	echo "ERROR"
 fi
 add_ref d 2 2
-if [ "${d}" != "4" ]
+if [[ "${d}" != "4" ]]
 then
 	echo "ERROR"
 fi
 add_stack 2 2
 array_pop __return_values e
-if [ "${e}" != "4" ]
+if [[ "${e}" != "4" ]]
 then
 	echo "ERROR"
 fi

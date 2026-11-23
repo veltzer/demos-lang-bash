@@ -6,6 +6,9 @@
 # References:
 # - https://stackoverflow.com/questions/3915040/bash-fish-command-to-print-absolute-path-to-a-file
 
+# make functions called inside $(...) keep "set -e"
+shopt -s inherit_errexit
+
 filename="relative_to_absolute_path.bash"
 
 abs1=$(realpath "${filename}")
@@ -15,7 +18,11 @@ abs2=$(readlink -f "${filename}")
 echo "abs2 is [${abs2}]"
 
 get_abs_filename() {
-	echo "$(cd "$(dirname "$1")" && pwd)/$(basename "$1")"
+	local dir base
+	dir=$(dirname "$1")
+	base=$(basename "$1")
+	dir=$(cd "${dir}" && pwd)
+	echo "${dir}/${base}"
 }
 
 abs3=$(get_abs_filename "${filename}")

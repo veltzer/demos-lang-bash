@@ -10,7 +10,7 @@
 # This example clearly shows that only the first one is the correct choice.
 
 function count() {
-	if [ $# -ne 3 ]
+	if [[ $# -ne 3 ]]
 	then
 		echo "problem with $1"
 	else
@@ -19,7 +19,7 @@ function count() {
 }
 
 function up1() {
-	if [ $# -ne 2 ]
+	if [[ $# -ne 2 ]]
 	then
 		echo "problem"
 	fi
@@ -27,7 +27,7 @@ function up1() {
 }
 
 function up2() {
-	if [ $# -ne 2 ]
+	if [[ $# -ne 2 ]]
 	then
 		echo "problem"
 	fi
@@ -35,7 +35,7 @@ function up2() {
 }
 
 function up3() {
-	if [ $# -ne 2 ]
+	if [[ $# -ne 2 ]]
 	then
 		echo "problem"
 	fi
@@ -43,7 +43,7 @@ function up3() {
 }
 
 function up4() {
-	if [ $# -ne 2 ]
+	if [[ $# -ne 2 ]]
 	then
 		echo "problem"
 	fi

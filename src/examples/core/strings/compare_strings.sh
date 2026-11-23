@@ -14,8 +14,10 @@
 
 a="foo"
 b="bar"
+# shellcheck disable=SC2292  # teaching: contrasts [ with [[ below
 [ "${a}" = "${b}" ]
 echo $?
+# shellcheck disable=SC2292  # teaching: contrasts [ with [[ below
 [ "${a}" != "${b}" ]
 echo $?
 [[ "${a}" == "${b}" ]]

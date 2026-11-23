@@ -25,5 +25,6 @@ echo "${A[@]}"
 A=(compgen -G "/etc/a*")
 echo "${A[@]}"
 
-mapfile -t A < <(compgen -G "/etc/a*")
+matches=$(compgen -G "/etc/a*")
+mapfile -t A <<<"${matches}"
 echo "${A[@]}"

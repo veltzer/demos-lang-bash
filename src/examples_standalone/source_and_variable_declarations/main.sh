@@ -20,19 +20,19 @@
 
 var="main_value"
 source "${BASH_SOURCE%/*}/sourced.bashinc"
-if [ "${var}" != "sourced_value" ]
+if [[ "${var}" != "sourced_value" ]]
 then
 	echo "ERROR"
 fi
-if [ "${my_var}" != "sourced_value" ]
+if [[ "${my_var}" != "sourced_value" ]]
 then
 	echo "ERROR"
 fi
-if [ -n "${my_unset_var-}" ]
+if [[ -n "${my_unset_var-}" ]]
 then
 	echo "ERROR"
 fi
-if [ -n "${my_unseen_var-}" ]
+if [[ -n "${my_unseen_var-}" ]]
 then
 	echo "ERROR"
 fi

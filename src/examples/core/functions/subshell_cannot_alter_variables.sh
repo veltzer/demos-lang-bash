@@ -7,6 +7,9 @@
 # subshell and so the function cannot change any variables in the
 # parent shell.
 
+# make functions called inside $(...) keep "set -e"
+shopt -s inherit_errexit
+
 function is_declared() {
 	local varname=$1
 	declare -p "${varname}" > /dev/null 2> /dev/null
@@ -18,22 +21,30 @@ function foo() {
 }
 
 y=$(foo)
-if [ "${y}" = "the_result" ]
+if [[ "${y}" = "the_result" ]]
 then
 	echo "correct return value from function"
 fi
-if ! is_declared x
+set +e
+is_declared x
+rc=$?
+set -e
+if [[ "${rc}" -ne 0 ]]
 then
 	echo "function call could not set variable which means it was in a subshell"
 fi
 
 # shellcheck disable=SC2006
 y=`foo`
-if [ "${y}" = "the_result" ]
+if [[ "${y}" = "the_result" ]]
 then
 	echo "correct return value from function"
 fi
-if ! is_declared x
+set +e
+is_declared x
+rc=$?
+set -e
+if [[ "${rc}" -ne 0 ]]
 then
 	echo "function call could not set variable which means it was in a subshell"
 fi

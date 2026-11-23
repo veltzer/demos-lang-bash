@@ -34,7 +34,7 @@ function array_with_minus_n() {
 
 a=5
 using_eval a 6
-if [ "${a}" != 6 ]
+if [[ "${a}" != 6 ]]
 then
 	echo "ERROR 1"
 fi
@@ -42,28 +42,32 @@ fi
 # show that this method has problem with same named variables
 var=6
 using_eval var 7
-if [ "${var}" != 6 ]
+if [[ "${var}" != 6 ]]
 then
 	echo "ERROR 2"
 fi
 
 a=7
 using_minus_n a 8
-if [ "${a}" != 8 ]
+if [[ "${a}" != 8 ]]
 then
 	echo "ERROR 3"
 fi
 
 a=3
 array_with_minus_n a
-if ! array_is_array a
+set +e
+array_is_array a
+rc=$?
+set -e
+if [[ "${rc}" -ne 0 ]]
 then
 	echo "ERROR 4"
 fi
 
 my_array=9
 using_minus_n my_array 10
-if [ "${my_array}" != 10 ]
+if [[ "${my_array}" != 10 ]]
 then
 	echo "ERROR 5"
 fi

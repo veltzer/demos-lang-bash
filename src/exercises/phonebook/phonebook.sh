@@ -1,5 +1,7 @@
 #!/bin/bash -eu
 
+set -o pipefail
+
 clear
 
 phonebook="phonebook.txt"
@@ -47,7 +49,11 @@ do
 			echo "in insert"
 			echo "=================================="
 			read_name
-			if is_there
+			set +e
+			is_there
+			rc=$?
+			set -e
+			if [[ "${rc}" -eq 0 ]]
 			then
 				error_name_there
 			else
@@ -60,7 +66,11 @@ do
 			echo "in delete"
 			echo "=================================="
 			read_name
-			if is_there
+			set +e
+			is_there
+			rc=$?
+			set -e
+			if [[ "${rc}" -eq 0 ]]
 			then
 				grep -v "^${name}," "${phonebook}" > tmp.txt
 				mv tmp.txt "${phonebook}"
@@ -73,7 +83,11 @@ do
 			echo "in search"
 			echo "=================================="
 			read_name
-			if is_there
+			set +e
+			is_there
+			rc=$?
+			set -e
+			if [[ "${rc}" -eq 0 ]]
 			then
 				grep "^${name}," "${phonebook}" | cut -f 2 -d ,
 			else
@@ -84,7 +98,7 @@ do
 			echo
 			echo "in printbook"
 			echo "=================================="
-			sort -t , < "${phonebook}" | less
+			{ sort -t , < "${phonebook}" || true; } | less
 			;;
 		printcount)
 			echo
@@ -97,7 +111,11 @@ do
 			echo "in update"
 			echo "=================================="
 			read_name
-			if is_there
+			set +e
+			is_there
+			rc=$?
+			set -e
+			if [[ "${rc}" -eq 0 ]]
 			then
 				read_phone
 				grep -v "^${name}," "${phonebook}" > tmp.txt

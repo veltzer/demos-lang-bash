@@ -3,7 +3,8 @@
 # This example shows how to check if a directory has subfolders.
 
 FOLDER="/etc"
-if [ "$(stat --format="%h" "${FOLDER}")" -gt 2 ]
+links=$(stat --format="%h" "${FOLDER}")
+if [[ "${links}" -gt 2 ]]
 then
 	echo "yes"
 else

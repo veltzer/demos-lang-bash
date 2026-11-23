@@ -63,18 +63,18 @@ oo_new obj
 oo_set_attr obj name mark
 oo_set_attr obj surname veltzer
 oo_get_attr obj name name
-if [ "${name}" != "mark" ]
+if [[ "${name}" != "mark" ]]
 then
 	echo "ERROR"
 fi
 oo_get_attr obj surname surname
-if [ "${surname}" != "veltzer" ]
+if [[ "${surname}" != "veltzer" ]]
 then
 	echo "ERROR"
 fi
 oo_print obj
 oo_len obj len
-if [ "${len}" != "2" ]
+if [[ "${len}" != "2" ]]
 then
 	echo "ERROR"
 fi

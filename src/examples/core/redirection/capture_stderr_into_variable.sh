@@ -12,7 +12,7 @@
 ls -l /notexists 2>&1 >/dev/null
 var=$(ls -l /notexists 2>&1 >/dev/null)
 echo "hoho"
-if [ "${var}" != "cat: /notexists: No such file or directory" ]
+if [[ "${var}" != "cat: /notexists: No such file or directory" ]]
 then
 	echo "ERROR"
 fi

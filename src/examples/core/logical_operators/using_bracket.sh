@@ -12,6 +12,7 @@
 # look at man builtins and look for 'test'.
 # - if you wish to do logical operators combined with '[' you must use -a, -o and more.
 
+# shellcheck disable=SC2292  # teaching: this example is about the [ builtin itself
 if [ 'foo' = 'foo' ]
 then
 	true
@@ -19,6 +20,7 @@ else
 	error "${LINENO}" "problem" 1
 fi
 
+# shellcheck disable=SC2292  # teaching: this example is about the [ builtin itself
 if [ 'foo' != 'bar' ]
 then
 	true
@@ -26,6 +28,7 @@ else
 	error "${LINENO}" "problem" 1
 fi
 
+# shellcheck disable=SC2292  # teaching: this example is about the [ builtin itself
 if [ 2 != 3 ] && [ 3 != 4 ]
 then
 	true
@@ -35,12 +38,14 @@ fi
 
 ((a=2))
 ((b=2))
+# shellcheck disable=SC2292  # teaching: this example is about the [ builtin itself
 if [ "${a}" = 1 ] || [ "${b}" = 2 ]
 then
 	true
 else
 	error "${LINENO}" "problem" 1
 fi
+# shellcheck disable=SC2292  # teaching: this example is about the [ builtin itself
 if [ "${a}" = 2 ] && [ "${b}" = 2 ]
 then
 	true

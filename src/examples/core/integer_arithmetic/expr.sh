@@ -13,6 +13,7 @@
 # References:
 # - https://ryanstutorials.net/bash-scripting-tutorial/bash-arithmetic.php
 
-echo $(expr 2 + 2)
+result=$(expr 2 + 2)
+echo "${result}"
 # the next line will cause an error
 # echo $(expr 2.1 + 2.1)

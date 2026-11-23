@@ -6,16 +6,24 @@
 
 function readable() {
 	local filename=$1
-	[ -r "${filename}" ]
+	[[ -r "${filename}" ]]
 	return $?
 
 }
 
-if readable "/etc/passwd"
+set +e
+readable "/etc/passwd"
+rc=$?
+set -e
+if [[ "${rc}" -eq 0 ]]
 then
 	echo "yes, /etc/passwd is readable"
 fi
-if ! readable "/etc/ssl/private"
+set +e
+readable "/etc/ssl/private"
+rc=$?
+set -e
+if [[ "${rc}" -ne 0 ]]
 then
 	echo "no, /etc/ssl/private is unreadable"
 fi

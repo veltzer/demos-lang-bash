@@ -8,7 +8,7 @@ len="${#string}"
 
 # with a simple while loop
 ((i=0))
-while [ "${i}" -lt "${len}" ]
+while [[ "${i}" -lt "${len}" ]]
 do
 	echo "${string:${i}:1}"
 	((i++))

@@ -10,7 +10,7 @@
 set -e
 
 # This should fail because [ -d /nonexisting ] should return error code...
-if [ -d /nonexisting ]
+if [[ -d /nonexisting ]]
 then
 	echo "yes"
 else

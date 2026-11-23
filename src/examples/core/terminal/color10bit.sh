@@ -1,5 +1,6 @@
 #!/bin/bash -eu
-awk -v term_cols="${width:-$(tput cols || echo 80)}" 'BEGIN{
+term_cols=${width:-$(tput cols || echo 80)}
+awk -v term_cols="${term_cols}" 'BEGIN{
     s="/\\";
     for (colnum = 0; colnum<term_cols; colnum++) {
         r = 255-(colnum*255/term_cols);
